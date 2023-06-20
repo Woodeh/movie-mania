@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# Cinema-hub App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Movie Search App](app_screenshot.png)
 
-## Available Scripts
+The Cinema-hub App is a web application built with React that allows users to search for movies and view detailed information about each movie. It provides a user-friendly interface for discovering movies and exploring their details.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Movie Search**: Users can easily search for movies by entering keywords in the search bar.
+- **Movie Details**: Detailed information about each movie, including title, release date, rating, plot summary, and cast, is displayed on the movie details page.
+- **Responsive Design**: The app is designed to work seamlessly on different devices and screen sizes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The Cinema-hub App is built using the following technologies:
 
-### `npm test`
+- **React**: A popular JavaScript library for building user interfaces. It provides a component-based architecture that enables the development of reusable UI elements.
+- **TypeScript**: A statically typed superset of JavaScript that adds type annotations to the language. It helps catch errors during development and improves code maintainability.
+- **SCSS**: A CSS preprocessor that extends the capabilities of CSS. It allows for the use of variables, mixins, and other advanced features to enhance the styling process.
+- **React Redux Toolkit**: A library that simplifies the usage of Redux, a state management tool for JavaScript applications. It provides utilities and abstractions to reduce boilerplate code and improve developer productivity.
+- **MUI (Material-UI)**: A popular React UI framework that provides a set of pre-built components following the Material Design guidelines. It offers a rich set of UI elements for creating a visually appealing and consistent user interface.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+To run the Cinema-hub App App locally, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+git clone https://github.com/your-username/movie-search-app.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory:
+cd movie-search-app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install the dependencies:
+npm install
 
-### `npm run eject`
+4. Start the development server:
+npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+5. Open your web browser and visit `http://localhost:3000` to access the app.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contribution
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Contributions to the Movie Search App are welcome! If you encounter any bugs, have suggestions for improvements, or want to add new features, please feel free to open an issue or submit a pull request.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Before contributing, please ensure that you have read the [contribution guidelines](CONTRIBUTING.md) to understand the project's coding standards and processes.
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project is licensed under the [MIT License](LICENSE). Feel free to use and modify the code for your own purposes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+Enjoy searching and discovering movies with the Cinema-hub App! If you have any questions or need assistance, please don't hesitate to contact me.
