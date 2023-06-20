@@ -33,10 +33,10 @@ The Cinema-hub App is built using the following technologies:
 To run the Cinema-hub App App locally, follow these steps:
 
 1. Clone the repository:
-git clone https://github.com/your-username/movie-search-app.git
+git clone https://github.com/Woodeh/cinema-hub
 
 2. Navigate to the project directory:
-cd movie-search-app
+cd cinema-hub
 
 3. Install the dependencies:
 npm install
