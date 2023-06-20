@@ -1,8 +1,10 @@
-# Cinema-hub App
+<h1 align="center">Cinema-hub App</h1>
 
-![Movie Search App](app_screenshot.png)
+<p align="center">
+  <img src="app_screenshot.png" alt="Movie Search App" />
+</p>
 
-The Cinema-hub App is a web application built with React that allows users to search for movies and view detailed information about each movie. It provides a user-friendly interface for discovering movies and exploring their details.
+<p align="center">The Cinema-hub App is a web application built with React that allows users to search for movies and view detailed information about each movie. It provides a user-friendly interface for discovering movies and exploring their details.</p>
 
 ## Features
 
@@ -11,6 +13,12 @@ The Cinema-hub App is a web application built with React that allows users to se
 - **Responsive Design**: The app is designed to work seamlessly on different devices and screen sizes.
 
 ## Technologies Used
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=react,ts,scss,redux,mui" />
+  </a>
+</p>
 
 The Cinema-hub App is built using the following technologies:
 
@@ -40,7 +48,7 @@ npm start
 
 ## Contribution
 
-Contributions to the Movie Search App are welcome! If you encounter any bugs, have suggestions for improvements, or want to add new features, please feel free to open an issue or submit a pull request.
+Contributions to the Cinema-hub App are welcome! If you encounter any bugs, have suggestions for improvements, or want to add new features, please feel free to open an issue or submit a pull request.
 
 Before contributing, please ensure that you have read the [contribution guidelines](CONTRIBUTING.md) to understand the project's coding standards and processes.
 
