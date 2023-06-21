@@ -1,7 +1,6 @@
 .burgerMenu {
     width: 84px;
     height: 84px;
-    background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +15,6 @@
             z-index: 100;
             width: 236px;
             height: 450px;
-            background-color: #000;
             transform: translateX(-250px);
             transition: transform .3s ease-in-out;
             display: flex;

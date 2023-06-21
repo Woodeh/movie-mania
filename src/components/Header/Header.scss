@@ -3,7 +3,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000;
 
 
     &__box {
@@ -46,6 +45,7 @@
 
     .logotype {
         cursor: pointer;
+        
     }
 }
 
