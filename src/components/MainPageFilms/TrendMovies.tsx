@@ -3,9 +3,10 @@ import { Movie } from './Movies/Movie';
 import './Movies.scss';
 import { ShowMore } from './ShowMore/ShowMore';
 
-interface IMovies {}
 
-interface IMovie {
+interface ITrendMovies {}
+
+interface ITrendMovie {
   title: string;
   from: number;
   to: number;
@@ -13,17 +14,17 @@ interface IMovie {
 
 
 
-export const Movies: FC<IMovies> = () => {
+export const TrendMovies: FC<ITrendMovies> = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [movies] = useState<IMovie[]>([
-    { title: 'Attack On Titan', from: 0, to: 1 },
-    { title: 'Black Clover', from: 0, to: 1 },
-    { title: 'Hunter x hunter', from: 0, to: 1 },
-    { title: 'My Hero Academia', from: 1, to: 2 },
-    { title: 'Initial D', from: 0, to: 1 },
-    { title: 'FullMetal Alchemist', from: 0, to: 1 },
-    { title: 'Jujutsu Kaisen', from: 1, to: 2 },
-    { title: 'Demon Slayer', from: 1, to: 2 },
+  const [movies] = useState<ITrendMovie[]>([
+    { title: 'Inception', from: 0, to: 1 },
+{ title: 'Interstellar', from: 0, to: 1 },
+{ title: 'The Dark Knight', from: 0, to: 1 },
+{ title: 'Pulp Fiction', from: 1, to: 2 },
+{ title: 'Fight Club', from: 0, to: 1 },
+{ title: 'The Shawshank Redemption', from: 0, to: 1 },
+{ title: 'The Matrix', from: 1, to: 2 },
+{ title: 'Goodfellas', from: 1, to: 2 },
   ]);
 
   const handleCountShowFilms = () => {
