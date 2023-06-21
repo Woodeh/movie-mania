@@ -71,7 +71,7 @@ export const RecommendationsFilm: FC<IRecommendationsFilm> = ({ movieTitle }) =>
     return (
         <>
             <div className="recommendations">
-                <h1>Recommendations</h1>
+                <h1>Related movies</h1>
                 {movies.length > 0 ? (
                     <Carousel
                         responsive={responsive}
