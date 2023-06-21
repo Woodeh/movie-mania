@@ -63,7 +63,9 @@
     height: 357px;
     border-radius: 20px;
     background-color: #2f3545;
+    
   }
+
   &--img:hover {
     outline: 2px solid rgb(48, 48, 48);
     transition: filter 0.5s ease;
@@ -82,4 +84,8 @@
 .react-multiple-carousel__arrow--right,
 .react-multiple-carousel__arrow--left {
   top: 160px;
+}
+
+.react-multi-carousel-list {
+padding-left: 7px;
 }

@@ -30,7 +30,7 @@ export const BlogPage: FC<IBlogPage> = ({ handleFilterMovie, handleMoveMain }) =
       <Logotype/>
       </div>
       <Header
-      
+     
         handleFilterMovie={handleFilterMovie}
         handleMoveMain={handleMoveMain}
         titleFilm={handleTitleFilm}

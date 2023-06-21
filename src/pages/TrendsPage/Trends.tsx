@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import "./Trends";
 import { getPostsAction } from "../../store/posts/actions";
 import { Header } from "../../components/Header/Header";
-import { MovieList } from "../../components/MovieList/MovieList";
+import { TrendMovieList } from "../../components/MovieList/TrendMovieList";
 import { Logotype } from "../../assets/icons";
 
 export interface Trends {
@@ -29,13 +29,15 @@ export const Trends: FC<Trends> = ({
 
   return (
     <div className="blog">
-      <Logotype />
+      <div className="mainLogo">
+      <Logotype/>
+      </div>
       <Header
         handleFilterMovie={handleFilterMovie}
         handleMoveMain={handleMoveMain}
         titleFilm={handleTitleFilm}
       />
-      <MovieList titleMovie={titleMovie} />
+      <TrendMovieList titleMovie={titleMovie} />
     </div>
   );
 };
