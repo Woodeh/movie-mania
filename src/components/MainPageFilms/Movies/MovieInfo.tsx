@@ -11,9 +11,6 @@ import { createBackToHomePath } from "../../../constants/createBackToHomePath";
 import { RecommendationsFilm } from "./RecommendationsFilm";
 import { Logotype } from "../../../assets/icons";
 
-
-
-
 interface IMovieInfo {
   match: {
     params: { id: string };
@@ -39,29 +36,36 @@ export const MovieInfo: FC<IMovieInfo> = () => {
   }, [id]);
 
   if (!movie) {
-    return <div className="loader triangle">
-      <svg viewBox="0 0 86 80">
-        <polygon points="43 8 79 72 7 72"></polygon>
-      </svg>
-    </div>;
+    return (
+      <div className="loader triangle">
+        <svg viewBox="0 0 86 80">
+          <polygon points="43 8 79 72 7 72"></polygon>
+        </svg>
+      </div>
+    );
   }
 
-  const genreArray = movie.Genre.split(','); // Преобразование строки в массив
+  const genreArray = movie.Genre.split(","); // Преобразование строки в массив
   const genreString = genreArray.join(` • `);
 
   return (
-
     <>
       <div className="mainLogo">
-        <Link to={'/posts'}><Logotype /></Link>
+        <Link to={"/posts"}>
+          <Logotype />
+        </Link>
       </div>
-      <Header handleFilterMovie={() => { }} handleMoveMain={() => { }} titleFilm={() => { }} />
+      <Header handleFilterMovie={() => {}} handleMoveMain={() => {}} titleFilm={() => {}} />
       <div className="movie-details">
         <div className="movie-poster">
           {movie.Poster !== "N/A" ? (
             <img className="movie-poster--img" src={movie.Poster} alt={movie.Title} />
           ) : (
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png" draggable="false" alt={movie.Title} />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png"
+              draggable="false"
+              alt={movie.Title}
+            />
           )}
         </div>
         <div className="movie-info">
@@ -75,14 +79,30 @@ export const MovieInfo: FC<IMovieInfo> = () => {
           <p className="movie-info--plot">{movie.Plot}</p>
           <div className="movie-info--genres">
             <ul>
-              <li><span className="movie-info--list">Year:</span></li>
-              <li><span className="movie-info--list">Released:</span></li>
-              <li><span className="movie-info--list">BoxOffice:</span></li>
-              <li><span className="movie-info--list">Country:</span></li>
-              <li><span className="movie-info--list">Actors:</span></li>
-              <li><span className="movie-info--list">Director:</span></li>
-              <li><span className="movie-info--list">Writer:</span></li>
-              <li><span className="movie-info--list">Stars:</span></li>
+              <li>
+                <span className="movie-info--list">Year:</span>
+              </li>
+              <li>
+                <span className="movie-info--list">Released:</span>
+              </li>
+              <li>
+                <span className="movie-info--list">BoxOffice:</span>
+              </li>
+              <li>
+                <span className="movie-info--list">Country:</span>
+              </li>
+              <li>
+                <span className="movie-info--list">Actors:</span>
+              </li>
+              <li>
+                <span className="movie-info--list">Director:</span>
+              </li>
+              <li>
+                <span className="movie-info--list">Writer:</span>
+              </li>
+              <li>
+                <span className="movie-info--list">Stars:</span>
+              </li>
             </ul>
             <ul>
               <li>{movie.Year}</li>
@@ -97,11 +117,7 @@ export const MovieInfo: FC<IMovieInfo> = () => {
           </div>
         </div>
       </div>
-      <RecommendationsFilm />
-      {/* <div className="movie-poster">
-        <img src={movie.Poster} alt={movie.Title} />
-      </div> */}
-
+      <RecommendationsFilm movieTitle={movie.Title} />
     </>
   );
 };
