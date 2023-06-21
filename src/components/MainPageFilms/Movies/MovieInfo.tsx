@@ -1,15 +1,17 @@
-import { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { FILM_URL } from "../../../api/urls";
 import { Link, useParams } from "react-router-dom";
 import { Header } from "../../Header/Header";
 import "./MovieInfo.scss";
 import { TypographyText } from "../../Typography/TypographyText";
-
 import { Breadcrumbs } from "../../Breadcrumbs/Breadcrumbs";
 import { createBackToHomePath } from "../../../constants/createBackToHomePath";
-
 import { RecommendationsFilm } from "./RecommendationsFilm";
 import { Logotype } from "../../../assets/icons";
+import { ShareButton } from "../../ShareButton/ShareButton";
+import { TelegramIcon, WhatsappIcon } from "react-share";
+
+
 
 interface IMovieInfo {
   match: {
@@ -17,9 +19,12 @@ interface IMovieInfo {
   };
 }
 
+
+
 export const MovieInfo: FC<IMovieInfo> = () => {
   const { id } = useParams<{ id: string }>();
   const [movie, setMovie] = useState<any>();
+  const [filmLink, setFilmLink] = useState<string>("");
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -28,6 +33,7 @@ export const MovieInfo: FC<IMovieInfo> = () => {
         const response = await fetch(URL);
         const data = await response.json();
         setMovie(data);
+        setFilmLink(data.Link); // Здесь предполагается, что свойство с ссылкой на фильм называется Link
       } catch (error) {
         console.log("error:", error);
       }
@@ -67,6 +73,7 @@ export const MovieInfo: FC<IMovieInfo> = () => {
               alt={movie.Title}
             />
           )}
+          <ShareButton/>
         </div>
         <div className="movie-info">
           <TypographyText content={genreString} type="subline" />
@@ -115,9 +122,18 @@ export const MovieInfo: FC<IMovieInfo> = () => {
               <li>{movie.Actors}</li>
             </ul>
           </div>
+          
+          
         </div>
       </div>
       <RecommendationsFilm movieTitle={movie.Title} />
     </>
   );
 };
+
+
+
+
+
+
+

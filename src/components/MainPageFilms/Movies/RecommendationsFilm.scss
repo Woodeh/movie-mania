@@ -12,8 +12,8 @@
 
 .movie-poster {
   position: relative;
-
   width: 266px;
+  margin-left: 10px;
   z-index: 1;
   &--btn {
     position: absolute;
@@ -88,4 +88,9 @@
 
 .react-multi-carousel-list {
 padding-left: 7px;
+}
+
+.related-title {
+  text-align: center;
+  margin-bottom: 15px;
 }

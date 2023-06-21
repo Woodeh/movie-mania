@@ -8,4 +8,4 @@ export { ReactComponent as UserIcon } from './user.svg';
 export { ReactComponent as CancelIcon } from './cancel.svg';
 export { ReactComponent as BurgerMenuIcon } from './burgerMenu.svg';
 export { ReactComponent as SearchIcon } from './search.svg';
-export { ReactComponent as Logotype } from './pixema.svg'
+export { ReactComponent as Logotype } from './cinema-glasses-stereo-movie-svgrepo-com.svg'

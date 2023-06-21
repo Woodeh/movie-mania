@@ -42,7 +42,7 @@ export const Settings: FC<ISettings> = () => {
         <>
         <div className='settings'>
             <div className="mainLogo">
-                <Link to={'/posts'}><Logotype/></Link>
+                <Link to={'/'}><Logotype/></Link>
             </div>
             <Header handleFilterMovie={() => {}} handleMoveMain={() => {}} titleFilm={() => {}}/>
             <TypographyText content='Profile' type='H2' />

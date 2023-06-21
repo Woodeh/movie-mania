@@ -28,6 +28,7 @@ export const BlogPage: FC<IBlogPage> = ({ handleFilterMovie, handleMoveMain }) =
     <div className="blog">
       <div className="mainLogo">
       <Logotype/>
+      <div className="logo-title">MovieMania</div>
       </div>
       <Header
      
