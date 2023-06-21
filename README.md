@@ -1,7 +1,7 @@
 <h1 align="center">Movie-Mania App</h1>
 
 <p align="center">
-  <img src="app_screenshot.png" alt="Movie-Mania App" />
+  <img src="/public/movie-mania-logo.svg" alt="Movie-Mania App" />
 </p>
 
 <p align="center">The Movie-Mania App is a web application built with React that allows users to search for movies and view detailed information about each movie. It provides a user-friendly interface for discovering movies and exploring their details.</p>
