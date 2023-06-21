@@ -1,10 +1,10 @@
-<h1 align="center">Cinema-hub App</h1>
+<h1 align="center">Movie-Mania App</h1>
 
 <p align="center">
-  <img src="app_screenshot.png" alt="Movie Search App" />
+  <img src="app_screenshot.png" alt="Movie-Mania App" />
 </p>
 
-<p align="center">The Cinema-hub App is a web application built with React that allows users to search for movies and view detailed information about each movie. It provides a user-friendly interface for discovering movies and exploring their details.</p>
+<p align="center">The Movie-Mania App is a web application built with React that allows users to search for movies and view detailed information about each movie. It provides a user-friendly interface for discovering movies and exploring their details.</p>
 
 ## Features
 
@@ -20,7 +20,7 @@
   </a>
 </p>
 
-The Cinema-hub App is built using the following technologies:
+The Movie-Mania App is built using the following technologies:
 
 - **React**: A popular JavaScript library for building user interfaces. It provides a component-based architecture that enables the development of reusable UI elements.
 - **TypeScript**: A statically typed superset of JavaScript that adds type annotations to the language. It helps catch errors during development and improves code maintainability.
@@ -30,7 +30,7 @@ The Cinema-hub App is built using the following technologies:
 
 ## Getting Started
 
-To run the Cinema-hub App App locally, follow these steps:
+To run the Movie-Mania App App locally, follow these steps:
 
 1. Clone the repository:
 git clone https://github.com/Woodeh/cinema-hub
@@ -48,7 +48,7 @@ npm start
 
 ## Contribution
 
-Contributions to the Cinema-hub App are welcome! If you encounter any bugs, have suggestions for improvements, or want to add new features, please feel free to open an issue or submit a pull request.
+Contributions to the Movie-Mania App are welcome! If you encounter any bugs, have suggestions for improvements, or want to add new features, please feel free to open an issue or submit a pull request.
 
 Before contributing, please ensure that you have read the [contribution guidelines](CONTRIBUTING.md) to understand the project's coding standards and processes.
 
