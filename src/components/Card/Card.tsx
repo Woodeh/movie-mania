@@ -25,35 +25,40 @@ export const Card: FC<ICard> = ({
   onAddToFavorites,
   onRemoveFromFavorites,
 }) => {
+  const handleAddToFavorites = (event: React.MouseEvent) => {
+    event.stopPropagation(); // Остановка всплытия события клика
+    onAddToFavorites();
+  };
+
   return (
-    <Link to={link}>
-      <div className="card" key={key}>
+    <div className="card" key={key}>
+      <Link to={link}>
         <img src={image} alt={titleFilm} />
         <h3 className="card-title">{titleFilm}</h3>
         <div className="card-info">
           <p className="card-year">{yearFilm}</p>
           <p className="card-genre">{genreFIlm}</p>
         </div>
-        <div className="card-actions">
-          {isFavorite ? (
-            <button
-              className="remove-favorite-button"
-              type="button" 
-              onClick={onRemoveFromFavorites}
-            >
-              Remove from Favorites
-            </button>
-          ) : (
-            <button
-              className="add-favorite-button"
-              type="button"
-              onClick={onAddToFavorites}
-            >
-              Add to Favorites
-            </button>
-          )}
-        </div>
+      </Link>
+      <div className="card-actions">
+        {isFavorite ? (
+          <button
+            className="remove-favorite-button"
+            type="button" 
+            onClick={onRemoveFromFavorites}
+          >
+            Remove from Favorites
+          </button>
+        ) : (
+          <button
+            className="add-favorite-button"
+            type="button"
+            onClick={handleAddToFavorites}
+          >
+            Add to Favorites
+          </button>
+        )}
       </div>
-    </Link>
+    </div>
   );
 };

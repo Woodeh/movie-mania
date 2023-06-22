@@ -1,10 +1,11 @@
 import React from "react";
+import "./FavoriteModal.scss";
 
 interface IFavoriteModal {
   onClose: () => void;
 }
 
-const Modal: React.FC<IFavoriteModal> = ({ onClose }) => {
+const FavoriteModal: React.FC<IFavoriteModal> = ({ onClose }) => {
   return (
     <div className="modal">
       <div className="modal-content">
@@ -15,4 +16,4 @@ const Modal: React.FC<IFavoriteModal> = ({ onClose }) => {
   );
 };
 
-export default Modal;
+export default FavoriteModal;
