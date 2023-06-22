@@ -1,6 +1,6 @@
-import { FC } from "react";
-import "./Card.scss";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
+import './Card.scss';
 
 interface ICard {
   key: string;
@@ -9,8 +9,10 @@ interface ICard {
   yearFilm: string;
   genreFIlm: string;
   link: string;
+  isFavorite: boolean;
+  onAddToFavorites: () => void;
+  onRemoveFromFavorites: () => void;
 }
-
 
 export const Card: FC<ICard> = ({
   key,
@@ -19,6 +21,9 @@ export const Card: FC<ICard> = ({
   yearFilm,
   genreFIlm,
   link,
+  isFavorite,
+  onAddToFavorites,
+  onRemoveFromFavorites,
 }) => {
   return (
     <Link to={link}>
@@ -28,6 +33,25 @@ export const Card: FC<ICard> = ({
         <div className="card-info">
           <p className="card-year">{yearFilm}</p>
           <p className="card-genre">{genreFIlm}</p>
+        </div>
+        <div className="card-actions">
+          {isFavorite ? (
+            <button
+              className="remove-favorite-button"
+              type="button" 
+              onClick={onRemoveFromFavorites}
+            >
+              Remove from Favorites
+            </button>
+          ) : (
+            <button
+              className="add-favorite-button"
+              type="button"
+              onClick={onAddToFavorites}
+            >
+              Add to Favorites
+            </button>
+          )}
         </div>
       </div>
     </Link>

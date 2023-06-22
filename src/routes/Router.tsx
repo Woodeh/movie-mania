@@ -12,6 +12,7 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import { Settings } from "../pages/Settings/Settings";
 import { MovieInfo } from "../components/MainPageFilms/Movies/MovieInfo";
 import { Trends } from "../pages/TrendsPage/Trends";
+import FavoritesPage from "../pages/FavoritesPage/FavoritesPage";
 
 export const Router: FC = () => {
   const { confirmEmail } = useAppSelector((state) => state.confirmEmail);
@@ -59,6 +60,8 @@ export const Router: FC = () => {
           />
         }
       />
+      /favorites
+      <Route path="/favorites" element ={<FavoritesPage/>} />
       <Route path="/search" element={<SearchPage />} />
       <Route path="/sign-in" element={<SignInPage />} />
       <Route path="/sign-up" element={<SignUpPage />} />

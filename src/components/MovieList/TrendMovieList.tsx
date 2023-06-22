@@ -48,8 +48,11 @@ export const TrendMovieList: FC<ITrendMovieList> = ({ titleMovie }) => {
           titleFilm={item["Title"]}
           yearFilm={item["Year"]}
           genreFIlm={item["Genre"]}
-          link={`/movies/${item.imdbID}`}
-        />
+          link={`/movies/${item.imdbID}`} isFavorite={false} onAddToFavorites={function (): void {
+            throw new Error("Function not implemented.");
+          } } onRemoveFromFavorites={function (): void {
+            throw new Error("Function not implemented.");
+          } }        />
       ))}
       {!movies.length && <TrendMovies />}
       {totalResults > movies.length && (
