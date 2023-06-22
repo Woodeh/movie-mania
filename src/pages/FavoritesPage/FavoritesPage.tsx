@@ -16,7 +16,7 @@ const FavoritesPage = () => {
 
   return (
     <div className="favorite-card">
-      <h2>Favorites</h2>
+      
       {favorites.map((movie: any) => (
         <Card
           key={movie.imdbID}
