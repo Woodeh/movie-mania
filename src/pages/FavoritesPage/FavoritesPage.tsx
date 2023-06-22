@@ -27,8 +27,7 @@ const FavoritesPage = () => {
           link={`/movies/${movie.imdbID}`}
           isFavorite={true}
           onRemoveFromFavorites={() => handleRemoveFromFavorites(movie.imdbID)}
-          onAddToFavorites={() => {}}
-        />
+          onAddToFavorites={() => { } } filmId={""}        />
       ))}
       {isModalOpen && (
         <FavoriteModal onClose={() => setModalOpen(false)} />

@@ -32,7 +32,14 @@ export const Movie: React.FC<IMovie> = ({ titleMovie, from, to }) => {
     fetchMovie();
   }, [titleMovie]);
 
-  const moviesToShow = movies.slice(from, to);
+  useEffect(() => {
+    // Обновить список фильмов после изменения избранных фильмов
+    const updatedMovies = movies.map(movie => ({
+      ...movie,
+      isFavorite: isMovieInFavorites(movie.imdbID)
+    }));
+    setMovies(updatedMovies);
+  }, [favorites]);
 
   const handleAddToFavorites = (movie: any) => {
     dispatch(addToFavorites(movie));
@@ -44,12 +51,12 @@ export const Movie: React.FC<IMovie> = ({ titleMovie, from, to }) => {
   };
 
   const isMovieInFavorites = (movieId: string) => {
-    return favorites.some((movie: any) => movie.id === movieId);
+    return favorites.some((movie: any) => movie.imdbID === movieId);
   };
-
+  
   return (
     <div className="movie-card">
-      {moviesToShow.map((movie) => (
+      {movies.slice(from, to).map((movie) => (
         <Card
           key={movie.imdbID}
           image={movie.Poster}
@@ -57,10 +64,9 @@ export const Movie: React.FC<IMovie> = ({ titleMovie, from, to }) => {
           yearFilm={movie.Year}
           genreFIlm={movie.Genre}
           link={`/movies/${movie.imdbID}`}
-          isFavorite={isMovieInFavorites(movie.imdbID)}
+          isFavorite={movie.isFavorite}
           onAddToFavorites={() => handleAddToFavorites(movie)}
-          onRemoveFromFavorites={() => handleRemoveFromFavorites(movie.imdbID)}
-        />
+          onRemoveFromFavorites={() => handleRemoveFromFavorites(movie.imdbID)} filmId={""}        />
       ))}
       <Link to="/favorites">Go to Favorites</Link>
 

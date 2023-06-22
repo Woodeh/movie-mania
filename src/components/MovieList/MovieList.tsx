@@ -52,7 +52,7 @@ export const MovieList: FC<IMovieList> = ({ titleMovie }) => {
             throw new Error("Function not implemented.");
           } } onRemoveFromFavorites={function (): void {
             throw new Error("Function not implemented.");
-          } }        />
+          } } filmId={""}        />
       ))}
       {!movies.length && <Movies />}
       {totalResults > movies.length && (

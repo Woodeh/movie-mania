@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import './Card.scss';
+import "./Card.scss";
 
 interface ICard {
-  key: string;
+  filmId: string;
   image: string;
   titleFilm: string;
   yearFilm: string;
@@ -11,11 +11,11 @@ interface ICard {
   link: string;
   isFavorite: boolean;
   onAddToFavorites: () => void;
-  onRemoveFromFavorites: () => void;
+  onRemoveFromFavorites: (filmId: string) => void;
 }
 
 export const Card: FC<ICard> = ({
-  key,
+  filmId,
   image,
   titleFilm,
   yearFilm,
@@ -26,12 +26,12 @@ export const Card: FC<ICard> = ({
   onRemoveFromFavorites,
 }) => {
   const handleAddToFavorites = (event: React.MouseEvent) => {
-    event.stopPropagation(); // Остановка всплытия события клика
+    event.stopPropagation();
     onAddToFavorites();
   };
 
   return (
-    <div className="card" key={key}>
+    <div className="card" key={filmId}>
       <Link to={link}>
         <img src={image} alt={titleFilm} />
         <h3 className="card-title">{titleFilm}</h3>
@@ -44,8 +44,8 @@ export const Card: FC<ICard> = ({
         {isFavorite ? (
           <button
             className="remove-favorite-button"
-            type="button" 
-            onClick={onRemoveFromFavorites}
+            type="button"
+            onClick={() => onRemoveFromFavorites(filmId)}
           >
             Remove from Favorites
           </button>
