@@ -1,10 +1,11 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addToFavorites, removeFromFavorites } from "../../../redux/favoritesActions";
 import { FILM_URL } from "../../../api/urls";
 import { Card } from "../../Card/Card";
 import { Link } from "react-router-dom";
 import "./Movie.scss";
+import FavoriteModal from "../../FavoriteModal/FavotireModal";
 
 interface IMovie {
   titleMovie: string;
@@ -12,10 +13,11 @@ interface IMovie {
   to: number;
 }
 
-export const Movie: FC<IMovie> = ({ titleMovie, from, to }) => {
+export const Movie: React.FC<IMovie> = ({ titleMovie, from, to }) => {
   const [movies, setMovies] = useState<any[]>([]);
   const favorites = useSelector((state: any) => state.favorites || []);
   const dispatch = useDispatch();
+  const [isModalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -31,15 +33,12 @@ export const Movie: FC<IMovie> = ({ titleMovie, from, to }) => {
   }, [titleMovie]);
 
   const moviesToShow = movies.slice(from, to);
+
   const handleAddToFavorites = (movie: any) => {
-    const isMovieAlreadyFavorite = favorites.some((favMovie: any) => favMovie.id === movie.imdbID);
-    if (!isMovieAlreadyFavorite) {
-      dispatch(addToFavorites(movie));
-    } else {
-      console.log("The movie is already in favorites.");
-    }
+    dispatch(addToFavorites(movie));
+    setModalOpen(true);
   };
-  
+
   const handleRemoveFromFavorites = (movieId: string) => {
     dispatch(removeFromFavorites(movieId));
   };
@@ -57,13 +56,15 @@ export const Movie: FC<IMovie> = ({ titleMovie, from, to }) => {
           titleFilm={movie.Title}
           yearFilm={movie.Year}
           genreFIlm={movie.Genre}
-          link={`movies/${movie.imdbID}`}
+          link={`/movies/${movie.imdbID}`}
           isFavorite={isMovieInFavorites(movie.imdbID)}
           onAddToFavorites={() => handleAddToFavorites(movie)}
           onRemoveFromFavorites={() => handleRemoveFromFavorites(movie.imdbID)}
         />
       ))}
       <Link to="/favorites">Go to Favorites</Link>
+
+      {isModalOpen && <FavoriteModal onClose={() => setModalOpen(false)} />}
     </div>
   );
 };

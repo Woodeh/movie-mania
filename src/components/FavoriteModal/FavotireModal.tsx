@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./FavoriteModal.scss";
 
 interface IFavoriteModal {
@@ -6,11 +6,20 @@ interface IFavoriteModal {
 }
 
 const FavoriteModal: React.FC<IFavoriteModal> = ({ onClose }) => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onClose();
+    }, 3000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [onClose]);
+
   return (
     <div className="modal">
       <div className="modal-content">
-        <h3>Фильм добавлен в избранное!</h3>
-        <button onClick={onClose}>Закрыть</button>
+        <h3>The film has been added to favorites!</h3>
       </div>
     </div>
   );
