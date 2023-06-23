@@ -68,7 +68,7 @@ export const Movie: React.FC<IMovie> = ({ titleMovie, from, to }) => {
           onAddToFavorites={() => handleAddToFavorites(movie)}
           onRemoveFromFavorites={() => handleRemoveFromFavorites(movie.imdbID)} filmId={""}        />
       ))}
-      <Link to="/favorites">Go to Favorites</Link>
+      {/* <Link to="/favorites">Go to Favorites</Link> */}
 
       {isModalOpen && <FavoriteModal onClose={() => setModalOpen(false)} />}
     </div>
