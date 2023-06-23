@@ -5,16 +5,14 @@ import { getPostsAction } from "../../store/posts/actions";
 import { Header } from "../../components/Header/Header";
 import { TrendMovieList } from "../../components/MovieList/TrendMovieList";
 import { Logotype } from "../../assets/icons";
+import Favorite from "../../components/Favorite/Favorite";
 
 export interface Trends {
   handleFilterMovie: () => void;
   handleMoveMain: () => void;
 }
 
-export const Trends: FC<Trends> = ({
-  handleFilterMovie,
-  handleMoveMain,
-}) => {
+export const Trends: FC<Trends> = ({ handleFilterMovie, handleMoveMain }) => {
   const dispatch = useAppDispatch();
   const { posts, error, loading } = useAppSelector((state) => state.posts);
 
@@ -30,7 +28,7 @@ export const Trends: FC<Trends> = ({
   return (
     <div className="blog">
       <div className="mainLogo">
-      <Logotype/>
+        <Logotype />
       </div>
       <Header
         handleFilterMovie={handleFilterMovie}

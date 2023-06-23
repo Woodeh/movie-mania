@@ -11,7 +11,7 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import { Settings } from "../pages/Settings/Settings";
 import { MovieInfo } from "../components/MainPageFilms/Movies/MovieInfo";
 import { Trends } from "../pages/TrendsPage/Trends";
-import FavoritesPage from "../pages/FavoritesPage/FavoritesPage";
+import { Favorites } from "../pages/FavoritesPage/FavoritesPage";
 
 export const Router: FC = () => {
   const { confirmEmail } = useAppSelector((state) => state.confirmEmail);
@@ -60,18 +60,20 @@ export const Router: FC = () => {
         }
       />
       /favorites
-      <Route path="/favorites" element ={<FavoritesPage/>} />
+      <Route path="/favorites" element={<Favorites handleFilterMovie={function (): void {
+        throw new Error("Function not implemented.");
+      } } handleMoveMain={function (): void {
+        throw new Error("Function not implemented.");
+      } } />} />
       <Route path="/sign-in" element={<SignInPage />} />
       <Route path="/sign-up" element={<SignUpPage />} />
       <Route path="/activate/:uid/:token" element={<ActivatePage />} />
-
       <Route element={<ProtectedRoute access={!!confirmEmail} />}>
         <Route
           path="/confirm-registration"
           element={<RegistrationConfirmPage />}
         />
       </Route>
-
       <Route path="*" element={<>Такой страницы не существует</>} />
     </Routes>
   );

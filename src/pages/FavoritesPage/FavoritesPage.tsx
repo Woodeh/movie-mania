@@ -1,39 +1,42 @@
-import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Card } from "../../components/Card/Card";
-import { removeFromFavorites } from "../../redux/favoritesActions";
-import "./FavoritesPage.scss";
-import FavoriteModal from "../../components/FavoriteModal/FavotireModal";
+import { FC, useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { getPostsAction } from "../../store/posts/actions";
+import { Header } from "../../components/Header/Header";
+import { Logotype } from "../../assets/icons";
+import Favorite from "../../components/Favorite/Favorite";
+import { FavoritesMovieList } from "../../components/MovieList/FavoritesMovieList";
 
-const FavoritesPage = () => {
-  const favorites = useSelector((state: any) => state.favorites || []);
-  const dispatch = useDispatch();
-  const [isModalOpen, setModalOpen] = useState(false);
+export interface IFavorites {
+  handleFilterMovie: () => void;
+  handleMoveMain: () => void;
+}
 
-  const handleRemoveFromFavorites = (movieId: string) => {
-    dispatch(removeFromFavorites(movieId));
+export const Favorites: FC<IFavorites> = ({ handleFilterMovie, handleMoveMain }) => {
+  const dispatch = useAppDispatch();
+  const { posts, error, loading } = useAppSelector((state) => state.posts);
+
+  useEffect(() => {
+    dispatch(getPostsAction());
+  }, [dispatch]);
+
+  const [titleMovie, setTitleMovie] = useState("");
+  const handleTitleFilm = (newValue: string) => {
+    setTitleMovie(newValue);
   };
 
   return (
-    <div className="favorite-card">
+    <div className="blog">
+      <div className="mainLogo">
+        <Logotype />
+      </div>
+      <Header
+        handleFilterMovie={handleFilterMovie}
+        handleMoveMain={handleMoveMain}
+        titleFilm={handleTitleFilm}
+      />
+      <Favorite />
+     <FavoritesMovieList titleMovie={titleMovie} />
       
-      {favorites.map((movie: any) => (
-        <Card
-          key={movie.imdbID}
-          image={movie.Poster}
-          titleFilm={movie.Title}
-          yearFilm={movie.Year}
-          genreFIlm={movie.Genre}
-          link={`/movies/${movie.imdbID}`}
-          isFavorite={true}
-          onRemoveFromFavorites={() => handleRemoveFromFavorites(movie.imdbID)}
-          onAddToFavorites={() => { } } filmId={""}        />
-      ))}
-      {isModalOpen && (
-        <FavoriteModal onClose={() => setModalOpen(false)} />
-      )}
     </div>
   );
 };
-
-export default FavoritesPage;
