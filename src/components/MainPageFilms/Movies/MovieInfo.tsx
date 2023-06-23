@@ -4,12 +4,10 @@ import { Link, useParams } from "react-router-dom";
 import { Header } from "../../Header/Header";
 import "./MovieInfo.scss";
 import { TypographyText } from "../../Typography/TypographyText";
-import { Breadcrumbs } from "../../Breadcrumbs/Breadcrumbs";
-import { createBackToHomePath } from "../../../constants/createBackToHomePath";
 import { RecommendationsFilm } from "./RecommendationsFilm";
 import { Logotype } from "../../../assets/icons";
 import { ShareButton } from "../../ShareButton/ShareButton";
-import { TelegramIcon, WhatsappIcon } from "react-share";
+
 
 
 
@@ -33,7 +31,7 @@ export const MovieInfo: FC<IMovieInfo> = () => {
         const response = await fetch(URL);
         const data = await response.json();
         setMovie(data);
-        setFilmLink(data.Link); // Здесь предполагается, что свойство с ссылкой на фильм называется Link
+        setFilmLink(data.Link); 
       } catch (error) {
         console.log("error:", error);
       }
@@ -51,7 +49,7 @@ export const MovieInfo: FC<IMovieInfo> = () => {
     );
   }
 
-  const genreArray = movie.Genre.split(","); // Преобразование строки в массив
+  const genreArray = movie.Genre.split(","); 
   const genreString = genreArray.join(` • `);
 
   return (
