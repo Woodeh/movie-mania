@@ -48,8 +48,11 @@ export const MovieList: FC<IMovieList> = ({ titleMovie }) => {
           titleFilm={item["Title"]}
           yearFilm={item["Year"]}
           genreFIlm={item["Genre"]}
-          link={`/movies/${item.imdbID}`}
-        />
+          link={`/movies/${item.imdbID}`} isFavorite={false} onAddToFavorites={function (): void {
+            throw new Error("Function not implemented.");
+          } } onRemoveFromFavorites={function (): void {
+            throw new Error("Function not implemented.");
+          } } filmId={""}        />
       ))}
       {!movies.length && <Movies />}
       {totalResults > movies.length && (

@@ -1,15 +1,13 @@
-import React, { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { FILM_URL } from "../../../api/urls";
 import { Link, useParams } from "react-router-dom";
 import { Header } from "../../Header/Header";
 import "./MovieInfo.scss";
 import { TypographyText } from "../../Typography/TypographyText";
-import { Breadcrumbs } from "../../Breadcrumbs/Breadcrumbs";
-import { createBackToHomePath } from "../../../constants/createBackToHomePath";
 import { RecommendationsFilm } from "./RecommendationsFilm";
 import { Logotype } from "../../../assets/icons";
 import { ShareButton } from "../../ShareButton/ShareButton";
-import { TelegramIcon, WhatsappIcon } from "react-share";
+
 
 
 

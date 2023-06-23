@@ -1,10 +1,9 @@
-// Header.tsx
-import { FC } from 'react';
+import { FC, useState, KeyboardEvent } from 'react';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 import { UserInfo } from '../UserInfo/UserInfo';
 import { IconButton } from '../IconButton/IconButton';
-import { CancelIcon, UserIcon, Logotype } from '../../assets/icons';
-import { useNavigate } from 'react-router';
+import { UserIcon } from '../../assets/icons';
+import { useNavigate } from 'react-router-dom';
 import './Header.scss';
 
 interface IHeader {
@@ -15,20 +14,26 @@ interface IHeader {
 }
 
 export const Header: FC<IHeader> = ({
-  handleMoveMain,
-  handleFilterMovie,
   titleFilm,
   isSearchDisabled = false
 }) => {
   const navigate = useNavigate();
   const isLogged = false;
+  const [searchValue, setSearchValue] = useState('');
 
   const handleClickToSignIn = () => {
     navigate('/sign-in');
   };
 
-  const handleClickToHome = () => {
-    navigate('/posts');
+  const handleSearch = () => {
+    titleFilm(searchValue);
+    navigate(`/favorites?query=${searchValue}`);
+  };
+
+  const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
   };
 
   const inputClass = `search-input ${isSearchDisabled && 'search-film__disabled'}`;
@@ -43,7 +48,9 @@ export const Header: FC<IHeader> = ({
             type="text"
             placeholder="search"
             disabled={isSearchDisabled}
-            onChange={(e) => titleFilm(e.target.value)}
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            onKeyUp={handleKeyUp}
           />
         </div>
       </div>

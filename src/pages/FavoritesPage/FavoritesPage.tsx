@@ -1,18 +1,17 @@
 import { FC, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import "./Trends";
 import { getPostsAction } from "../../store/posts/actions";
 import { Header } from "../../components/Header/Header";
-import { TrendMovieList } from "../../components/MovieList/TrendMovieList";
 import { Logotype } from "../../assets/icons";
 import Favorite from "../../components/Favorite/Favorite";
+import { FavoritesMovieList } from "../../components/MovieList/FavoritesMovieList";
 
-export interface Trends {
+export interface IFavorites {
   handleFilterMovie: () => void;
   handleMoveMain: () => void;
 }
 
-export const Trends: FC<Trends> = ({ handleFilterMovie, handleMoveMain }) => {
+export const Favorites: FC<IFavorites> = ({ handleFilterMovie, handleMoveMain }) => {
   const dispatch = useAppDispatch();
   const { posts, error, loading } = useAppSelector((state) => state.posts);
 
@@ -35,7 +34,8 @@ export const Trends: FC<Trends> = ({ handleFilterMovie, handleMoveMain }) => {
         handleMoveMain={handleMoveMain}
         titleFilm={handleTitleFilm}
       />
-      <TrendMovieList titleMovie={titleMovie} />
+      <Favorite />
+      <FavoritesMovieList titleMovie={titleMovie} />
     </div>
   );
 };
