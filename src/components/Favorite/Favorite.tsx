@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Card } from "../Card/Card";
 import { removeFromFavorites } from "../../redux/favoritesActions";
+import { FavoritesMovieList } from "../MovieList/FavoritesMovieList";
 import "./Favorite.scss";
 import FavoriteModal from "../FavoriteModal/FavotireModal";
 
@@ -16,6 +17,7 @@ const Favorite = () => {
 
   return (
     <div className="favorite-card">
+      <FavoritesMovieList titleMovie="" /> {/* Добавляем компонент FavoritesMovieList */}
       {favorites.map((movie: any) => (
         <Card
           key={movie.imdbID}

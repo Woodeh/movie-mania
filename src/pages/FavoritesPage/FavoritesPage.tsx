@@ -35,8 +35,7 @@ export const Favorites: FC<IFavorites> = ({ handleFilterMovie, handleMoveMain })
         titleFilm={handleTitleFilm}
       />
       <Favorite />
-     <FavoritesMovieList titleMovie={titleMovie} />
-      
+      <FavoritesMovieList titleMovie={titleMovie} />
     </div>
   );
 };
