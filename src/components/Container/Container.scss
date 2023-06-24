@@ -8,40 +8,44 @@
     padding: 0px 5px 0;
     box-shadow: 0 0 50px rgba(0, 0, 0, 1);
     overflow: hidden;
+  
+    @media (max-width: 1200px) {
+      width: 100%;
+      padding: 0 20px;
+    }
   }
-
-
-.dark{
+  
+  .dark {
     color: #0f0124;
     background-color: #fff;
-
+  
     svg {
-        path {
-            fill: #000;
-        }
+      path {
+        fill: #000;
+      }
     }
-
+  
     h3 {
-        color: #000;
+      color: #000;
     }
-}
-
-.light {
+  }
+  
+  .light {
     color: #fff;
     background-color: #0f0124;
-
+  
     svg {
-        path {
-            fill: #fff;
-        }
+      path {
+        fill: #fff;
+      }
     }
-
+  
     span {
-        color: #fff
+      color: #fff;
     }
-
-    h3, h2 {
-        color: #fff;
-    } 
-}
-
+  
+    h3,
+    h2 {
+      color: #fff;
+    }
+  }

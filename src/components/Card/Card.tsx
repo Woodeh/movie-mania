@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./Card.scss";
 
 interface ICard {
@@ -34,30 +36,36 @@ export const Card: FC<ICard> = ({
     <div className="card" key={filmId}>
       <Link to={link}>
         <img src={image} alt={titleFilm} />
-        <h3 className="card-title">{titleFilm}</h3>
         <div className="card-info">
-          <p className="card-year">{yearFilm}</p>
+        
           <p className="card-genre">{genreFIlm}</p>
         </div>
       </Link>
+      <div className="card-bottom">
+        <div className="card-info">
+      <h3 className="card-title">{titleFilm}</h3>
+          <p className="card-year">{yearFilm}</p>
+          </div>
       <div className="card-actions">
         {isFavorite ? (
           <button
-            className="remove-favorite-button"
-            type="button"
-            onClick={() => onRemoveFromFavorites(filmId)}
-          >
-            Remove from Favorites
-          </button>
+          className="remove-favorite-button"
+          type="button"
+          onClick={() => onRemoveFromFavorites(filmId)}
+        >
+          <FontAwesomeIcon icon={faHeart} className="button-icon" />
+        </button>
         ) : (
           <button
             className="add-favorite-button"
             type="button"
             onClick={handleAddToFavorites}
           >
-            Add to Favorites
+            <FontAwesomeIcon icon={faHeart} /> {/* Заменяет кнопку на иконку сердца */}
           </button>
+          
         )}
+        </div>
       </div>
     </div>
   );
