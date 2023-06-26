@@ -12,6 +12,7 @@ import { Settings } from "../pages/Settings/Settings";
 import { MovieInfo } from "../components/MainPageFilms/Movies/MovieInfo";
 import { Trends } from "../pages/TrendsPage/Trends";
 import { Favorites } from "../pages/FavoritesPage/FavoritesPage";
+import { Search } from "../pages/SearchPage/SearchPage";
 
 export const Router: FC = () => {
   const { confirmEmail } = useAppSelector((state) => state.confirmEmail);
@@ -65,6 +66,7 @@ export const Router: FC = () => {
       } } handleMoveMain={function (): void {
         throw new Error("Function not implemented.");
       } } />} />
+      <Route path="/search-page" element={<Search />} />
       <Route path="/sign-in" element={<SignInPage />} />
       <Route path="/sign-up" element={<SignUpPage />} />
       <Route path="/activate/:uid/:token" element={<ActivatePage />} />

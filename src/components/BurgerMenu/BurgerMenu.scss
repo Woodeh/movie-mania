@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     border: none;
+    background-color: #0f0124;
     
     
 
@@ -21,8 +22,10 @@
             flex-direction: column;
             justify-content: space-between;
 
+            
             &.open {
                 transform: translateX(0);
+                
             }
         }
 
@@ -43,7 +46,7 @@
             color: #fff;
     
             &:hover {
-              color: #2231aa;
+              color: #000000;
             }
         }
 
@@ -53,6 +56,7 @@
             justify-content: center;
             align-items: center;
             color: #fff;
+            
         }
         
         &__theme-btn {

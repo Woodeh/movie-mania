@@ -21,12 +21,13 @@ export const TrendMovieList: FC<ITrendMovieList> = ({ titleMovie }) => {
         const URL = `${FILM_URL}?s=${search}&apikey=797d76c8&page=${currentPage}&r=json&plot=full&pageSize=${pageSize}`;
         const response = await fetch(URL);
         const data = await response.json();
-        setMovies(prevMovies => [...prevMovies, ...data.Search || []]);
+        setMovies((prevMovies) => [...prevMovies, ...data.Search || []]);
         setTotalResults(data.totalResults);
       } catch (error) {
         console.log("error:", error);
       }
     };
+
     fetchMovies();
   }, [titleMovie, currentPage]);
 
@@ -36,24 +37,32 @@ export const TrendMovieList: FC<ITrendMovieList> = ({ titleMovie }) => {
   }, [titleMovie]);
 
   const handleLoadMore = () => {
-    setCurrentPage(prevPage => prevPage + 1);
-  }
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
 
   return (
     <div className="card-list">
       {movies.map((item) => (
         <Card
           key={item.imdbID}
-          image={item["Poster"] !== "N/A" ? item["Poster"] : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png"}
+          image={
+            item["Poster"] !== "N/A"
+              ? item["Poster"]
+              : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png"
+          }
           titleFilm={item["Title"]}
           yearFilm={item["Year"]}
           genreFIlm={item["Genre"]}
-          link={`/movies/${item.imdbID}`} isFavorite={false} onAddToFavorites={function (): void {
-
+          link={`/movies/${item.imdbID}`}
+          isFavorite={false}
+          onAddToFavorites={() => {
             throw new Error("Function not implemented.");
-          } } onRemoveFromFavorites={function (): void {
+          }}
+          onRemoveFromFavorites={() => {
             throw new Error("Function not implemented.");
-          } } filmId={""}        />
+          }}
+          filmId={""}
+        />
       ))}
       {!movies.length && <TrendMovies />}
       {totalResults > movies.length && (

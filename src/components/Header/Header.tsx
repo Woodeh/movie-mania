@@ -27,7 +27,7 @@ export const Header: FC<IHeader> = ({
 
   const handleSearch = () => {
     titleFilm(searchValue);
-    navigate(`/favorites?query=${searchValue}`);
+    navigate(`/search-page?query=${searchValue}`);
   };
 
   const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {

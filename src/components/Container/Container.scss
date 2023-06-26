@@ -1,32 +1,31 @@
+
+
 .container {
-    width: 1170px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 auto;
-    row-gap: 72px;
-    padding: 0px 5px 0;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 1);
-    overflow: hidden;
-  
-    @media (max-width: 1200px) {
-      width: 100%;
-      padding: 0 20px;
-    }
-  }
-  
+  width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  row-gap: 72px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+}
+
   .dark {
-    color: #0f0124;
+    color: #ffffff;
     background-color: #fff;
   
-    svg {
+
+
+ 
+  
+    .header__box svg {
       path {
         fill: #000;
       }
     }
-  
+
     h3 {
-      color: #000;
+      color: #ffffff;
     }
   }
   
