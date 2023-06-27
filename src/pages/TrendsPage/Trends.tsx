@@ -1,41 +1,19 @@
-import { FC, useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { FC } from "react";
 import "./Trends";
-// import { getPostsAction } from "../../store/posts/actions";
 import { Header } from "../../components/Header/Header";
-import { TrendMovieList } from "../../components/MovieList/TrendMovieList";
 import { Logotype } from "../../assets/icons";
-import Favorite from "../../components/Favorite/Favorite";
+import { TrendMovies } from "../../components/MainPageFilms/TrendMovies";
 
-export interface Trends {
-  handleFilterMovie: () => void;
-  handleMoveMain: () => void;
-}
+export interface ITrends {}
 
-export const Trends: FC<Trends> = ({ handleFilterMovie, handleMoveMain }) => {
-  const dispatch = useAppDispatch();
-  const { posts, error, loading } = useAppSelector((state) => state.posts);
-
-  // useEffect(() => {
-  //   dispatch(getPostsAction());
-  // }, [dispatch]);
-
-  const [titleMovie, setTitleMovie] = useState("");
-  const handleTitleFilm = (newValue: string) => {
-    setTitleMovie(newValue);
-  };
-
+export const Trends: FC<ITrends> = () => {
   return (
     <div className="blog">
       <div className="mainLogo">
         <Logotype />
-      </div>
-      <Header
-        handleFilterMovie={handleFilterMovie}
-        handleMoveMain={handleMoveMain}
-        titleFilm={handleTitleFilm}
-      />
-      <TrendMovieList titleMovie={titleMovie} />
+      </div>  
+      <Header />
+      <TrendMovies />
     </div>
   );
 };

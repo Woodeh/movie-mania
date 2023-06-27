@@ -3,18 +3,25 @@ import { useSelector, useDispatch } from "react-redux";
 import { addToFavorites, removeFromFavorites } from "../../../redux/favoritesActions";
 import { FILM_URL } from "../../../api/urls";
 import { Card } from "../../Card/Card";
-import { Link } from "react-router-dom";
 import "./Movie.scss";
 import FavoriteModal from "../../FavoriteModal/FavotireModal";
 
-interface IMovie {
-  titleMovie: string;
-  from: number;
-  to: number;
+interface IMovieFC {
+  imdbID: string;
 }
 
-export const Movie: React.FC<IMovie> = ({ titleMovie, from, to }) => {
-  const [movies, setMovies] = useState<any[]>([]);
+interface IMovie {
+  isFavorite: boolean;
+  Genre: string;
+  Poster: string;
+  Title: string;
+  Type: string;
+  Year: string;
+  imdbID: string;
+}
+
+export const Movie: React.FC<IMovieFC> = ({imdbID}) => {
+  const [movie, setMovie] = useState<IMovie>();
   const favorites = useSelector((state: any) => state.favorites || []);
   const dispatch = useDispatch();
   const [isModalOpen, setModalOpen] = useState(false);
@@ -22,24 +29,23 @@ export const Movie: React.FC<IMovie> = ({ titleMovie, from, to }) => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const response = await fetch(`${FILM_URL}?s=${titleMovie}&apikey=797d76c8`);
+        const response = await fetch(`${FILM_URL}?i=${imdbID}&apikey=797d76c8`);
         const data = await response.json();
-        setMovies(data.Search || []);
+        setMovie(data || null);
       } catch (error) {
         console.log("Error:", error);
       }
     };
     fetchMovie();
-  }, [titleMovie]);
+  }, [imdbID]);
 
-  useEffect(() => {
-    // Обновить список фильмов после изменения избранных фильмов
-    const updatedMovies = movies.map(movie => ({
-      ...movie,
-      isFavorite: isMovieInFavorites(movie.imdbID)
-    }));
-    setMovies(updatedMovies);
-  }, [favorites]);
+  // useEffect(() => {
+  //   const updatedMovies = movie.map(movie => ({
+  //     ...movie,
+  //     isFavorite: isMovieInFavorites(movie.imdbID)
+  //   }));
+  //   setMovie(updatedMovies);
+  // }, [favorites]);
 
   const handleAddToFavorites = (movie: any) => {
     dispatch(addToFavorites(movie));
@@ -56,7 +62,7 @@ export const Movie: React.FC<IMovie> = ({ titleMovie, from, to }) => {
   
   return (
     <div className="movie-card">
-      {movies.slice(from, to).map((movie) => (
+      {movie && 
         <Card
           key={movie.imdbID}
           image={movie.Poster}
@@ -67,7 +73,7 @@ export const Movie: React.FC<IMovie> = ({ titleMovie, from, to }) => {
           isFavorite={movie.isFavorite}
           onAddToFavorites={() => handleAddToFavorites(movie)}
           onRemoveFromFavorites={() => handleRemoveFromFavorites(movie.imdbID)} filmId={""}        />
-      ))}
+}
      
 
       {isModalOpen && <FavoriteModal onClose={() => setModalOpen(false)} />}

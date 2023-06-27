@@ -7,14 +7,11 @@ import { useNavigate } from 'react-router-dom';
 import './Header.scss';
 
 interface IHeader {
-  handleMoveMain: () => void;
-  handleFilterMovie: () => void;
-  titleFilm: (newValue: string) => void;
+  
   isSearchDisabled?: boolean;
 }
 
 export const Header: FC<IHeader> = ({
-  titleFilm,
   isSearchDisabled = false
 }) => {
   const navigate = useNavigate();
@@ -26,7 +23,6 @@ export const Header: FC<IHeader> = ({
   };
 
   const handleSearch = () => {
-    titleFilm(searchValue);
     navigate(`/search-page?query=${searchValue}`);
   };
 
@@ -57,7 +53,7 @@ export const Header: FC<IHeader> = ({
 
       <div className="header__box">
         {isLogged ? (
-          <UserInfo username="Dmitry Podolnitski " />
+          <UserInfo username="D" />
         ) : (
           <IconButton onClick={handleClickToSignIn} type="header">
             <UserIcon />

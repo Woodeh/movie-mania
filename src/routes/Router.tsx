@@ -23,27 +23,13 @@ export const Router: FC = () => {
       <Route
         path="/trends"
         element={
-          <Trends
-            handleFilterMovie={function (): void {
-              throw new Error("Function not implemented.");
-            }}
-            handleMoveMain={function (): void {
-              throw new Error("Function not implemented.");
-            }}
-          />
+          <Trends />
         }
       />
       <Route
         path=""
         element={
-          <BlogPage
-            handleFilterMovie={function (): void {
-              throw new Error("Function not implemented.");
-            }}
-            handleMoveMain={function (): void {
-              throw new Error("Function not implemented.");
-            }}
-          />
+          <BlogPage />
         }
       />
       <Route
@@ -59,11 +45,7 @@ export const Router: FC = () => {
         }
       />
       /favorites
-      <Route path="/favorites" element={<Favorites handleFilterMovie={function (): void {
-        throw new Error("Function not implemented.");
-      } } handleMoveMain={function (): void {
-        throw new Error("Function not implemented.");
-      } } />} />
+      <Route path="/favorites" element={<Favorites  />} />
       <Route path="/search-page" element={<Search />} />
       <Route path="/sign-in" element={<SignInPage />} />
       <Route path="/sign-up" element={<SignUpPage />} />

@@ -101,7 +101,7 @@ export const SignUpPage: FC = () => {
             <div className="mainLogo">
                 <Link to={'/posts'}><Logotype/></Link>
             </div>
-            <Header handleFilterMovie={() => {}} handleMoveMain={() => {}} titleFilm={() => {}}/>
+            <Header />
             {/* <Breadcrumbs path={[createBackToHomePath]} /> */}
             <form className='sign-up__form'>
             <TypographyText content='Sign Up' type='H1'/>

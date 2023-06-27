@@ -94,7 +94,7 @@ export const SignInPage: FC = () => {
             <div className="mainLogo">
                 <Link to={'/posts'}><Logotype/></Link>
             </div>
-            <Header handleFilterMovie={() => {}} handleMoveMain={() => {}} titleFilm={() => {}}/>
+            <Header />
             {/* <Breadcrumbs path={[createBackToHomePath]} /> */}
             <form className='sign-in__form'>
             <TypographyText content='Sign In' type='H1'/>

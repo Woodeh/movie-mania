@@ -27,16 +27,3 @@ export const PageTemplate: FC<IPageTemplate> = ({children}) => (
         </Container>
     </>
 )
-function handleFilterMovie(): void {
-    throw new Error('Function not implemented.');
-}
-
-function handleMoveMain(): void {
-    throw new Error('Function not implemented.');
-}
-
-
-function handleTitleFilm(newValue: string): void {
-    throw new Error('Function not implemented.');
-}
-

@@ -6,15 +6,10 @@ import { ShowMore } from './ShowMore/ShowMore';
 
 interface IMovies {}
 
-interface IMovie {
-  title: string;
-  from: number;
-  to: number;
-}
 
 export const Movies: FC<IMovies> = () => {
   const [showMoreCount, setShowMoreCount] = useState(4);
-  const [movies] = useState<IMovie[]>(moviesDb);
+  const [movies] = useState<string[]>(moviesDb);
 
   const handleCountShowFilms = () => {
     if (showMoreCount === -1 || showMoreCount + 4 >= movies.length) {
@@ -31,10 +26,8 @@ export const Movies: FC<IMovies> = () => {
       <div className="movies-container">
         {renderedMovies.map((movie) => (
           <Movie
-            key={movie.title}
-            titleMovie={movie.title}
-            from={movie.from}
-            to={movie.to}
+            key={movie}
+            imdbID={movie}
           />
         ))}
       </div>
