@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import "./BlogPage.scss";
-import { getPostsAction } from "../../store/posts/actions";
+// import { getPostsAction } from "../../store/posts/actions";
 import { Header } from "../../components/Header/Header";
 import { MovieList } from "../../components/MovieList/MovieList";
 import { Logotype } from "../../assets/icons";
@@ -15,9 +15,9 @@ export const BlogPage: FC<IBlogPage> = ({ handleFilterMovie, handleMoveMain }) =
   const dispatch = useAppDispatch();
   const { posts, error, loading } = useAppSelector((state) => state.posts);
 
-  useEffect(() => {
-    dispatch(getPostsAction());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getPostsAction());
+  // }, [dispatch]);
 
   const [titleMovie, setTitleMovie] = useState("");
   const handleTitleFilm = (newValue: string) => {
@@ -25,11 +25,9 @@ export const BlogPage: FC<IBlogPage> = ({ handleFilterMovie, handleMoveMain }) =
   };
 
   return (
+    
     <div className="blog">
-      <div className="mainLogo">
-      <Logotype/>
-      <div className="logo-title">MovieMania</div>
-      </div>
+      
       <Header
      
         handleFilterMovie={handleFilterMovie}

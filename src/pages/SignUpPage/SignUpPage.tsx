@@ -3,7 +3,6 @@ import { TypographyText } from '../../components/Typography/TypographyText';
 import { Input } from '../../components/Input/Input';
 import { Button } from '../../components/Button/Button';
 import './SignUpPage.scss';
-import { createBackToHomePath } from '../../constants/createBackToHomePath';
 import { Link, useNavigate } from 'react-router-dom';
 import { postNewUser } from '../../api/postNewUser';
 import { useAppDispatch } from '../../store/hooks';

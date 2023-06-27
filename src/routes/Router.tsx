@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import { BlogPage } from "../pages/BlogPage/BlogPage";
-import { PostPage } from "../pages/PostPage/PostPage";
 import { SignInPage } from "../pages/SignInPage/SignInPage";
 import { SignUpPage } from "../pages/SignUpPage/SignUpPage";
 import { RegistrationConfirmPage } from "../pages/RegistrationConfirmPage/RegistrationConfirmPage";
@@ -47,7 +46,6 @@ export const Router: FC = () => {
           />
         }
       />
-      <Route path="/posts/:id" element={<PostPage />} />
       <Route
         path="/movies/:id"
         element={

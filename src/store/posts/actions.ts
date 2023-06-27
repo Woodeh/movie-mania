@@ -26,13 +26,13 @@ export const setLikeAction = (id: number): ISetLikeAction => {
     return { type: SET_DISLIKE, payload: id };
   }
 
-export const getPostsAction = () => async (dispatch: ThunkDispatch<RootState, unknown, ActionsType>) => {
-    try {
-      dispatch(getPostsRequestAction());
-      const posts = await getPosts();
-      const dataWithAddFields: IPost[] = posts.map((post) => ({...post, like: 0, dislike: 0}));
-      dispatch(getPostsSuccessAction(dataWithAddFields));
-    } catch (error) {
-      dispatch(getPostsErrorAction());
-    }
-};
+// export const getPostsAction = () => async (dispatch: ThunkDispatch<RootState, unknown, ActionsType>) => {
+//     try {
+//       dispatch(getPostsRequestAction());
+//       const posts = await getPosts();
+//       const dataWithAddFields: IPost[] = posts.map((post) => ({...post, like: 0, dislike: 0}));
+//       dispatch(getPostsSuccessAction(dataWithAddFields));
+//     } catch (error) {
+//       dispatch(getPostsErrorAction());
+//     }
+// };

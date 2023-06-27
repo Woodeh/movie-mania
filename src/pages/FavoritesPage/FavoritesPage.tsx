@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { getPostsAction } from "../../store/posts/actions";
+// import { getPostsAction } from "../../store/posts/actions";
 import { Header } from "../../components/Header/Header";
 import { Logotype } from "../../assets/icons";
 import Favorite from "../../components/Favorite/Favorite";
@@ -15,9 +15,9 @@ export const Favorites: FC<IFavorites> = ({ handleFilterMovie, handleMoveMain })
   const dispatch = useAppDispatch();
   const { posts, error, loading } = useAppSelector((state) => state.posts);
 
-  useEffect(() => {
-    dispatch(getPostsAction());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getPostsAction());
+  // }, [dispatch]);
 
   const [titleMovie, setTitleMovie] = useState("");
   const handleTitleFilm = (newValue: string) => {
@@ -26,9 +26,7 @@ export const Favorites: FC<IFavorites> = ({ handleFilterMovie, handleMoveMain })
 
   return (
     <div className="blog">
-      <div className="mainLogo">
-        <Logotype />
-      </div>
+     
       <Header
         handleFilterMovie={handleFilterMovie}
         handleMoveMain={handleMoveMain}
