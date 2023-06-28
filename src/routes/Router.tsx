@@ -9,7 +9,7 @@ import { useAppSelector } from "../store/hooks";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { Settings } from "../pages/Settings/Settings";
 import { MovieInfo } from "../components/MainPageFilms/Movies/MovieInfo";
-import { Trends } from "../pages/TrendsPage/Trends";
+import { Trends } from "../pages/TrendsPage/TrendsPage";
 import { Favorites } from "../pages/FavoritesPage/FavoritesPage";
 import { Search } from "../pages/SearchPage/SearchPage";
 
@@ -20,18 +20,8 @@ export const Router: FC = () => {
     <Routes>
       {/* <Route path='/main' element={<MainPage/>}/> */}
       <Route path="/settings" element={<Settings />} />
-      <Route
-        path="/trends"
-        element={
-          <Trends />
-        }
-      />
-      <Route
-        path=""
-        element={
-          <BlogPage />
-        }
-      />
+      <Route path="/trends" element={<Trends />} />
+      <Route path="" element={<BlogPage />} />
       <Route
         path="/movies/:id"
         element={
@@ -45,7 +35,7 @@ export const Router: FC = () => {
         }
       />
       /favorites
-      <Route path="/favorites" element={<Favorites  />} />
+      <Route path="/favorites" element={<Favorites />} />
       <Route path="/search-page" element={<Search />} />
       <Route path="/sign-in" element={<SignInPage />} />
       <Route path="/sign-up" element={<SignUpPage />} />

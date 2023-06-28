@@ -4,7 +4,7 @@ import { TelegramIcon, WhatsappIcon, FacebookIcon } from 'react-share';
 
 export const ShareButton = () => {
     const shareUrl = window.location.href;
-    const title = 'Заголовок статьи';
+    const title = 'Movie Mania';
   
     const iconSize = 32;
     const isRoundIcon = false;

@@ -12,6 +12,7 @@ interface ICard {
   genreFIlm: string;
   link: string;
   isFavorite: boolean;
+  imdbRating: string;
   onAddToFavorites: () => void;
   onRemoveFromFavorites: (filmId: string) => void;
 }
@@ -24,6 +25,7 @@ export const Card: FC<ICard> = ({
   genreFIlm,
   link,
   isFavorite,
+  imdbRating,
   onAddToFavorites,
   onRemoveFromFavorites,
 }) => {
@@ -39,6 +41,7 @@ export const Card: FC<ICard> = ({
         <div className="card-info">
           <p className="card-genre">{genreFIlm}</p>
         </div>
+        <div className="card-rating">{imdbRating}</div>
       </Link>
       <div className="card-bottom">
         <div className="card-info">
