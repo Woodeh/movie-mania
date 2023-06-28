@@ -3,8 +3,6 @@ import { TypographyText } from '../../components/Typography/TypographyText';
 import { Input } from '../../components/Input/Input';
 import { Button } from '../../components/Button/Button';
 import './SignUpPage.scss';
-import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
-import { createBackToHomePath } from '../../constants/createBackToHomePath';
 import { Link, useNavigate } from 'react-router-dom';
 import { postNewUser } from '../../api/postNewUser';
 import { useAppDispatch } from '../../store/hooks';
@@ -103,7 +101,7 @@ export const SignUpPage: FC = () => {
             <div className="mainLogo">
                 <Link to={'/posts'}><Logotype/></Link>
             </div>
-            <Header handleFilterMovie={() => {}} handleMoveMain={() => {}} titleFilm={() => {}}/>
+            <Header />
             {/* <Breadcrumbs path={[createBackToHomePath]} /> */}
             <form className='sign-up__form'>
             <TypographyText content='Sign Up' type='H1'/>

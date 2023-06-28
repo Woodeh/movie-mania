@@ -1,41 +1,25 @@
-import { FC, useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { getPostsAction } from "../../store/posts/actions";
+import { FC } from "react";
 import { Header } from "../../components/Header/Header";
-import { Logotype } from "../../assets/icons";
-import Favorite from "../../components/Favorite/Favorite";
-import { FavoritesMovieList } from "../../components/MovieList/FavoritesMovieList";
+import { Movie } from "../../components/MainPageFilms/Movies/Movie";
+import { useSelector } from "react-redux";
 
-export interface IFavorites {
-  handleFilterMovie: () => void;
-  handleMoveMain: () => void;
-}
+export interface IFavorites {}
 
-export const Favorites: FC<IFavorites> = ({ handleFilterMovie, handleMoveMain }) => {
-  const dispatch = useAppDispatch();
-  const { posts, error, loading } = useAppSelector((state) => state.posts);
-
-  useEffect(() => {
-    dispatch(getPostsAction());
-  }, [dispatch]);
-
-  const [titleMovie, setTitleMovie] = useState("");
-  const handleTitleFilm = (newValue: string) => {
-    setTitleMovie(newValue);
-  };
+export const Favorites: FC<IFavorites> = () => {
+  const favorites = useSelector((state: any) => state.favorites || []);
 
   return (
     <div className="blog">
-      <div className="mainLogo">
-        <Logotype />
+      <Header />
+      <div className="movies-container">
+        {favorites.map((movie: any) => (
+          <Movie
+            key={movie.imdbID}
+            imdbID = {movie.imdbID}
+          />
+        ))}
+        {/* {isModalOpen && <FavoriteModal onClose={() => setModalOpen(false)} />} */}
       </div>
-      <Header
-        handleFilterMovie={handleFilterMovie}
-        handleMoveMain={handleMoveMain}
-        titleFilm={handleTitleFilm}
-      />
-      <Favorite />
-      <FavoritesMovieList titleMovie={titleMovie} />
     </div>
   );
 };

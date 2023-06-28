@@ -1,42 +1,37 @@
-import { FC, useState, KeyboardEvent } from 'react';
-import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
-import { UserInfo } from '../UserInfo/UserInfo';
-import { IconButton } from '../IconButton/IconButton';
-import { UserIcon } from '../../assets/icons';
-import { useNavigate } from 'react-router-dom';
-import './Header.scss';
+import { FC, useState, KeyboardEvent } from "react";
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+import { UserInfo } from "../UserInfo/UserInfo";
+import { IconButton } from "../IconButton/IconButton";
+import { UserIcon } from "../../assets/icons";
+import { useNavigate } from "react-router-dom";
+import "./Header.scss";
 
 interface IHeader {
-  handleMoveMain: () => void;
-  handleFilterMovie: () => void;
-  titleFilm: (newValue: string) => void;
   isSearchDisabled?: boolean;
 }
 
-export const Header: FC<IHeader> = ({
-  titleFilm,
-  isSearchDisabled = false
-}) => {
+export const Header: FC<IHeader> = ({ isSearchDisabled = false }) => {
   const navigate = useNavigate();
   const isLogged = false;
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
 
   const handleClickToSignIn = () => {
-    navigate('/sign-in');
+    navigate("/sign-in");
   };
 
   const handleSearch = () => {
-    titleFilm(searchValue);
-    navigate(`/favorites?query=${searchValue}`);
+    navigate(`/search-page?query=${searchValue}`);
   };
 
   const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleSearch();
     }
   };
 
-  const inputClass = `search-input ${isSearchDisabled && 'search-film__disabled'}`;
+  const inputClass = `search-input ${
+    isSearchDisabled && "search-film__disabled"
+  }`;
 
   return (
     <header className="header">
@@ -57,7 +52,7 @@ export const Header: FC<IHeader> = ({
 
       <div className="header__box">
         {isLogged ? (
-          <UserInfo username="Dmitry Podolnitski " />
+          <UserInfo username="D" />
         ) : (
           <IconButton onClick={handleClickToSignIn} type="header">
             <UserIcon />

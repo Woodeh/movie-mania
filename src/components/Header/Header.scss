@@ -1,73 +1,60 @@
 .header {
-    height: 84px;
+  height: 84px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f0124;
+
+  &__box {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+  }
 
+  &__search-box {
+    display: flex;
 
-    &__box {
-        display: flex;
-        align-items: center;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
     }
+  }
 
+  &__search-input {
+    flex: 1;
 
-    // &__search-input {
-    //     width: 1200px;
-    //     height: 56px;
-    //     padding: 0 20px;
-    //     // background-color: #5360cd;
-    //     border: none;
-    //     color: #fff;
-    //     outline: none;
-    //     border-radius: 10px;
-    //     margin: 5px;
-    //     background-color: #323537;
-    //     border: 2px solid transparent;
-
-    //     &::placeholder {
-    //         color: #fff;
-    //         opacity: .5;
-    //     }
-
-    //     &:focus {
-    //         border: 2px solid purple;
-    //     }
-    // }
-
-    &__search-box {
-        display: flex;
-
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-top: 10px;
     }
+  }
 
-    &__search-input {
-        flex: 1;
-    }
-
-    .logotype {
-        cursor: pointer;
-        
-    }
+  .logotype {
+    cursor: pointer;
+  }
 }
 
 .search-input {
-    width: 900px;
-    height: 56px;
-    padding: 0 20px;
-    // background-color: #5360cd;
-    border: none;
+  width: 900px;
+  height: 56px;
+  padding: 0 20px;
+  border: none;
+  color: #fff;
+  outline: none;
+  border-radius: 10px;
+  margin: 5px;
+  background-color: #323537;
+  border: 2px solid transparent;
+
+  &::placeholder {
     color: #fff;
-    outline: none;
-    border-radius: 10px;
-    margin: 5px;
-    background-color: #323537;
-    border: 2px solid transparent;
+    opacity: 0.5;
+  }
 
-    &::placeholder {
-        color: #fff;
-        opacity: .5;
-    }
+  &:focus {
+    border: 2px solid purple;
+  }
 
-    &:focus {
-        border: 2px solid purple;
-    }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }

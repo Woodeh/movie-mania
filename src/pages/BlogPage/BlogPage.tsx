@@ -1,42 +1,15 @@
-import { FC, useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { FC } from "react";
 import "./BlogPage.scss";
-import { getPostsAction } from "../../store/posts/actions";
 import { Header } from "../../components/Header/Header";
-import { MovieList } from "../../components/MovieList/MovieList";
-import { Logotype } from "../../assets/icons";
+import { Movies } from "../../components/MainPageFilms/Movies";
 
-interface IBlogPage {
-  handleFilterMovie: () => void;
-  handleMoveMain: () => void;
-}
+interface IBlogPage {}
 
-export const BlogPage: FC<IBlogPage> = ({ handleFilterMovie, handleMoveMain }) => {
-  const dispatch = useAppDispatch();
-  const { posts, error, loading } = useAppSelector((state) => state.posts);
-
-  useEffect(() => {
-    dispatch(getPostsAction());
-  }, [dispatch]);
-
-  const [titleMovie, setTitleMovie] = useState("");
-  const handleTitleFilm = (newValue: string) => {
-    setTitleMovie(newValue);
-  };
-
+export const BlogPage: FC<IBlogPage> = () => {
   return (
     <div className="blog">
-      <div className="mainLogo">
-      <Logotype/>
-      <div className="logo-title">MovieMania</div>
-      </div>
-      <Header
-     
-        handleFilterMovie={handleFilterMovie}
-        handleMoveMain={handleMoveMain}
-        titleFilm={handleTitleFilm}
-      />
-      <MovieList titleMovie={titleMovie} />
+      <Header />
+      <Movies />
     </div>
   );
 };

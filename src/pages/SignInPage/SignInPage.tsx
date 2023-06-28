@@ -3,8 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { TypographyText } from '../../components/Typography/TypographyText';
 import { Input } from '../../components/Input/Input';
 import { Button } from '../../components/Button/Button';
-import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
-import { createBackToHomePath } from '../../constants/createBackToHomePath';
+
+
 import { postLogin } from '../../api/postLogin';
 import './SignInPage.scss';
 import { Header } from '../../components/Header/Header';
@@ -94,7 +94,7 @@ export const SignInPage: FC = () => {
             <div className="mainLogo">
                 <Link to={'/posts'}><Logotype/></Link>
             </div>
-            <Header handleFilterMovie={() => {}} handleMoveMain={() => {}} titleFilm={() => {}}/>
+            <Header />
             {/* <Breadcrumbs path={[createBackToHomePath]} /> */}
             <form className='sign-in__form'>
             <TypographyText content='Sign In' type='H1'/>

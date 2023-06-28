@@ -9,7 +9,7 @@ const FavoriteModal: React.FC<IFavoriteModal> = ({ onClose }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
-    }, 3000);
+    }, 1500);
 
     return () => {
       clearTimeout(timer);

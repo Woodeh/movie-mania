@@ -44,7 +44,7 @@ export const Settings: FC<ISettings> = () => {
             <div className="mainLogo">
                 <Link to={'/'}><Logotype/></Link>
             </div>
-            <Header handleFilterMovie={() => {}} handleMoveMain={() => {}} titleFilm={() => {}}/>
+            <Header />
             <TypographyText content='Profile' type='H2' />
             <form className='settings__form-profile'>
                 <Input title='Name' value={username} handleChange={handleChangeName} placeholder='Enter your Name' />
