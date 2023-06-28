@@ -37,34 +37,32 @@ export const Card: FC<ICard> = ({
       <Link to={link}>
         <img src={image} alt={titleFilm} />
         <div className="card-info">
-        
           <p className="card-genre">{genreFIlm}</p>
         </div>
       </Link>
       <div className="card-bottom">
         <div className="card-info">
-      <h3 className="card-title">{titleFilm}</h3>
+          <h3 className="card-title">{titleFilm}</h3>
           <p className="card-year">{yearFilm}</p>
-          </div>
-      <div className="card-actions">
-        {isFavorite ? (
-          <button
-          className="remove-favorite-button"
-          type="button"
-          onClick={() => onRemoveFromFavorites(filmId)}
-        >
-          <FontAwesomeIcon icon={faHeart} className="button-icon" />
-        </button>
-        ) : (
-          <button
-            className="add-favorite-button"
-            type="button"
-            onClick={handleAddToFavorites}
-          >
-            <FontAwesomeIcon icon={faHeart} /> {/* Заменяет кнопку на иконку сердца */}
-          </button>
-          
-        )}
+        </div>
+        <div className="card-actions">
+          {isFavorite ? (
+            <button
+              className="remove-favorite-button"
+              type="button"
+              onClick={() => onRemoveFromFavorites(filmId)}
+            >
+              <FontAwesomeIcon icon={faHeart} className="button-icon" />
+            </button>
+          ) : (
+            <button
+              className="add-favorite-button"
+              type="button"
+              onClick={handleAddToFavorites}
+            >
+              <FontAwesomeIcon icon={faHeart} />{" "}
+            </button>
+          )}
         </div>
       </div>
     </div>

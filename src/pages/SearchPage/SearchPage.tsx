@@ -46,9 +46,6 @@ export const Search = () => {
   };
 
 
-  
-
- 
 
   const handleTitleFilm = (searchValue: React.SetStateAction<string>) => {
     setTitleMovie(searchValue);
@@ -60,6 +57,8 @@ export const Search = () => {
         <Logotype />
       </div>
       <Header/>
+      
     </div>
+    
   );
 };

@@ -1,5 +1,3 @@
-
-
 .container {
   width: 1170px;
   margin: 0 auto;
@@ -15,41 +13,38 @@
   }
 }
 
-  .dark {
+.dark {
+  color: #ffffff;
+  background-color: #fff;
+
+
+  .header__box svg {
+    path {
+      fill: #000000;
+    }
+  }
+
+  h3 {
     color: #ffffff;
-    background-color: #fff;
-  
+  }
+}
 
+.light {
+  color: #fff;
+  background-color: #0f0124;
 
- 
-  
-    .header__box svg {
-      path {
-        fill: #000000;
-      }
-    }
-
-    h3 {
-      color: #ffffff;
+  svg {
+    path {
+      fill: #fff;
     }
   }
-  
-  .light {
+
+  span {
     color: #fff;
-    background-color: #0f0124;
-  
-    svg {
-      path {
-        fill: #fff;
-      }
-    }
-  
-    span {
-      color: #fff;
-    }
-  
-    h3,
-    h2 {
-      color: #fff;
-    }
   }
+
+  h3,
+  h2 {
+    color: #fff;
+  }
+}

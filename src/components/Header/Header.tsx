@@ -1,25 +1,22 @@
-import { FC, useState, KeyboardEvent } from 'react';
-import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
-import { UserInfo } from '../UserInfo/UserInfo';
-import { IconButton } from '../IconButton/IconButton';
-import { UserIcon } from '../../assets/icons';
-import { useNavigate } from 'react-router-dom';
-import './Header.scss';
+import { FC, useState, KeyboardEvent } from "react";
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+import { UserInfo } from "../UserInfo/UserInfo";
+import { IconButton } from "../IconButton/IconButton";
+import { UserIcon } from "../../assets/icons";
+import { useNavigate } from "react-router-dom";
+import "./Header.scss";
 
 interface IHeader {
-  
   isSearchDisabled?: boolean;
 }
 
-export const Header: FC<IHeader> = ({
-  isSearchDisabled = false
-}) => {
+export const Header: FC<IHeader> = ({ isSearchDisabled = false }) => {
   const navigate = useNavigate();
   const isLogged = false;
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
 
   const handleClickToSignIn = () => {
-    navigate('/sign-in');
+    navigate("/sign-in");
   };
 
   const handleSearch = () => {
@@ -27,12 +24,14 @@ export const Header: FC<IHeader> = ({
   };
 
   const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleSearch();
     }
   };
 
-  const inputClass = `search-input ${isSearchDisabled && 'search-film__disabled'}`;
+  const inputClass = `search-input ${
+    isSearchDisabled && "search-film__disabled"
+  }`;
 
   return (
     <header className="header">
