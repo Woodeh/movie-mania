@@ -1,7 +1,7 @@
-import * as React from 'react';
-import Switch from '@mui/material/Switch';
-import { useAppDispatch } from '../../store/hooks';
-import { toggleThemeAction } from '../../store/theme/actions';
+import * as React from "react";
+import Switch from "@mui/material/Switch";
+import { useAppDispatch } from "../../store/hooks";
+import { toggleThemeAction } from "../../store/theme/actions";
 
 export const ControlledSwitches = () => {
   const [checked, setChecked] = React.useState(true);
@@ -16,8 +16,7 @@ export const ControlledSwitches = () => {
       checked={checked}
       onChange={handleChange}
       onClick={() => dispatch(toggleThemeAction())}
-      inputProps={{ 'aria-label': 'controlled' }}
-
+      inputProps={{ "aria-label": "controlled" }}
     />
   );
-}
+};

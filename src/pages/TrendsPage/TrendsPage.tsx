@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "./Trends";
+import "./TrendsPage";
 import { Header } from "../../components/Header/Header";
 import { Logotype } from "../../assets/icons";
 import { TrendMovies } from "../../components/MainPageFilms/TrendMovies";
@@ -11,7 +11,7 @@ export const Trends: FC<ITrends> = () => {
     <div className="blog">
       <div className="mainLogo">
         <Logotype />
-      </div>  
+      </div>
       <Header />
       <TrendMovies />
     </div>

@@ -1,23 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { Header } from "../../components/Header/Header";
 import { Logotype } from "../../assets/icons";
 import { FILM_URL } from "../../api/urls";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { Movie } from "../../components/MainPageFilms/Movies/Movie";
+import "./SearchPage.scss";
 
 export const Search = () => {
-  const dispatch = useAppDispatch();
-  const { posts, error, loading } = useAppSelector((state) => state.posts);
-  const [titleMovie, setTitleMovie] = useState("");
-
   const [movies, setMovies] = useState<any[]>([]);
   const [totalResults, setTotalResults] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 20;
-
-  let [searchParams] = useSearchParams();
-  let query = searchParams.get("query") || '';
-  console.log(query)
+  const [pageSize] = useState(20);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  let query = searchParams.get("query") || "";
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -26,7 +22,8 @@ export const Search = () => {
         const URL = `${FILM_URL}?s=${search}&apikey=797d76c8&page=${currentPage}&r=json&plot=full&pageSize=${pageSize}`;
         const response = await fetch(URL);
         const data = await response.json();
-        setMovies((prevMovies) => [...prevMovies, ...data.Search || []]);
+        console.log(data);
+        setMovies([...(data.Search || [])]);
         setTotalResults(data.totalResults);
       } catch (error) {
         console.log("error:", error);
@@ -34,21 +31,14 @@ export const Search = () => {
     };
 
     fetchMovies();
-  }, [titleMovie, currentPage]);
+  }, [query, currentPage, pageSize]);
 
-  useEffect(() => {
-    setCurrentPage(1);
-    setMovies([]);
-  }, [titleMovie]);
-
-  const handleLoadMore = () => {
+  const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
-
-
-  const handleTitleFilm = (searchValue: React.SetStateAction<string>) => {
-    setTitleMovie(searchValue);
+  const handlePreviousPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
   };
 
   return (
@@ -56,9 +46,28 @@ export const Search = () => {
       <div className="mainLogo">
         <Logotype />
       </div>
-      <Header/>
-      
+      <Header />
+      <div className="movies-container">
+        {movies.map((movie) => (
+          <Movie imdbID={query} movieObject={movie} key={movie.imdbID} />
+        ))}
+        <div className="pagination-container">
+          <button
+            onClick={handlePreviousPage}
+            disabled={currentPage === 1}
+            className="pagination-button previous-button"
+          >
+            Prev
+          </button>
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage * pageSize >= totalResults}
+            className="pagination-button next-button"
+          >
+            Next
+          </button>
+        </div>
+      </div>
     </div>
-    
   );
 };

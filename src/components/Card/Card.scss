@@ -115,3 +115,14 @@ h3.card-title {
   display: flex;
   justify-content: space-between;
 }
+        
+.card-rating {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: rgb(67, 14, 138);
+  color: #ffffff;
+  position: absolute;
+  top: 28px;
+  left: 28px;
+}

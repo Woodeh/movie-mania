@@ -7,10 +7,12 @@ import "./Movie.scss";
 import FavoriteModal from "../../FavoriteModal/FavotireModal";
 
 interface IMovieFC {
-  imdbID: string;
+  imdbID: string | '';
+  movieObject?: IMovie;
 }
 
 interface IMovie {
+  imdbRating: string;
   isFavorite: boolean;
   Genre: string;
   Poster: string;
@@ -20,7 +22,7 @@ interface IMovie {
   imdbID: string;
 }
 
-export const Movie: React.FC<IMovieFC> = ({imdbID}) => {
+export const Movie: React.FC<IMovieFC> = ({imdbID, movieObject}) => {
   const [movie, setMovie] = useState<IMovie>();
   const favorites = useSelector((state: any) => state.favorites || []);
   const dispatch = useDispatch();
@@ -36,8 +38,10 @@ export const Movie: React.FC<IMovieFC> = ({imdbID}) => {
         console.log("Error:", error);
       }
     };
-    fetchMovie();
-  }, [imdbID]);
+    if(!movieObject) {fetchMovie();} else {
+      setMovie(movieObject);
+    }
+  }, [imdbID,movieObject]);
 
   // useEffect(() => {
   //   const updatedMovies = movie.map(movie => ({
@@ -68,6 +72,7 @@ export const Movie: React.FC<IMovieFC> = ({imdbID}) => {
           image={movie.Poster}
           titleFilm={movie.Title}
           yearFilm={movie.Year}
+          imdbRating={movie.imdbRating}
           genreFIlm={movie.Genre}
           link={`/movies/${movie.imdbID}`}
           isFavorite={movie.isFavorite}
