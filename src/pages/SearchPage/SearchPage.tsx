@@ -11,6 +11,8 @@ export const Search = () => {
   const [totalResults, setTotalResults] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize] = useState(20);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showLoader, setShowLoader] = useState(false);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   let query = searchParams.get("query") || "";
@@ -18,6 +20,8 @@ export const Search = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
+        setIsLoading(true);
+        setShowLoader(true); 
         const search = encodeURIComponent(query);
         const URL = `${FILM_URL}?s=${search}&apikey=797d76c8&page=${currentPage}&r=json&plot=full&pageSize=${pageSize}`;
         const response = await fetch(URL);
@@ -27,6 +31,11 @@ export const Search = () => {
         setTotalResults(data.totalResults);
       } catch (error) {
         console.log("error:", error);
+      } finally {
+        setIsLoading(false);
+        setTimeout(() => {
+          setShowLoader(false); 
+        }, 1500);
       }
     };
 
@@ -48,9 +57,17 @@ export const Search = () => {
       </div>
       <Header />
       <div className="movies-container">
-        {movies.map((movie) => (
-          <Movie imdbID={query} movieObject={movie} key={movie.imdbID} />
-        ))}
+        {isLoading || showLoader ? (
+          <div className="loader triangle">
+          <svg viewBox="0 0 86 80">
+            <polygon points="43 8 79 72 7 72"></polygon>
+          </svg>
+        </div>
+        ) : (
+          movies.map((movie) => (
+            <Movie imdbID={movie.imdbID} movieObject={movie} key={movie.imdbID} />
+          ))
+        )}
         <div className="pagination-container">
           <button
             onClick={handlePreviousPage}

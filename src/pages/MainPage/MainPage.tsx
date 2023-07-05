@@ -1,11 +1,11 @@
 import { FC } from "react";
-import "./BlogPage.scss";
+import "./MainPage.scss";
 import { Header } from "../../components/Header/Header";
 import { Movies } from "../../components/MainPageFilms/Movies";
 
-interface IBlogPage {}
+interface IMainPage {}
 
-export const BlogPage: FC<IBlogPage> = () => {
+export const BlogPage: FC<IMainPage> = () => {
   return (
     <div className="blog">
       <Header />

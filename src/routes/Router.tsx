@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
-import { BlogPage } from "../pages/MainPage/BlogPage";
+import { BlogPage } from "../pages/MainPage/MainPage";
 import { SignInPage } from "../pages/SignInPage/SignInPage";
 import { SignUpPage } from "../pages/SignUpPage/SignUpPage";
 import { RegistrationConfirmPage } from "../pages/RegistrationConfirmPage/RegistrationConfirmPage";
