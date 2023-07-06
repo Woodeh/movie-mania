@@ -93,8 +93,10 @@ h3.card-title {
 
   .add-favorite-button {
     background-color: #2ecc71;
+    position: absolute;
+    top: 28px;
+    right: 28px;
     color: #ffffff;
-    margin-right: 8px;
 
     &:hover {
       background-color: #27ae60;
@@ -125,4 +127,8 @@ h3.card-title {
   position: absolute;
   top: 28px;
   left: 28px;
+}
+
+.card-genre {
+  text-align: center;
 }
