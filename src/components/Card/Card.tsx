@@ -41,7 +41,9 @@ export const Card: FC<ICard> = ({
         <div className="card-info">
           <p className="card-genre">{genreFIlm}</p>
         </div>
-        <div className="card-rating">{imdbRating}</div>
+        {imdbRating ? (
+          <div className="card-rating">{imdbRating}</div>
+        ) : null}
       </Link>
       <div className="card-bottom">
         <div className="card-info">
