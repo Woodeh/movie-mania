@@ -41,7 +41,7 @@ export const Header: FC<IHeader> = ({ isSearchDisabled = false }) => {
           <input
             className={inputClass}
             type="text"
-            placeholder="search"
+            placeholder="Search"
             disabled={isSearchDisabled}
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
