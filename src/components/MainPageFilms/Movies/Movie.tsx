@@ -7,7 +7,7 @@ import "./Movie.scss";
 import FavoriteModal from "../../FavoriteModal/FavotireModal";
 
 interface IMovieFC {
-  imdbID: string;
+  imdbID: string | '';
   movieObject?: IMovie;
 }
 
@@ -22,8 +22,8 @@ interface IMovie {
   imdbID: string;
 }
 
-export const Movie: React.FC<IMovieFC> = ({ imdbID, movieObject }) => {
-  const [movie, setMovie] = useState<IMovie | null>(null);
+export const Movie: React.FC<IMovieFC> = ({imdbID, movieObject}) => {
+  const [movie, setMovie] = useState<IMovie>();
   const favorites = useSelector((state: any) => state.favorites || []);
   const dispatch = useDispatch();
   const [isModalOpen, setModalOpen] = useState(false);
@@ -45,34 +45,24 @@ export const Movie: React.FC<IMovieFC> = ({ imdbID, movieObject }) => {
     }
   }, [imdbID, movieObject]);
 
-  const handleAddToFavorites = () => {
-    dispatch(addToFavorites(movie));
+  const handleAddToFavorites = (movie: any) => {
+    const updatedMovie = { ...movie, isFavorite: true }; // Update isFavorite property
+    dispatch(addToFavorites(updatedMovie));
     setModalOpen(true);
+    setMovie(updatedMovie); // Update the movie object in the component state
   };
 
-  const handleRemoveFromFavorites = () => {
-    if (movie) {
-      dispatch(removeFromFavorites(movie.imdbID));
-    }
+  const handleRemoveFromFavorites = (movieId: string) => {
+    dispatch(removeFromFavorites(movieId));
   };
-
-  useEffect(() => {
-    const updatedMovies = movie
-      ? {
-          ...movie,
-          isFavorite: isMovieInFavorites(movie.imdbID),
-        }
-      : null;
-    setMovie(updatedMovies);
-  }, [favorites]);
 
   const isMovieInFavorites = (movieId: string) => {
     return favorites.some((movie: any) => movie.imdbID === movieId);
   };
-
+  
   return (
     <div className="movie-card">
-      {movie && (
+      {movie && 
         <Card
           key={movie.imdbID}
           image={movie.Poster}
@@ -81,12 +71,10 @@ export const Movie: React.FC<IMovieFC> = ({ imdbID, movieObject }) => {
           imdbRating={movie.imdbRating}
           genreFIlm={movie.Genre}
           link={`/movies/${movie.imdbID}`}
-          isFavorite={movie.isFavorite}
-          onAddToFavorites={handleAddToFavorites}
-          onRemoveFromFavorites={handleRemoveFromFavorites}
-          filmId={movie.imdbID}
-        />
-      )}
+          isFavorite={isMovieInFavorites(movie.imdbID)} // Update isFavorite based on the updated logic
+          onAddToFavorites={() => handleAddToFavorites(movie)}
+          onRemoveFromFavorites={() => handleRemoveFromFavorites(movie.imdbID)} filmId={""} />
+      }
 
       {isModalOpen && <FavoriteModal onClose={() => setModalOpen(false)} />}
     </div>
