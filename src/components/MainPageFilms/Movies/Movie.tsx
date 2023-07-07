@@ -7,7 +7,7 @@ import "./Movie.scss";
 import FavoriteModal from "../../FavoriteModal/FavotireModal";
 
 interface IMovieFC {
-  imdbID: string | '';
+  imdbID: string;
   movieObject?: IMovie;
 }
 
@@ -22,8 +22,8 @@ interface IMovie {
   imdbID: string;
 }
 
-export const Movie: React.FC<IMovieFC> = ({imdbID, movieObject}) => {
-  const [movie, setMovie] = useState<IMovie>();
+export const Movie: React.FC<IMovieFC> = ({ imdbID, movieObject }) => {
+  const [movie, setMovie] = useState<IMovie | null>(null);
   const favorites = useSelector((state: any) => state.favorites || []);
   const dispatch = useDispatch();
   const [isModalOpen, setModalOpen] = useState(false);
@@ -38,35 +38,41 @@ export const Movie: React.FC<IMovieFC> = ({imdbID, movieObject}) => {
         console.log("Error:", error);
       }
     };
-    if(!movieObject) {fetchMovie();} else {
+    if (!movieObject) {
+      fetchMovie();
+    } else {
       setMovie(movieObject);
     }
-  }, [imdbID,movieObject]);
+  }, [imdbID, movieObject]);
 
-  // useEffect(() => {
-  //   const updatedMovies = movie.map(movie => ({
-  //     ...movie,
-  //     isFavorite: isMovieInFavorites(movie.imdbID)
-  //   }));
-  //   setMovie(updatedMovies);
-  // }, [favorites]);
-
-  const handleAddToFavorites = (movie: any) => {
+  const handleAddToFavorites = () => {
     dispatch(addToFavorites(movie));
     setModalOpen(true);
   };
 
-  const handleRemoveFromFavorites = (movieId: string) => {
-    dispatch(removeFromFavorites(movieId));
+  const handleRemoveFromFavorites = () => {
+    if (movie) {
+      dispatch(removeFromFavorites(movie.imdbID));
+    }
   };
+
+  useEffect(() => {
+    const updatedMovies = movie
+      ? {
+          ...movie,
+          isFavorite: isMovieInFavorites(movie.imdbID),
+        }
+      : null;
+    setMovie(updatedMovies);
+  }, [favorites]);
 
   const isMovieInFavorites = (movieId: string) => {
     return favorites.some((movie: any) => movie.imdbID === movieId);
   };
-  
+
   return (
     <div className="movie-card">
-      {movie && 
+      {movie && (
         <Card
           key={movie.imdbID}
           image={movie.Poster}
@@ -76,10 +82,11 @@ export const Movie: React.FC<IMovieFC> = ({imdbID, movieObject}) => {
           genreFIlm={movie.Genre}
           link={`/movies/${movie.imdbID}`}
           isFavorite={movie.isFavorite}
-          onAddToFavorites={() => handleAddToFavorites(movie)}
-          onRemoveFromFavorites={() => handleRemoveFromFavorites(movie.imdbID)} filmId={""}        />
-}
-     
+          onAddToFavorites={handleAddToFavorites}
+          onRemoveFromFavorites={handleRemoveFromFavorites}
+          filmId={movie.imdbID}
+        />
+      )}
 
       {isModalOpen && <FavoriteModal onClose={() => setModalOpen(false)} />}
     </div>

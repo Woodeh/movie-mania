@@ -106,7 +106,9 @@ h3.card-title {
   .remove-favorite-button {
     background-color: #e74c3c;
     color: #ffffff;
-
+    position: absolute;
+    top: 28px;
+    right: 28px;
     &:hover {
       background-color: #c0392b;
     }

@@ -34,6 +34,11 @@ export const Card: FC<ICard> = ({
     onAddToFavorites();
   };
 
+  const handleRemoveFromFavorites = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    onRemoveFromFavorites(filmId);
+  };
+
   return (
     <div className="card" key={filmId}>
       <Link to={link}>
@@ -55,7 +60,7 @@ export const Card: FC<ICard> = ({
             <button
               className="remove-favorite-button"
               type="button"
-              onClick={() => onRemoveFromFavorites(filmId)}
+              onClick={handleRemoveFromFavorites}
             >
               <FontAwesomeIcon icon={faHeart} className="button-icon" />
             </button>
