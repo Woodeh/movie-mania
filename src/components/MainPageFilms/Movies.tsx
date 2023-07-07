@@ -1,11 +1,10 @@
-import { FC, useState } from 'react';
-import { Movie } from './Movies/Movie';
-import './Movies.scss';
-import { moviesDb } from '../../constants/moviesDb';
-import { ShowMore } from './ShowMore/ShowMore';
+import { FC, useState } from "react";
+import { Movie } from "./Movies/Movie";
+import "./Movies.scss";
+import { moviesDb } from "../../constants/moviesDb";
+import { ShowMore } from "./ShowMore/ShowMore";
 
 interface IMovies {}
-
 
 export const Movies: FC<IMovies> = () => {
   const [showMoreCount, setShowMoreCount] = useState(4);
@@ -19,16 +18,16 @@ export const Movies: FC<IMovies> = () => {
     }
   };
 
-  const renderedMovies = movies.slice(0, showMoreCount !== -1 ? showMoreCount + 4 : undefined);
+  const renderedMovies = movies.slice(
+    0,
+    showMoreCount !== -1 ? showMoreCount + 4 : undefined
+  );
 
   return (
     <div className="movies">
       <div className="movies-container">
         {renderedMovies.map((movie) => (
-          <Movie
-            key={movie}
-            imdbID={movie}
-          />
+          <Movie key={movie} imdbID={movie} />
         ))}
       </div>
       {showMoreCount !== -1 && movies.length > showMoreCount + 4 && (
