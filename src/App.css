@@ -2,9 +2,15 @@
   text-align: center;
 }
 
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {

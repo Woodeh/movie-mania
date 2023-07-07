@@ -1,14 +1,4 @@
-.recommendations {
-  display: flex;
 
-  flex-direction: column;
-  border-radius: 20px;
-
-  &--ul {
-    display: flex;
-    gap: 40px;
-  }
-}
 
 .movie-poster {
   position: relative;
@@ -61,23 +51,6 @@
   &--img {
     width: 266px;
     height: 357px;
-    border-radius: 20px;
-    background-color: #2f3545;
-    
-  }
-
-  &--img:hover {
-    outline: 2px solid rgb(48, 48, 48);
-    transition: filter 0.5s ease;
-    filter: brightness(1.2);
-    @keyframes brightnessAnimation {
-      from {
-        filter: brightness(1);
-      }
-      to {
-        filter: brightness(1.2);
-      }
-    }
   }
 }
 
