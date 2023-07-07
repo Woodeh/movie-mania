@@ -38,22 +38,18 @@ export const Movie: React.FC<IMovieFC> = ({imdbID, movieObject}) => {
         console.log("Error:", error);
       }
     };
-    if(!movieObject) {fetchMovie();} else {
+    if (!movieObject) {
+      fetchMovie();
+    } else {
       setMovie(movieObject);
     }
-  }, [imdbID,movieObject]);
-
-  // useEffect(() => {
-  //   const updatedMovies = movie.map(movie => ({
-  //     ...movie,
-  //     isFavorite: isMovieInFavorites(movie.imdbID)
-  //   }));
-  //   setMovie(updatedMovies);
-  // }, [favorites]);
+  }, [imdbID, movieObject]);
 
   const handleAddToFavorites = (movie: any) => {
-    dispatch(addToFavorites(movie));
+    const updatedMovie = { ...movie, isFavorite: true }; // Update isFavorite property
+    dispatch(addToFavorites(updatedMovie));
     setModalOpen(true);
+    setMovie(updatedMovie); // Update the movie object in the component state
   };
 
   const handleRemoveFromFavorites = (movieId: string) => {
@@ -75,11 +71,10 @@ export const Movie: React.FC<IMovieFC> = ({imdbID, movieObject}) => {
           imdbRating={movie.imdbRating}
           genreFIlm={movie.Genre}
           link={`/movies/${movie.imdbID}`}
-          isFavorite={movie.isFavorite}
+          isFavorite={isMovieInFavorites(movie.imdbID)} // Update isFavorite based on the updated logic
           onAddToFavorites={() => handleAddToFavorites(movie)}
-          onRemoveFromFavorites={() => handleRemoveFromFavorites(movie.imdbID)} filmId={""}        />
-}
-     
+          onRemoveFromFavorites={() => handleRemoveFromFavorites(movie.imdbID)} filmId={""} />
+      }
 
       {isModalOpen && <FavoriteModal onClose={() => setModalOpen(false)} />}
     </div>

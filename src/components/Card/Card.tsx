@@ -1,8 +1,10 @@
+
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./Card.scss";
+import FavoriteButton from "../../components/FavoriteButton/FavoriteButton";
 
 interface ICard {
   filmId: string;
@@ -14,7 +16,7 @@ interface ICard {
   isFavorite: boolean;
   imdbRating: string;
   onAddToFavorites: () => void;
-  onRemoveFromFavorites: (filmId: string) => void;
+  onRemoveFromFavorites: () => void;
 }
 
 export const Card: FC<ICard> = ({
@@ -29,9 +31,12 @@ export const Card: FC<ICard> = ({
   onAddToFavorites,
   onRemoveFromFavorites,
 }) => {
-  const handleAddToFavorites = (event: React.MouseEvent) => {
-    event.stopPropagation();
+  const handleAddToFavorites = () => {
     onAddToFavorites();
+  };
+
+  const handleRemoveFromFavorites = () => {
+    onRemoveFromFavorites();
   };
 
   return (
@@ -41,7 +46,9 @@ export const Card: FC<ICard> = ({
         <div className="card-info">
           <p className="card-genre">{genreFIlm}</p>
         </div>
-        <div className="card-rating">{imdbRating}</div>
+        {imdbRating ? (
+          <div className="card-rating">{imdbRating}</div>
+        ) : null}
       </Link>
       <div className="card-bottom">
         <div className="card-info">
@@ -49,23 +56,11 @@ export const Card: FC<ICard> = ({
           <p className="card-year">{yearFilm}</p>
         </div>
         <div className="card-actions">
-          {isFavorite ? (
-            <button
-              className="remove-favorite-button"
-              type="button"
-              onClick={() => onRemoveFromFavorites(filmId)}
-            >
-              <FontAwesomeIcon icon={faHeart} className="button-icon" />
-            </button>
-          ) : (
-            <button
-              className="add-favorite-button"
-              type="button"
-              onClick={handleAddToFavorites}
-            >
-              <FontAwesomeIcon icon={faHeart} />{" "}
-            </button>
-          )}
+          <FavoriteButton
+            isFavorite={isFavorite}
+            onAddToFavorites={handleAddToFavorites}
+            onRemoveFromFavorites={handleRemoveFromFavorites}
+          />
         </div>
       </div>
     </div>
