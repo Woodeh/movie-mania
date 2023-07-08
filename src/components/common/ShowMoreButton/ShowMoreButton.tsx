@@ -1,5 +1,5 @@
 import { FC,ReactNode } from 'react';
-import './ShowMore.scss';
+import './ShowMoreButton.scss';
 
 interface IShowMore {
     children:ReactNode;

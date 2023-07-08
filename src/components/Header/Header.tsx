@@ -1,7 +1,7 @@
 import { FC, useState, KeyboardEvent } from "react";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { UserInfo } from "../UserInfo/UserInfo";
-import { IconButton } from "../IconButton/IconButton";
+import { IconButton } from "../common/IconButton/IconButton";
 import { UserIcon } from "../../assets/icons";
 import { useNavigate } from "react-router-dom";
 import "./Header.scss";

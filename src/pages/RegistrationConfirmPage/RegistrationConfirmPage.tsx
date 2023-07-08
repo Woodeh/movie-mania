@@ -2,7 +2,7 @@ import { FC, useEffect } from "react";
 import { TypographyText } from "../../components/Typography/TypographyText";
 import { Button } from "../../components/common/Button/Button";
 import "./RegistrationConfirmPage.scss";
-import { Breadcrumbs } from "../../components/Breadcrumbs/Breadcrumbs";
+import { Breadcrumbs } from "../../components/common/Breadcrumbs/Breadcrumbs";
 import { createBackToHomePath } from "../../constants/createBackToHomePath";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";

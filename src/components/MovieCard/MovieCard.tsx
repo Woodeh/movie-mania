@@ -1,24 +1,11 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import "./Card.scss";
+import "./MovieCard.scss";
 import FavoriteButton from "../common/FavoriteButton/FavoriteButton";
+import { IMovieCard } from "../../interfaces/IMovieCard";
 
-interface ICard {
-  filmId: string;
-  image: string;
-  titleFilm: string;
-  yearFilm: string;
-  genreFIlm: string;
-  link: string;
-  isFavorite: boolean;
-  imdbRating: string;
-  onAddToFavorites: () => void;
-  onRemoveFromFavorites: () => void;
-}
 
-export const Card: FC<ICard> = ({
+export const Card: FC<IMovieCard> = ({
   filmId,
   image,
   titleFilm,

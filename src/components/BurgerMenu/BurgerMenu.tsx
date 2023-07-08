@@ -5,8 +5,8 @@ import "./BurgerMenu.scss";
 import { Button } from "../common/Button/Button";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { isDarktheme } from "../../store/theme/selectors";
-import { IconButton } from "../IconButton/IconButton";
-import { ControlledSwitches } from "../Switcher/Switcher";
+import { IconButton } from "../common/IconButton/IconButton";
+import { ControlledSwitches } from "../common/Switcher/Switcher";
 
 export const BurgerMenu: FC = () => {
   const navigate = useNavigate();

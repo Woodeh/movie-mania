@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import "./ActivatePage.scss";
 import { TypographyText } from "../../components/Typography/TypographyText";
 import { Button } from "../../components/common/Button/Button";
-import { Breadcrumbs } from "../../components/Breadcrumbs/Breadcrumbs";
+import { Breadcrumbs } from "../../components/common/Breadcrumbs/Breadcrumbs";
 import { createBackToHomePath } from "../../constants/createBackToHomePath";
 import { useNavigate, useParams } from "react-router-dom";
 import { Spinner } from "../../components/common/Spinner/Spinner";

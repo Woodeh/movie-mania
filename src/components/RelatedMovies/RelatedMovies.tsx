@@ -4,18 +4,10 @@ import "./RelatedMovies.scss";
 import { TypographyText } from "../Typography/TypographyText";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { IMovie } from "../../interfaces/IMovie";
 
 interface IRecommendationsFilm {
   movieTitle: string;
-}
-
-interface IMovie {
-  Genre: any;
-  Title: string;
-  Year: string;
-  imdbID: string;
-  Poster: string;
-  imdbRating: string;
 }
 
 export const RecommendationsFilm: FC<IRecommendationsFilm> = ({
