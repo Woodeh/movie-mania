@@ -1,6 +1,6 @@
 import { FC, ReactNode, useState } from "react";
-import { Container } from "../Container/Container";
-import { Footer } from "../Footer/Footer";
+import { Container } from "../common/Container/Container";
+import { Footer } from "../Layouts/Footer/Footer";
 import { Logotype } from "../../assets/icons";
 
 interface IPageTemplate {

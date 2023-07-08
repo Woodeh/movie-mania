@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
-import { FILM_URL } from "../../api/urls";
+import { FILM_URL } from "../../utils/api/urls";
 import { Link, useParams } from "react-router-dom";
-import { Header } from "../../components/Header/Header";
+import { Header } from "../../components/Layouts/Header/Header";
 import "./MoviePage.scss";
 import { TypographyText } from "../../components/Typography/TypographyText";
 import { RecommendationsFilm } from "../../components/RelatedMovies/RelatedMovies";

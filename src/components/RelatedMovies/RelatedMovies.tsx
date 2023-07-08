@@ -4,7 +4,7 @@ import "./RelatedMovies.scss";
 import { TypographyText } from "../Typography/TypographyText";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { IMovie } from "../../interfaces/IMovie";
+import { IMovie } from "../../utils/interfaces/IMovie";
 
 interface IRecommendationsFilm {
   movieTitle: string;

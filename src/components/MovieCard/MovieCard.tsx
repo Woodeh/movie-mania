@@ -2,8 +2,7 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import "./MovieCard.scss";
 import FavoriteButton from "../common/FavoriteButton/FavoriteButton";
-import { IMovieCard } from "../../interfaces/IMovieCard";
-
+import { IMovieCard } from "../../utils/interfaces/IMovieCard";
 
 export const Card: FC<IMovieCard> = ({
   filmId,

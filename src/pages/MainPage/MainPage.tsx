@@ -1,7 +1,7 @@
 import { FC } from "react";
 import "./MainPage.scss";
-import { Header } from "../../components/Header/Header";
-import { Movies } from "../../components/MainPageFilms/Movies";
+import { Header } from "../../components/Layouts/Header/Header";
+import { Movies } from "./MainPageMovieList/MainPageMovieList";
 
 interface IMainPage {}
 

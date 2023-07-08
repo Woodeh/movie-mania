@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Header } from "../../components/Header/Header";
+import { Header } from "../../components/Layouts/Header/Header";
 import { Logotype } from "../../assets/icons";
-import { FILM_URL } from "../../api/urls";
+import { FILM_URL } from "../../utils/api/urls";
 import { useLocation } from "react-router-dom";
 import { Movie } from "../../components/Movie/Movie";
 import "./SearchPage.scss";

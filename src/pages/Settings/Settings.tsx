@@ -3,7 +3,7 @@ import "./Settings.scss";
 import { TypographyText } from "../../components/Typography/TypographyText";
 import { Input } from "../../components/common/Input/Input";
 import { Button } from "../../components/common/Button/Button";
-import { Header } from "../../components/Header/Header";
+import { Header } from "../../components/Layouts/Header/Header";
 import { Logotype } from "../../assets/icons";
 import { Link } from "react-router-dom";
 

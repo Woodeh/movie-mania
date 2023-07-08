@@ -3,7 +3,7 @@ import { TypographyText } from "../../components/Typography/TypographyText";
 import { Button } from "../../components/common/Button/Button";
 import "./RegistrationConfirmPage.scss";
 import { Breadcrumbs } from "../../components/common/Breadcrumbs/Breadcrumbs";
-import { createBackToHomePath } from "../../constants/createBackToHomePath";
+import { createBackToHomePath } from "../../utils/constants/createBackToHomePath";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { resetConfirmEmailAction } from "../../store/confirmEmail/actions";

@@ -4,10 +4,10 @@ import { Input } from "../../components/common/Input/Input";
 import { Button } from "../../components/common/Button/Button";
 import "./SignUpPage.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { postNewUser } from "../../api/postNewUser";
+import { postNewUser } from "../../utils/api/postNewUser";
 import { useAppDispatch } from "../../store/hooks";
 import { setConfirmEmailAction } from "../../store/confirmEmail/actions";
-import { Header } from "../../components/Header/Header";
+import { Header } from "../../components/Layouts/Header/Header";
 import { Logotype } from "../../assets/icons";
 
 interface IError {

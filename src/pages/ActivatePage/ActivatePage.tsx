@@ -3,10 +3,10 @@ import "./ActivatePage.scss";
 import { TypographyText } from "../../components/Typography/TypographyText";
 import { Button } from "../../components/common/Button/Button";
 import { Breadcrumbs } from "../../components/common/Breadcrumbs/Breadcrumbs";
-import { createBackToHomePath } from "../../constants/createBackToHomePath";
+import { createBackToHomePath } from "../../utils/constants/createBackToHomePath";
 import { useNavigate, useParams } from "react-router-dom";
 import { Spinner } from "../../components/common/Spinner/Spinner";
-import { postActivate } from "../../api/postActivate";
+import { postActivate } from "../../utils/api/postActivate";
 
 export const ActivatePage: FC = () => {
   const { uid, token } = useParams();
