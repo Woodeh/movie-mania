@@ -35,7 +35,7 @@
 
 .search-input {
   width: 900px;
-  height: 56px;
+  height: 40px;
   padding: 0 20px;
   border: none;
   color: #fff;
@@ -50,9 +50,9 @@
     opacity: 0.5;
   }
 
-  &:focus {
-    border: 2px solid purple;
-  }
+  // &:focus {
+  //   border: 1px solid rgb(255, 255, 255);
+  // }
 
   @media (max-width: 768px) {
     width: 100%;
