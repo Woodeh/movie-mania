@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
-import { Movie } from "../Movie/Movie";
+import { Movie } from "../../../components/Movie/Movie";
 import "./TrendMovieList.scss";
-import { trendMoviesDb } from "../../utils/constants/trendsMoviesDb";
+import { trendMoviesDb } from "../../../utils/constants/trendsMoviesDb";
 
 interface ITrendMovies {}
 

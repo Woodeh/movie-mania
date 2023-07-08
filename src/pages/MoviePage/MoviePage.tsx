@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { Header } from "../../components/Layouts/Header/Header";
 import "./MoviePage.scss";
 import { TypographyText } from "../../components/Typography/TypographyText";
-import { RecommendationsFilm } from "../../components/RelatedMovies/RelatedMovies";
+import { RecommendationsFilm } from "./RelatedMovies/RelatedMovies";
 import { Logotype } from "../../assets/icons";
 import { ShareButton } from "../../components/common/ShareButton/ShareButton";
 import { useDispatch, useSelector } from "react-redux";

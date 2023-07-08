@@ -2,7 +2,7 @@ import { FC } from "react";
 import "./TrendsPage";
 import { Header } from "../../components/Layouts/Header/Header";
 import { Logotype } from "../../assets/icons";
-import { TrendMovies } from "../../components/TrendMovieList/TrendMovieList";
+import { TrendMovies } from "./TrendMovieList/TrendMovieList";
 
 export interface ITrends {}
 

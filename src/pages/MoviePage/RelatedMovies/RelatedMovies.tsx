@@ -1,11 +1,11 @@
 import React, { FC, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./RelatedMovies.scss";
-import { TypographyText } from "../Typography/TypographyText";
+import { TypographyText } from "../../../components/Typography/TypographyText";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { IMovie } from "../../utils/interfaces/IMovie";
-import Loader from "../common/Loader/Loader";
+import { IMovie } from "../../../utils/interfaces/IMovie";
+import Loader from "../../../components/common/Loader/Loader";
 
 interface IRecommendationsFilm {
   movieTitle: string;
