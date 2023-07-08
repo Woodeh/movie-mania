@@ -8,7 +8,7 @@ import { ActivatePage } from "../pages/ActivatePage/ActivatePage";
 import { useAppSelector } from "../store/hooks";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { Settings } from "../pages/Settings/Settings";
-import { MovieInfo } from "../components/MainPageFilms/Movies/MovieInfo";
+import { MovieInfo } from "../pages/MoviePage/MoviePage";
 import { Trends } from "../pages/TrendsPage/TrendsPage";
 import { Favorites } from "../pages/FavoritesPage/FavoritesPage";
 import { Search } from "../pages/SearchPage/SearchPage";

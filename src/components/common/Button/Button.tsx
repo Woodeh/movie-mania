@@ -1,7 +1,7 @@
 import { FC } from "react";
 import "./Button.scss";
-import { useAppSelector } from "../../store/hooks";
-import { isDarktheme } from "../../store/theme/selectors";
+import { useAppSelector } from "../../../store/hooks";
+import { isDarktheme } from "../../../store/theme/selectors";
 
 interface IButton {
   isDisabled?: boolean;

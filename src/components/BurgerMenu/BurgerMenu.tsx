@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import { CancelIcon, BurgerMenuIcon } from "../../assets/icons";
 import { useNavigate } from "react-router-dom";
 import "./BurgerMenu.scss";
-import { Button } from "../Button/Button";
+import { Button } from "../common/Button/Button";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { isDarktheme } from "../../store/theme/selectors";
 import { IconButton } from "../IconButton/IconButton";

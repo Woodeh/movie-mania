@@ -1,10 +1,9 @@
-
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./Card.scss";
-import FavoriteButton from "../../components/FavoriteButton/FavoriteButton";
+import FavoriteButton from "../common/FavoriteButton/FavoriteButton";
 
 interface ICard {
   filmId: string;
@@ -46,9 +45,7 @@ export const Card: FC<ICard> = ({
         <div className="card-info">
           <p className="card-genre">{genreFIlm}</p>
         </div>
-        {imdbRating ? (
-          <div className="card-rating">{imdbRating}</div>
-        ) : null}
+        {imdbRating ? <div className="card-rating">{imdbRating}</div> : null}
       </Link>
       <div className="card-bottom">
         <div className="card-info">

@@ -1,15 +1,18 @@
 import React, { FC, useEffect, useState } from "react";
-import { FILM_URL } from "../../../api/urls";
+import { FILM_URL } from "../../api/urls";
 import { Link, useParams } from "react-router-dom";
-import { Header } from "../../Header/Header";
-import "./MovieInfo.scss";
-import { TypographyText } from "../../Typography/TypographyText";
-import { RecommendationsFilm } from "./RecommendationsFilm";
-import { Logotype } from "../../../assets/icons";
-import { ShareButton } from "../../ShareButton/ShareButton";
+import { Header } from "../../components/Header/Header";
+import "./MoviePage.scss";
+import { TypographyText } from "../../components/Typography/TypographyText";
+import { RecommendationsFilm } from "../../components/RelatedMovies/RelatedMovies";
+import { Logotype } from "../../assets/icons";
+import { ShareButton } from "../../components/common/ShareButton/ShareButton";
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavorites, removeFromFavorites } from "../../../redux/favoritesActions";
-import FavoriteButton from "../../FavoriteButton/FavoriteButton";
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from "../../redux/favoritesActions";
+import FavoriteButton from "../../components/common/FavoriteButton/FavoriteButton";
 
 interface IMovieInfo {
   match: {
@@ -77,7 +80,11 @@ export const MovieInfo: FC<IMovieInfo> = () => {
       <div className="movie-details">
         <div className="movie-poster">
           {movie.Poster !== "N/A" ? (
-            <img className="movie-poster--img" src={movie.Poster} alt={movie.Title} />
+            <img
+              className="movie-poster--img"
+              src={movie.Poster}
+              alt={movie.Title}
+            />
           ) : (
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png"

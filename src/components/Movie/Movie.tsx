@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addToFavorites, removeFromFavorites } from "../../../redux/favoritesActions";
-import { FILM_URL } from "../../../api/urls";
-import { Card } from "../../Card/Card";
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from "../../redux/favoritesActions";
+import { FILM_URL } from "../../api/urls";
+import { Card } from "../Card/Card";
 import "./Movie.scss";
-import FavoriteModal from "../../FavoriteModal/FavotireModal";
+import FavoriteModal from "../FavoriteModal/FavotireModal";
 
 interface IMovieFC {
-  imdbID: string | '';
+  imdbID: string | "";
   movieObject?: IMovie;
 }
 
@@ -22,7 +25,7 @@ interface IMovie {
   imdbID: string;
 }
 
-export const Movie: React.FC<IMovieFC> = ({imdbID, movieObject}) => {
+export const Movie: React.FC<IMovieFC> = ({ imdbID, movieObject }) => {
   const [movie, setMovie] = useState<IMovie>();
   const favorites = useSelector((state: any) => state.favorites || []);
   const dispatch = useDispatch();
@@ -59,10 +62,10 @@ export const Movie: React.FC<IMovieFC> = ({imdbID, movieObject}) => {
   const isMovieInFavorites = (movieId: string) => {
     return favorites.some((movie: any) => movie.imdbID === movieId);
   };
-  
+
   return (
     <div className="movie-card">
-      {movie && 
+      {movie && (
         <Card
           key={movie.imdbID}
           image={movie.Poster}
@@ -73,8 +76,10 @@ export const Movie: React.FC<IMovieFC> = ({imdbID, movieObject}) => {
           link={`/movies/${movie.imdbID}`}
           isFavorite={isMovieInFavorites(movie.imdbID)} // Update isFavorite based on the updated logic
           onAddToFavorites={() => handleAddToFavorites(movie)}
-          onRemoveFromFavorites={() => handleRemoveFromFavorites(movie.imdbID)} filmId={""} />
-      }
+          onRemoveFromFavorites={() => handleRemoveFromFavorites(movie.imdbID)}
+          filmId={""}
+        />
+      )}
 
       {isModalOpen && <FavoriteModal onClose={() => setModalOpen(false)} />}
     </div>

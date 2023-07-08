@@ -1,8 +1,8 @@
 import { FC, useState } from "react";
-import { Movie } from "./Movies/Movie";
+import { Movie } from "../Movie/Movie";
 import "./Movies.scss";
 import { moviesDb } from "../../constants/moviesDb";
-import { ShowMore } from "./ShowMore/ShowMore";
+import { ShowMore } from "../ShowMore/ShowMore";
 
 interface IMovies {}
 
