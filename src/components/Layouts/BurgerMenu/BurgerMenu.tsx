@@ -1,12 +1,12 @@
 import { FC, useState } from "react";
-import { CancelIcon, BurgerMenuIcon } from "../../assets/icons";
+import { CancelIcon, BurgerMenuIcon } from "../../../assets/icons";
 import { useNavigate } from "react-router-dom";
 import "./BurgerMenu.scss";
-import { Button } from "../common/Button/Button";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { isDarktheme } from "../../store/theme/selectors";
-import { IconButton } from "../common/IconButton/IconButton";
-import { ControlledSwitches } from "../common/Switcher/Switcher";
+import { Button } from "../../common/Button/Button";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { isDarktheme } from "../../../store/theme/selectors";
+import { IconButton } from "../../common/IconButton/IconButton";
+import { ControlledSwitches } from "../../common/Switcher/Switcher";
 
 export const BurgerMenu: FC = () => {
   const navigate = useNavigate();

@@ -13,6 +13,7 @@ import {
   removeFromFavorites,
 } from "../../redux/favoritesActions";
 import FavoriteButton from "../../components/common/FavoriteButton/FavoriteButton";
+import Loader from "../../components/common/Loader/Loader";
 
 interface IMovieInfo {
   match: {
@@ -57,13 +58,7 @@ export const MovieInfo: FC<IMovieInfo> = () => {
   };
 
   if (!movie) {
-    return (
-      <div className="loader triangle">
-        <svg viewBox="0 0 86 80">
-          <polygon points="43 8 79 72 7 72"></polygon>
-        </svg>
-      </div>
-    );
+    return <Loader />;
   }
 
   const genreArray = movie.Genre.split(",");

@@ -5,6 +5,7 @@ import { TypographyText } from "../Typography/TypographyText";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { IMovie } from "../../utils/interfaces/IMovie";
+import Loader from "../common/Loader/Loader";
 
 interface IRecommendationsFilm {
   movieTitle: string;
@@ -113,11 +114,7 @@ export const RecommendationsFilm: FC<IRecommendationsFilm> = ({
             ))}
           </Carousel>
         ) : (
-          <div className="loader triangle">
-            <svg viewBox="0 0 86 80">
-              <polygon points="43 8 79 72 7 72"></polygon>
-            </svg>
-          </div>
+          <Loader />
         )}
       </div>
     </>

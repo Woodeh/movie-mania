@@ -5,6 +5,7 @@ import { FILM_URL } from "../../utils/api/urls";
 import { useLocation } from "react-router-dom";
 import { Movie } from "../../components/Movie/Movie";
 import "./SearchPage.scss";
+import Loader from "../../components/common/Loader/Loader";
 
 export const Search = () => {
   const [visibleMovies, setVisibleMovies] = useState<any[]>([]);
@@ -59,11 +60,7 @@ export const Search = () => {
       <Header />
       <div className="movies-container">
         {isLoading || showLoader ? (
-          <div className="loader triangle">
-            <svg viewBox="0 0 86 80">
-              <polygon points="43 8 79 72 7 72"></polygon>
-            </svg>
-          </div>
+          <Loader />
         ) : (
           visibleMovies.map((movie) => (
             <Movie
