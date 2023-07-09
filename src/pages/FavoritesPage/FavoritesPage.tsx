@@ -1,5 +1,4 @@
 import { FC, useState, useEffect } from "react";
-import { Header } from "../../components/Layouts/Header/Header";
 import { Movie } from "../../components/Movie/Movie";
 import { useSelector } from "react-redux";
 import "./FavoritesPage.scss";
@@ -23,7 +22,6 @@ export const Favorites: FC<IFavorites> = () => {
 
   return (
     <div className="favorites">
-      <Header />
       {favorites.length === 0 ? (
         <div className="empty-favorites">
           <div className="jumping-words">

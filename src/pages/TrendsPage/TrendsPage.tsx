@@ -9,7 +9,6 @@ export interface ITrends {}
 export const Trends: FC<ITrends> = () => {
   return (
     <div className="blog">
-      <Header />
       <TrendMovies />
     </div>
   );

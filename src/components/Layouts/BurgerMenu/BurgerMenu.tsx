@@ -8,6 +8,11 @@ import { isDarktheme } from "../../../store/theme/selectors";
 import { IconButton } from "../../common/IconButton/IconButton";
 import { ControlledSwitches } from "../../common/Switcher/Switcher";
 
+interface IconButtonProps {
+  onClick: () => void;
+  className?: string; // Add className prop
+}
+
 export const BurgerMenu: FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -46,6 +51,11 @@ export const BurgerMenu: FC = () => {
         </IconButton>
       </div>
       <div className={`burgerMenu__content ${isOpen && "open"}`}>
+        <IconButton
+          onClick={handleClick}
+        >
+          <CancelIcon />
+        </IconButton>
         <nav className="burgerMenu__nav">
           {options.map(({ id, name, url }) => (
             <li key={id} className="burgerMenu__nav-item">

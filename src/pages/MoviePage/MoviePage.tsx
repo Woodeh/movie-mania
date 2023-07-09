@@ -1,11 +1,9 @@
 import React, { FC, useEffect, useState } from "react";
 import { FILM_URL } from "../../utils/api/urls";
 import { Link, useParams } from "react-router-dom";
-import { Header } from "../../components/Layouts/Header/Header";
 import "./MoviePage.scss";
 import { TypographyText } from "../../components/Typography/TypographyText";
 import { RelatedMovies } from "./RelatedMovies/RelatedMovies";
-import { Logotype } from "../../assets/icons";
 import { ShareButton } from "../../components/common/ShareButton/ShareButton";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -66,7 +64,6 @@ export const MovieInfo: FC<IMovieInfo> = () => {
 
   return (
     <>
-      <Header />
       <div className="movie-details">
         <div className="movie-poster">
           {movie.Poster !== "N/A" ? (
@@ -121,19 +118,15 @@ export const MovieInfo: FC<IMovieInfo> = () => {
               <li>
                 <span className="movie-info--list">Writer:</span>
               </li>
-              <li>
-                <span className="movie-info--list">Stars:</span>
-              </li>
             </ul>
             <ul>
-              <li>{movie.Year}</li>
-              <li>{movie.Released}</li>
-              <li>{movie.BoxOffice}</li>
-              <li>{movie.Country}</li>
-              <li>{movie.Actors}</li>
-              <li>{movie.Director}</li>
-              <li>{movie.Writer}</li>
-              <li>{movie.Actors}</li>
+              <li>{movie.Year || "N/A"}</li>
+              <li>{movie.Released || "N/A"}</li>
+              <li>{movie.BoxOffice || "N/A"}</li>
+              <li>{movie.Country || "N/A"}</li>
+              <li>{movie.Actors || "N/A"}</li>
+              <li>{movie.Director || "N/A"}</li>
+              <li>{movie.Writer || "N/A"}</li>
             </ul>
           </div>
         </div>

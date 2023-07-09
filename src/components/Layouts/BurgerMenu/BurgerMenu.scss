@@ -5,39 +5,44 @@
   border: none;
   background-color: #0f0124;
 
-
   &__content {
     position: absolute;
-    top: 84px;
+    top: 0;
     left: 0;
-    padding-left: 50px;
+    width: 100%;
+    height: 0;
+    background-color: #0f0124;
     z-index: 100;
-    width: 236px;
-    height: 450px;
-    transform: translateX(-250px);
-    transition: transform .3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+    flex-direction: row;
+    justify-content: center; /* Add this property */
+    
 
     &.open {
-      transform: translateX(0);
+      height: 92px;
     }
   }
 
+  &__nav {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
+
   &__nav-item {
-    height: 83px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    flex: 0 0 50%; /* Добавлено свойство */
+    max-width: 50%; /* Добавлено свойство */
   }
 
   &__nav-btn {
     background: none;
     border: none;
-    width: 100%;
-    height: 100%;
     font-weight: 600;
     cursor: pointer;
     color: #fff;
@@ -53,11 +58,10 @@
     justify-content: center;
     align-items: center;
     color: #fff;
-
   }
 
   &__theme-btn {
-    width: 100%;
+    width: 100px; /* Измените ширину кнопок по своему усмотрению */
     border: none;
     background: none;
     cursor: pointer;

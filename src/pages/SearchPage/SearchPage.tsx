@@ -54,7 +54,6 @@ export const Search = () => {
 
   return (
     <div className="blog">
-      <Header />
       <div className="movies-container">
         {isLoading || showLoader ? (
           <Loader />

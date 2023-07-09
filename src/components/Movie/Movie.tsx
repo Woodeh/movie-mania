@@ -58,7 +58,7 @@ export const Movie: React.FC<IMovieFC> = ({ imdbID, movieObject }) => {
       {movie && (
         <Card
           key={movie.imdbID}
-          image={movie.Poster}
+          image={movie.Poster !== "N/A" ? movie.Poster : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png"}
           titleFilm={movie.Title}
           yearFilm={movie.Year}
           imdbRating={movie.imdbRating}

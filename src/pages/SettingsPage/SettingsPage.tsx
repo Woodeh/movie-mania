@@ -39,7 +39,6 @@ export const Settings: FC<ISettings> = () => {
   return (
     <>
       <div className="settings">
-        <Header />
         <TypographyText content="Profile" type="H2" />
         <form className="settings__form-profile">
           <Input
