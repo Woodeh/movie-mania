@@ -1,4 +1,4 @@
-import { IPost } from '../../interfaces/IPost';
+import { IPost } from '../../utils/interfaces/IPost';
 import { GET_POSTS_ERROR, GET_POSTS_REQUEST, GET_POSTS_SUCCESS, SET_DISLIKE, SET_LIKE } from './actionTypes';
 
 export interface IPostsState {

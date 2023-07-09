@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Header } from "../../components/Header/Header";
+import { Header } from "../../components/Layouts/Header/Header";
 import { Logotype } from "../../assets/icons";
-import { FILM_URL } from "../../api/urls";
+import { FILM_URL } from "../../utils/api/urls";
 import { useLocation } from "react-router-dom";
-import { Movie } from "../../components/MainPageFilms/Movies/Movie";
+import { Movie } from "../../components/Movie/Movie";
 import "./SearchPage.scss";
+import Loader from "../../components/common/Loader/Loader";
 
 export const Search = () => {
   const [visibleMovies, setVisibleMovies] = useState<any[]>([]);
@@ -59,34 +60,33 @@ export const Search = () => {
       <Header />
       <div className="movies-container">
         {isLoading || showLoader ? (
-          <div className="loader triangle">
-            <svg viewBox="0 0 86 80">
-              <polygon points="43 8 79 72 7 72"></polygon>
-            </svg>
-          </div>
+          <Loader />
         ) : (
           visibleMovies.map((movie) => (
-            <Movie imdbID={movie.imdbID} movieObject={movie} key={movie.imdbID} />
+            <Movie
+              imdbID={movie.imdbID}
+              movieObject={movie}
+              key={movie.imdbID}
+            />
           ))
         )}
-       
       </div>
       <div className="pagination-container">
-          <button
-            onClick={handlePreviousPage}
-            disabled={currentPage === 1}
-            className="pagination-button previous-button"
-          >
-            Prev
-          </button>
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage * 8 >= totalResults}
-            className="pagination-button next-button"
-          >
-            Next
-          </button>
-        </div>
+        <button
+          onClick={handlePreviousPage}
+          disabled={currentPage === 1}
+          className="pagination-button previous-button"
+        >
+          Prev
+        </button>
+        <button
+          onClick={handleNextPage}
+          disabled={currentPage * 8 >= totalResults}
+          className="pagination-button next-button"
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
