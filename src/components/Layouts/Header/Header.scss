@@ -34,7 +34,7 @@
 }
 
 .search-input {
-  width: 900px;
+  width: 500px;
   height: 40px;
   padding: 0 20px;
   border: none;
@@ -57,4 +57,27 @@
   @media (max-width: 768px) {
     width: 100%;
   }
+}
+
+
+.logo_container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 30px
+}
+
+.logo {
+  width: 50px;
+}
+
+.logo_title {
+  font-size: 25px;
+   align-self: center;
+}
+
+.burger_container {
+  display: flex;
+  align-items: center;
+  
 }

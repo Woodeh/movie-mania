@@ -9,10 +9,7 @@ interface IPageTemplate {
 
 export const PageTemplate: FC<IPageTemplate> = ({ children }) => (
   <>
-    <div className="mainLogo">
-      <Logotype />
-      <div className="logo-title">MovieMania</div>
-    </div>
+    
     <Container>
       {children}
       <Footer />

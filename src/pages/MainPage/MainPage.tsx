@@ -7,7 +7,7 @@ interface IMainPage {}
 
 export const MainPage: FC<IMainPage> = () => {
   return (
-    <div className="mainPage">
+    <div className="main-page">
       <Header />
       <Movies />
     </div>

@@ -39,11 +39,6 @@ export const Settings: FC<ISettings> = () => {
   return (
     <>
       <div className="settings">
-        <div className="mainLogo">
-          <Link to={"/"}>
-            <Logotype />
-          </Link>
-        </div>
         <Header />
         <TypographyText content="Profile" type="H2" />
         <form className="settings__form-profile">

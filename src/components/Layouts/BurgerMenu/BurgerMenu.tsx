@@ -63,11 +63,11 @@ export const BurgerMenu: FC = () => {
             Night mode
             <ControlledSwitches />
           </div>
-          {isLogged ? (
+          {/* {isLogged ? (
             <Button content="Log Out" onClick={logout} type="secondary" />
           ) : (
             <Button content="Sign In" onClick={signIn} type="primary" />
-          )}
+          )} */}
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { Header } from "../../components/Layouts/Header/Header";
 import "./MoviePage.scss";
 import { TypographyText } from "../../components/Typography/TypographyText";
-import { RecommendationsFilm } from "./RelatedMovies/RelatedMovies";
+import { RelatedMovies } from "./RelatedMovies/RelatedMovies";
 import { Logotype } from "../../assets/icons";
 import { ShareButton } from "../../components/common/ShareButton/ShareButton";
 import { useDispatch, useSelector } from "react-redux";
@@ -66,11 +66,6 @@ export const MovieInfo: FC<IMovieInfo> = () => {
 
   return (
     <>
-      <div className="mainLogo">
-        <Link to={"/posts"}>
-          <Logotype />
-        </Link>
-      </div>
       <Header />
       <div className="movie-details">
         <div className="movie-poster">
@@ -143,7 +138,7 @@ export const MovieInfo: FC<IMovieInfo> = () => {
           </div>
         </div>
       </div>
-      <RecommendationsFilm movieTitle={movie.Title} />
+      <RelatedMovies movieTitle={movie.Title} />
     </>
   );
 };

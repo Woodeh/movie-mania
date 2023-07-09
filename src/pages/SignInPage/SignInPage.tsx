@@ -94,11 +94,7 @@ export const SignInPage: FC = () => {
 
   return (
     <div className="sign-in">
-      <div className="mainLogo">
-        <Link to={"/posts"}>
-          <Logotype />
-        </Link>
-      </div>
+     
       <Header />
       {/* <Breadcrumbs path={[createBackToHomePath]} /> */}
       <form className="sign-in__form">

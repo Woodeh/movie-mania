@@ -7,11 +7,11 @@ import "react-multi-carousel/lib/styles.css";
 import { IMovie } from "../../../utils/interfaces/IMovie";
 import Loader from "../../../components/common/Loader/Loader";
 
-interface IRecommendationsFilm {
+interface IRelatedMovies {
   movieTitle: string;
 }
 
-export const RecommendationsFilm: FC<IRecommendationsFilm> = ({
+export const RelatedMovies: FC<IRelatedMovies> = ({
   movieTitle,
 }) => {
   const [movies, setMovies] = useState<IMovie[]>([]);
@@ -76,7 +76,7 @@ export const RecommendationsFilm: FC<IRecommendationsFilm> = ({
 
   return (
     <>
-      <div className="recommendations">
+      <div className="related-movies">
         <h1 className="related-title">Related movies</h1>
         {movies.length > 0 ? (
           <Carousel

@@ -1,6 +1,4 @@
 .burgerMenu {
-  width: 84px;
-  height: 84px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +23,6 @@
 
     &.open {
       transform: translateX(0);
-
     }
   }
 
