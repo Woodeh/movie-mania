@@ -9,7 +9,7 @@ export const store = configureStore({
     theme: themeReducer,
     posts: postsReducer,
     confirmEmail: confirmEmailReducer,
-    favorites: favoritesReducer, // Добавление favoritesReducer
+    favorites: favoritesReducer,
   },
   devTools: true,
 });

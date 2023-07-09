@@ -27,7 +27,7 @@ export const Search = () => {
         const data = await response.json();
         console.log(data);
         const dataMovies = data.Search || [];
-        const limitedMovies = dataMovies.slice(0, 8); // Ограничьте количество карточек до 8
+        const limitedMovies = dataMovies.slice(0, 8);
         setVisibleMovies(limitedMovies);
         setTotalResults(data.totalResults);
       } catch (error) {

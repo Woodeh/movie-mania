@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
-import { BlogPage } from "../pages/MainPage/MainPage";
+import { MainPage } from "../pages/MainPage/MainPage";
 import { SignInPage } from "../pages/SignInPage/SignInPage";
 import { SignUpPage } from "../pages/SignUpPage/SignUpPage";
 import { RegistrationConfirmPage } from "../pages/RegistrationConfirmPage/RegistrationConfirmPage";
@@ -21,7 +21,7 @@ export const Router: FC = () => {
       {/* <Route path='/main' element={<MainPage/>}/> */}
       <Route path="/settings" element={<Settings />} />
       <Route path="/trends" element={<Trends />} />
-      <Route path="" element={<BlogPage />} />
+      <Route path="" element={<MainPage />} />
       <Route
         path="/movies/:id"
         element={
@@ -34,7 +34,7 @@ export const Router: FC = () => {
           />
         }
       />
-      /favorites
+      
       <Route path="/favorites" element={<Favorites />} />
       <Route path="/search-page" element={<Search />} />
       <Route path="/sign-in" element={<SignInPage />} />
