@@ -1,0 +1,16 @@
+export const animatedWords: string[] = [
+    "You",
+    "haven't",
+    "added",
+    "anything",
+    "to",
+    "your",
+    "favorites",
+    "yet.",
+    "Please",
+    "add",
+    "something",
+    "and",
+    "come",
+    "back!",
+  ];
