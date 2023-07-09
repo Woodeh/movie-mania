@@ -1,134 +1,146 @@
-import { FC, useEffect, useRef, useState, KeyboardEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { TypographyText } from '../../components/Typography/TypographyText';
-import { Input } from '../../components/Input/Input';
-import { Button } from '../../components/Button/Button';
+import { FC, useEffect, useRef, useState, KeyboardEvent } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { TypographyText } from "../../components/Typography/TypographyText";
+import { Input } from "../../components/common/Input/Input";
+import { Button } from "../../components/common/Button/Button";
 
-
-import { postLogin } from '../../api/postLogin';
-import './SignInPage.scss';
-import { Header } from '../../components/Header/Header';
-import { Logotype } from '../../assets/icons';
+import { postLogin } from "../../utils/api/postLogin";
+import "./SignInPage.scss";
+import { Header } from "../../components/Layouts/Header/Header";
+import { Logotype } from "../../assets/icons";
 
 interface IError {
-    email: string | string[];
-    password: string | string[];
-    detail: string | string[];
+  email: string | string[];
+  password: string | string[];
+  detail: string | string[];
 }
 
 export const SignInPage: FC = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [errors, setErrors] = useState<IError>({
-        email: '',
-        password: '',
-        detail: '',
-    });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState<IError>({
+    email: "",
+    password: "",
+    detail: "",
+  });
 
-    const inputEmailRef = useRef<HTMLInputElement>(null);
-    const inputPasswordRef = useRef<HTMLInputElement>(null);
+  const inputEmailRef = useRef<HTMLInputElement>(null);
+  const inputPasswordRef = useRef<HTMLInputElement>(null);
 
-    useEffect(() => {
-        if (inputEmailRef.current) {
-            inputEmailRef.current.focus();
-        }
-    }, []);
+  useEffect(() => {
+    if (inputEmailRef.current) {
+      inputEmailRef.current.focus();
+    }
+  }, []);
 
-    const handleChangeEmail = (newValue: string) => {
-        setEmail(newValue);
-        setErrors(errors => ({...errors, email: '', detail: ''}));
+  const handleChangeEmail = (newValue: string) => {
+    setEmail(newValue);
+    setErrors((errors) => ({ ...errors, email: "", detail: "" }));
+  };
+
+  const handleChangePassword = (newValue: string) => {
+    setPassword(newValue);
+    setErrors((errors) => ({ ...errors, password: "", detail: "" }));
+  };
+
+  const validateForm = () => {
+    const newErrors: IError = {
+      email: "",
+      password: "",
+      detail: "",
+    };
+
+    if (!email) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = "Email is invalid";
+    }
+    if (!password) {
+      newErrors.password = "Password is required";
+    } else if (password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters long";
     }
 
-    const handleChangePassword = (newValue: string) => {
-        setPassword(newValue);
-        setErrors(errors => ({...errors, password: '', detail: ''}));
+    let isValid = Object.values(newErrors).every((error) => error === "");
+    if (isValid) {
+      return true;
+    } else {
+      setErrors(newErrors);
+      return false;
     }
+  };
 
-    const validateForm = () => {
-        const newErrors: IError = {
-            email: '',
-            password: '',
-            detail: '',
-        }
-
-        if (!email) {
-            newErrors.email = 'Email is required';
-        } else if (!/\S+@\S+\.\S+/.test(email)) {
-            newErrors.email = 'Email is invalid';
-        }
-        if (!password) {
-            newErrors.password = 'Password is required';
-        }  else if (password.length < 6) {
-            newErrors.password = 'Password must be at least 6 characters long';
-          }
-        
-        let isValid = Object.values(newErrors).every(error => error === '');
-        if (isValid) {
-            return true;
-        } else {
-            setErrors(newErrors);
-            return false;
-        }
+  const handleSubmit = () => {
+    if (validateForm()) {
+      postLogin({ email, password })
+        .then((data) => {
+          localStorage.setItem("access_token", data.access);
+          localStorage.setItem("refresh_token", data.refresh);
+          navigate("/posts");
+        })
+        .catch((error) =>
+          setErrors((prev) => ({ ...prev, ...error.response.data }))
+        );
     }
+  };
 
-    const handleSubmit = () => {
-        if (validateForm()) {
-            postLogin({ email, password }).then((data) => {
-                localStorage.setItem('access_token', data.access);
-                localStorage.setItem('refresh_token', data.refresh);
-                navigate('/posts');
-            }).catch((error) => setErrors(prev => ({...prev, ...error.response.data})));
-        }
+  const handleKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && inputPasswordRef.current && email) {
+      inputPasswordRef.current.focus();
     }
+  };
 
-    const handleKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter' && inputPasswordRef.current && email) {
-            inputPasswordRef.current.focus();
-        }
-    }
-
-    return (
-        <div className='sign-in'>
-            <div className="mainLogo">
-                <Link to={'/posts'}><Logotype/></Link>
-            </div>
-            <Header />
-            {/* <Breadcrumbs path={[createBackToHomePath]} /> */}
-            <form className='sign-in__form'>
-            <TypographyText content='Sign In' type='H1'/>
-                <Input
-                    title='Email'
-                    placeholder='Your email'
-                    value={email}
-                    handleChange={handleChangeEmail}
-                    inputRef={inputEmailRef}
-                    handleKeyUp={handleKeyUp}
-                    errorMessage={errors.email}
-                />
-                <div>
-                    <Input
-                        title='Password'
-                        placeholder='Your password'
-                        value={password}
-                        handleChange={handleChangePassword}
-                        inputRef={inputPasswordRef}
-                        errorMessage={errors.password}
-                    />
-                    {errors.detail && <div className='sign-in__error-message'>{errors.detail}</div>}
-                    {/* <a className='sign-in__form-forgot' href="https://example.com">
+  return (
+    <div className="sign-in">
+      <div className="mainLogo">
+        <Link to={"/posts"}>
+          <Logotype />
+        </Link>
+      </div>
+      <Header />
+      {/* <Breadcrumbs path={[createBackToHomePath]} /> */}
+      <form className="sign-in__form">
+        <TypographyText content="Sign In" type="H1" />
+        <Input
+          title="Email"
+          placeholder="Your email"
+          value={email}
+          handleChange={handleChangeEmail}
+          inputRef={inputEmailRef}
+          handleKeyUp={handleKeyUp}
+          errorMessage={errors.email}
+        />
+        <div>
+          <Input
+            title="Password"
+            placeholder="Your password"
+            value={password}
+            handleChange={handleChangePassword}
+            inputRef={inputPasswordRef}
+            errorMessage={errors.password}
+          />
+          {errors.detail && (
+            <div className="sign-in__error-message">{errors.detail}</div>
+          )}
+          {/* <a className='sign-in__form-forgot' href="https://example.com">
                         Forgot password?
                     </a> */}
-                </div>
-                <Button content='Sign In' onClick={handleSubmit} type='primary' isDisabled={!Object.values(errors).every(error => error === '')} />
-                <p className='sign-in__form-description'>
-                    Don’t have an account? {' '}
-                <Link to='/sign-up' className='sign-in__form-link'>
-                    Sign Up
-                </Link>
-                </p>
-            </form>
         </div>
-    )
+        <Button
+          content="Sign In"
+          onClick={handleSubmit}
+          type="primary"
+          isDisabled={!Object.values(errors).every((error) => error === "")}
+        />
+        <p className="sign-in__form-description">
+          Don’t have an account?{" "}
+          <Link to="/sign-up" className="sign-in__form-link">
+            Sign Up
+          </Link>
+        </p>
+      </form>
+    </div>
+  );
 };

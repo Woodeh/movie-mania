@@ -1,5 +1,5 @@
-import { IPost } from "../../interfaces/IPost";
-import { getPosts } from '../../api/getPosts';
+import { IPost } from "../../utils/interfaces/IPost";
+import { getPosts } from '../../utils/api/getPosts';
 import { IGetPostsRequestAction, IGetPostsErrorAction, IGetPostsSuccessAction, ActionsType, ISetLikeAction, ISetDislikeAction } from "./interfaces";
 import { GET_POSTS_ERROR, GET_POSTS_REQUEST, GET_POSTS_SUCCESS, SET_DISLIKE, SET_LIKE } from './actionTypes';
 import { ThunkDispatch } from "@reduxjs/toolkit";

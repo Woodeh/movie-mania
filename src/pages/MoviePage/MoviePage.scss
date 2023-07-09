@@ -1,0 +1,90 @@
+.movie-details {
+  display: flex;
+  width: max-content;
+  gap: 42px;
+
+  .movie-info {
+    &--plot {
+      width: 800px;
+      padding-bottom: 40px;
+    }
+
+    h1 {}
+
+    h2 {
+      color: #afb2b6;
+    }
+
+    ul {
+      li {
+        margin: 20px 0;
+        list-style-type: none;
+      }
+    }
+
+    .movie-rating {
+      display: flex;
+      gap: 10px;
+      padding-top: 26px;
+      padding-bottom: 42px;
+
+      &--green {
+        background-color: #00a340;
+      }
+    }
+
+    span {
+      background: #323537;
+      border-radius: 6px;
+      padding: 2px 8px;
+      color: #ffffff;
+
+      font-family: "Exo 2";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &--genres {
+      display: flex;
+      gap: 54px;
+      line-height: 24px;
+      font-family: "Exo 2";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+
+
+body {
+  min-height: 100vh;
+  background: #f5f9ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .dribbble {
+    position: fixed;
+    display: block;
+    right: 20px;
+    bottom: 20px;
+
+    img {
+      display: block;
+      height: 28px;
+    }
+  }
+}
+
+
+.share-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
