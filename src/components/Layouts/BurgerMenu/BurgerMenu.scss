@@ -4,26 +4,27 @@
   align-items: center;
   border: none;
   background-color: #0f0124;
+  overflow: hidden;
 
   &__content {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    width: 1170px;
     height: 0;
     background-color: #0f0124;
     z-index: 100;
     overflow: hidden;
     transition: height 0.3s ease-in-out;
     flex-direction: row;
-    justify-content: center; /* Add this property */
-    
+    left: 50%;
+    transform: translateX(-50%);
 
     &.open {
       height: 92px;
     }
   }
 
+  
   &__nav {
     display: flex;
     flex-direction: row; 
@@ -36,8 +37,8 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    flex: 0 0 50%; /* Добавлено свойство */
-    max-width: 50%; /* Добавлено свойство */
+    flex-grow: 1;
+    max-width: 50%;
   }
 
   &__nav-btn {
@@ -61,7 +62,7 @@
   }
 
   &__theme-btn {
-    width: 100px; /* Измените ширину кнопок по своему усмотрению */
+    width: 100px;
     border: none;
     background: none;
     cursor: pointer;
