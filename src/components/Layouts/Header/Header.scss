@@ -1,7 +1,7 @@
 .header {
   height: 84px;
   display: flex;
-  justify-content: space-between;
+  
   align-items: center;
   background-color: #0f0124;
 
@@ -42,17 +42,15 @@
   outline: none;
   border-radius: 10px;
   margin: 5px;
-  background-color: #323537;
+  background-color: #505050;
   border: 2px solid transparent;
-
+  margin-left: 205px;
   &::placeholder {
     color: #fff;
     opacity: 0.5;
   }
 
-  // &:focus {
-  //   border: 1px solid rgb(255, 255, 255);
-  // }
+
 
   @media (max-width: 768px) {
     width: 100%;
@@ -64,20 +62,23 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding-left: 30px
+  margin-left: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #505050;
+  border-radius: 10px;
 }
 
 .logo {
-  width: 50px;
+  width: 40px;
 }
 
 .logo_title {
-  font-size: 25px;
+  font-size: 30px;
    align-self: center;
 }
 
 .burger_container {
   display: flex;
   align-items: center;
-  
 }
