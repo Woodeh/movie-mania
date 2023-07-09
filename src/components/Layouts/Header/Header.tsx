@@ -35,30 +35,29 @@ export const Header: FC<IHeader> = ({ isSearchDisabled = false }) => {
 
   return (
     <header className="header">
-  <div className="logo_container">
-    <div className="logo">
-      <Logotype />
-    </div>
-    <div className="logo_title">MovieMania</div>
-  </div>
-  <div className="burger_container">
-    <BurgerMenu />
-    <div className="burger_title">Menu</div>
-  </div>
-  <div className="search">
-    <div className="search__input">
-      <input
-        className={inputClass}
-        type="text"
-        placeholder="Search"
-        disabled={isSearchDisabled}
-        value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
-        onKeyUp={handleKeyUp}
-      />
-    </div>
-  </div>
-
+      <div className="logo_container">
+        <div className="logo">
+          <Logotype />
+        </div>
+        <div className="logo_title">MovieMania</div>
+      </div>
+      <div className="burger_container">
+        <BurgerMenu />
+        <div className="burger_title">Menu</div>
+      </div>
+      <div className="search">
+        <div className="search__input">
+          <input
+            className={inputClass}
+            type="text"
+            placeholder="Search"
+            disabled={isSearchDisabled}
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            onKeyUp={handleKeyUp}
+          />
+        </div>
+      </div>
 
       <div className="header__box">
         {isLogged ? (

@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  addToFavorites,
-  removeFromFavorites,
-} from "../../redux/favoritesActions";
+import { addToFavorites, removeFromFavorites,} from "../../redux/favoritesActions";
 import { FILM_URL } from "../../utils/api/urls";
 import { Card } from "../MovieCard/MovieCard";
 import FavoriteModal from "../common/FavoriteModal/FavotireModal";
@@ -58,7 +55,11 @@ export const Movie: React.FC<IMovieFC> = ({ imdbID, movieObject }) => {
       {movie && (
         <Card
           key={movie.imdbID}
-          image={movie.Poster !== "N/A" ? movie.Poster : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png"}
+          image={
+            movie.Poster !== "N/A"
+              ? movie.Poster
+              : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png"
+          }
           titleFilm={movie.Title}
           yearFilm={movie.Year}
           imdbRating={movie.imdbRating}

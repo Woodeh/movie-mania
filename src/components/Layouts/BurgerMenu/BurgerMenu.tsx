@@ -1,16 +1,16 @@
 import { FC, useState } from "react";
 import { CancelIcon, BurgerMenuIcon } from "../../../assets/icons";
 import { useNavigate } from "react-router-dom";
-import "./BurgerMenu.scss";
-import { Button } from "../../common/Button/Button";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { isDarktheme } from "../../../store/theme/selectors";
 import { IconButton } from "../../common/IconButton/IconButton";
 import { ControlledSwitches } from "../../common/Switcher/Switcher";
+import { Button } from "../../common/Button/Button";
+import "./BurgerMenu.scss";
 
 interface IconButtonProps {
   onClick: () => void;
-  className?: string; // Add className prop
+  className?: string; 
 }
 
 export const BurgerMenu: FC = () => {
@@ -51,9 +51,7 @@ export const BurgerMenu: FC = () => {
         </IconButton>
       </div>
       <div className={`burgerMenu__content ${isOpen && "open"}`}>
-        <IconButton
-          onClick={handleClick}
-        >
+        <IconButton onClick={handleClick}>
           <CancelIcon />
         </IconButton>
         <nav className="burgerMenu__nav">

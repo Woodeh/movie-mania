@@ -1,14 +1,12 @@
 import { FC } from "react";
-import "./TrendsPage";
-import { Header } from "../../components/Layouts/Header/Header";
-import { Logotype } from "../../assets/icons";
 import { TrendMovies } from "./TrendMovieList/TrendMovieList";
+import "./TrendsPage.scss";
 
 export interface ITrends {}
 
 export const Trends: FC<ITrends> = () => {
   return (
-    <div className="blog">
+    <div className="trend-page">
       <TrendMovies />
     </div>
   );

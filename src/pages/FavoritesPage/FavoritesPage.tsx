@@ -1,8 +1,8 @@
 import { FC, useState, useEffect } from "react";
 import { Movie } from "../../components/Movie/Movie";
 import { useSelector } from "react-redux";
-import "./FavoritesPage.scss";
 import { animatedWords } from "../../utils/constants/FavoriteAnimatedWords";
+import "./FavoritesPage.scss";
 
 export interface IFavorites {}
 
@@ -19,7 +19,6 @@ export const Favorites: FC<IFavorites> = () => {
     }
   }, [animatedWordIndex]);
 
-
   return (
     <div className="favorites">
       {favorites.length === 0 ? (
@@ -28,7 +27,9 @@ export const Favorites: FC<IFavorites> = () => {
             {animatedWords.map((word: string, index: number) => (
               <span
                 key={index}
-                className={`jumping-word ${index <= animatedWordIndex ? "animate" : ""}`}
+                className={`jumping-word ${
+                  index <= animatedWordIndex ? "animate" : ""
+                }`}
               >
                 {word}
                 {index < animatedWords.length - 1 && "\u00A0"}

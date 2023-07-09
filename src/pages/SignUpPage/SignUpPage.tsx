@@ -2,13 +2,12 @@ import { FC, useState } from "react";
 import { TypographyText } from "../../components/Typography/TypographyText";
 import { Input } from "../../components/common/Input/Input";
 import { Button } from "../../components/common/Button/Button";
-import "./SignUpPage.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { postNewUser } from "../../utils/api/postNewUser";
 import { useAppDispatch } from "../../store/hooks";
 import { setConfirmEmailAction } from "../../store/confirmEmail/actions";
 import { Header } from "../../components/Layouts/Header/Header";
-import { Logotype } from "../../assets/icons";
+import "./SignUpPage.scss";
 
 interface IError {
   username: string | string[];

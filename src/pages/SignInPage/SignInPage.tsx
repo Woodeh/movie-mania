@@ -3,11 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { TypographyText } from "../../components/Typography/TypographyText";
 import { Input } from "../../components/common/Input/Input";
 import { Button } from "../../components/common/Button/Button";
-
 import { postLogin } from "../../utils/api/postLogin";
 import "./SignInPage.scss";
-import { Header } from "../../components/Layouts/Header/Header";
-import { Logotype } from "../../assets/icons";
 
 interface IError {
   email: string | string[];
@@ -94,8 +91,6 @@ export const SignInPage: FC = () => {
 
   return (
     <div className="sign-in">
-     
-      <Header />
       {/* <Breadcrumbs path={[createBackToHomePath]} /> */}
       <form className="sign-in__form">
         <TypographyText content="Sign In" type="H1" />
