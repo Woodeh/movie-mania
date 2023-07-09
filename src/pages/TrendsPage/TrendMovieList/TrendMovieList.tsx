@@ -25,7 +25,7 @@ export const TrendMovies: FC<ITrendMovies> = () => {
       {visibleCount < trendMoviesDb.length && (
         <div className="movies-bottom">
           <button className="show-more-button" onClick={handleShowMore}>
-            Show More
+            show more
           </button>
         </div>
       )}

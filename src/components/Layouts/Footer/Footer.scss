@@ -3,11 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &__text {
-        font-size: 16px;
-        line-height: 24px;
-        font-weight: 400;
-        color: #8d8e97;
-    }
-}
+    
+    margin-top: auto;
+  }
+  
+  .footer__text {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #8d8e97;
+  }

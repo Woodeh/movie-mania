@@ -5,6 +5,8 @@
   border: none;
   background-color: #0f0124;
   overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
 
   &__content {
     position: absolute;
@@ -22,6 +24,11 @@
     &.open {
       height: 92px;
     }
+    svg {
+      path {
+        fill: #fdfdfd;
+      }
+    }
   }
 
 
@@ -30,6 +37,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
   }
 
   &__nav-item {
@@ -49,12 +57,11 @@
     color: #fff;
 
     &:hover {
-      color: #000000;
+      color: #6113c7;
     }
   }
 
   &__theme-box {
-    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,4 +84,8 @@
       }
     }
   }
+}
+
+.switch_title {
+  
 }

@@ -65,18 +65,20 @@ export const BurgerMenu: FC = () => {
               </button>
             </li>
           ))}
+          <li className="burgerMenu__nav-item">
+            <div className="burgerMenu__theme-box">
+              <p className="switch_title">Switch theme</p>
+              <ControlledSwitches />
+            </div>
+          </li>
         </nav>
-        <div>
-          <div className="burgerMenu__theme-box">
-            Night mode
-            <ControlledSwitches />
-          </div>
-          {/* {isLogged ? (
+        {/* <div>
+          {isLogged ? (
             <Button content="Log Out" onClick={logout} type="secondary" />
           ) : (
             <Button content="Sign In" onClick={signIn} type="primary" />
-          )} */}
-        </div>
+          )}
+        </div> */}
       </div>
     </div>
   );

@@ -4,7 +4,6 @@ button {
     border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
-    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     white-space: nowrap;
 
@@ -18,24 +17,50 @@ button {
   }
 
   .add-favorite-button {
-    background-color: #2ecc71;
+    background-color: #2ecc7000;
     position: absolute;
     top: 28px;
     right: 28px;
     color: #ffffff;
+    cursor: pointer;
+    
+
+    svg {
+      path {
+        fill: #ffffff;
+      }
+    }
 
     &:hover {
-      background-color: #27ae60;
+      background-color: #ffffff00;
+      svg {
+        path {
+          fill: #929292;
+        }
+      }
     }
+    
   }
 
   .remove-favorite-button {
-    background-color: #e74c3c;
-    color: #ffffff;
+    background-color: #e74d3c00;
+    color: #ffcc00;
     position: absolute;
     top: 28px;
     right: 28px;
+    cursor: pointer;
+    
+    
+    svg {
+      path {
+        fill: #ffcc00;
+      }
+    }
     &:hover {
-      background-color: #c0392b;
+      svg {
+        path {
+          fill: #aaaaaa;
+        }
+      }
     }
   }

@@ -41,7 +41,8 @@
   outline: none;
   border-radius: 10px;
   margin: 5px;
-  background-color: #505050;
+  background: rgba(255, 255, 255, 0.08);
+  
   border: 2px solid transparent;
   margin-left: 205px;
 
@@ -62,8 +63,6 @@
   margin-left: 30px;
   padding-left: 25px;
   padding-right: 25px;
-  background-color: #505050;
-  border-radius: 10px;
 }
 
 .logo {
@@ -73,9 +72,14 @@
 .logo_title {
   font-size: 30px;
   align-self: center;
+  user-select: none;
 }
 
 .burger_container {
   display: flex;
   align-items: center;
+}
+
+.burger_title {
+  user-select: none;
 }

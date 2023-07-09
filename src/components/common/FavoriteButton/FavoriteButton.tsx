@@ -28,7 +28,7 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({
       type="button"
       onClick={handleClick}
     >
-      <FontAwesomeIcon icon={faBookmark} />
+      <FontAwesomeIcon icon={faBookmark} size="2x"/>
     </button>
   );
 };

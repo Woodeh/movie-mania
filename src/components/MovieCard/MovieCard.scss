@@ -1,12 +1,18 @@
 .card {
-  background-color: #505050;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+ 
+  
   padding: 20px;
-  border-radius: 8px;
+  
   transition: transform 0.3s ease;
   height: 100%;
   position: relative;
   overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.08);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10.4px);
+-webkit-backdrop-filter: blur(10.4px);
 
   &:hover {
     transform: translateY(-5px) rotateZ(2deg);
@@ -56,7 +62,7 @@
 
   h3.card-title {
     font-size: 16px;
-    margin-bottom: 4px;
+    margin: 4px;
   }
 
   .card-description {
@@ -72,15 +78,14 @@
   }
 
   .card-bottom {
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
   }
 
   .card-rating {
     display: inline-block;
     padding: 5px 10px;
-    border-radius: 4px;
-    background-color: rgb(67, 14, 138);
+    border-radius: 8px;
+    background-color: rgb(0 0 0 / 65%);
     color: #ffffff;
     position: absolute;
     top: 28px;
@@ -89,5 +94,11 @@
 
   .card-genre {
     text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+
+  .card-year {
+    font-size: 14px;
   }
 }
