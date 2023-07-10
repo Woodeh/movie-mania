@@ -1,12 +1,12 @@
 import React, { FC, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./RelatedMovies.scss";
 import { TypographyText } from "../../../components/Typography/TypographyText";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { IMovie } from "../../../utils/interfaces/IMovie";
 import Loader from "../../../components/common/Loader/Loader";
+import "./RelatedMovies.scss";
 
 interface IRelatedMovies {
   movieTitle: string;
@@ -137,9 +137,9 @@ export const RelatedMovies: FC<IRelatedMovies> = ({ movieTitle }) => {
                     src={movie.Poster}
                     alt={movie.Title}
                   />
-                  <h3>{movie.Title}</h3>
-                  <h2>{movie.Year}</h2>
-                  <p>{movie.Genre.split(", ").join(" • ")}</p>
+                  <p className="related-movie__genre">{movie.Genre.split(", ").join(" , ")}</p>
+                  <h3 className="related-movie__title">{movie.Title}</h3>
+                  <h2 className="related-movie__year">{movie.Year}</h2>
                 </div>
               </Link>
             ))}
