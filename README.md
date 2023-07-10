@@ -46,7 +46,7 @@ npm start
 
 5. Open your web browser and visit `http://localhost:3000` to access the app.
 
-You can also just go to the website at this [link] (https://movie-mania-project.vercel.app/) ![](https://movie-mania-project.vercel.app/)
+You can also just go to the website at this [link](https://movie-mania-project.vercel.app/)
 
 
 
