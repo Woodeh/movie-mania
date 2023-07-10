@@ -21,9 +21,9 @@ export const App = () => {
         ]}
         subsets={["cyrillic-ext", "greek"]}
       />
+      <Router />
       <MainPage />
       <Search />
-      <Router />
     </PageTemplate>
   );
 };
