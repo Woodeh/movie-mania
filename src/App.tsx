@@ -2,6 +2,7 @@ import { PageTemplate } from "./components/Layouts/PageTemplate/PageTemplate";
 import { Router } from "./routes/Router";
 import GoogleFontLoader from "react-google-font-loader";
 import "./App.css";
+import { MainPage } from "./pages/MainPage/MainPage";
 
 export const App = () => {
   return (
@@ -19,6 +20,7 @@ export const App = () => {
         ]}
         subsets={["cyrillic-ext", "greek"]}
       />
+      <MainPage />
       <Router />
     </PageTemplate>
   );
