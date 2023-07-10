@@ -13,8 +13,8 @@
 }
 
 .dark {
-  color: #ffffff;
-  background-color: #fff;
+  color: #050505;
+  background-color: #ffffffe1;
 
 
   .header__box svg {
@@ -23,20 +23,49 @@
     }
   }
 
+  
+
   h3 {
-    color: #ffffff;
+    color: #000000;
   }
+
+  .show-more {
+    color: rgb(0, 0, 0);
+  }
+
+  .header {
+    background-color: #e6e0ee;
+
+    
+  }
+
+  svg {
+    path {
+      fill: #000000;
+    }
+  }
+
+  .search-input {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.445);
+  }
+
+  .show-more-button {
+    color: black;
+  }
+
 }
 
 .light {
   color: #fff;
-  background-color: #0f0124;
+  background-color: #000000a3;
 
   svg {
     path {
-      fill: #fff;
+      fill: #ffffff;
     }
   }
+
 
   span {
     color: #fff;
@@ -46,4 +75,6 @@
   h2 {
     color: #fff;
   }
+
+  
 }

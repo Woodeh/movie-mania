@@ -2,7 +2,7 @@
   height: 84px;
   display: flex;
   align-items: center;
-  background-color: #0f0124;
+  
 
   &__box {
     display: flex;
@@ -82,4 +82,8 @@
 
 .burger_title {
   user-select: none;
+}
+
+.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
+  background-color: #8400ff !important;
 }
