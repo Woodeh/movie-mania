@@ -15,6 +15,7 @@
   z-index: 9999;
   opacity: 0;
   transition: opacity 0.5s;
+  
 
 
   
@@ -31,7 +32,7 @@
   .slick-slider {
     width: 80%;
     max-width: 800px;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
     margin-top: 50px;
   }
 
@@ -43,23 +44,29 @@
   }
 
 
-  button {
+  .start-button {
     padding: 10px 20px;
-    background-color: #e21212;
+    
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(10.4px);
+    backdrop-filter: blur(10.4px);
     color: #ffffff;
     border: none;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
     z-index: 2;
-    
+    position: absolute;
+    bottom: 150px;
   }
 }
 
 
 .custom-prev-arrow {
     width: 100px;
-    color: red;
+    
 }
 
 .splash-screen__logotype {
@@ -73,5 +80,19 @@ margin: 0 auto;
 }
 
 .splash-screen__title {
-  
+  text-align: center;
 }
+
+.splash-screen__discription {
+  text-align: center;
+}
+
+
+// .slick-prev:before, .slick-next:before {
+//   font-family: 'slick';
+//   font-size: 50px;
+//   line-height: 1;
+//   opacity: .75;
+//   color: white;
+//   -webkit-font-smoothing: antialiased;
+// }

@@ -1,3 +1,13 @@
+.fav-movies-container {
+  display: flex;
+  align-content: space-between;
+    justify-content: space-around;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    margin: 10px 0 0 0;
+}
+
 .empty-favorites {
   display: flex;
   justify-content: center;

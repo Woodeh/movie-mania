@@ -38,7 +38,7 @@ export const Favorites: FC<IFavorites> = () => {
           </div>
         </div>
       ) : (
-        <div className="movies-container">
+        <div className="fav-movies-container">
           {favorites.map((movie: any) => (
             <Movie key={movie.imdbID} imdbID={movie.imdbID} />
           ))}

@@ -77,7 +77,7 @@ export const RelatedMovies: FC<IRelatedMovies> = ({ movieTitle }) => {
   };
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: Math.min(movies.length, 4),

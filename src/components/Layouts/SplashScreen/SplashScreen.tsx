@@ -29,9 +29,9 @@ const SamplePrevArrow = (props: { className: any; style: any; onClick: any; }) =
 
 export const SplashScreen = () => {
   const [showSplashScreen, setShowSplashScreen] = useState(true);
-  const image1 = require('./JJK.jpg');
-  const image2 = require('./JJK.jpg');
-  const image3 = require('./JJK.jpg');
+  const image1 = require('./1slide.jpg');
+  const image2 = require('./2slide.jpg');
+  const image3 = require('./3slide.jpg');
   const image4 = require('./JJK.jpg');
   const image5 = require('./JJK.jpg');
   const hideSplashScreen = () => {
@@ -59,10 +59,11 @@ export const SplashScreen = () => {
           </div>
       
       <h1 className="splash-screen__title">MovieMania</h1>
+      <p className="splash-screen__discription">Welcome! In this app you will have access to things like:</p>
       </div>
       <Slider {...sliderSettings}>
         <div>
-          <img src={image1} alt="Slide 1" />
+          <img src={image1} alt="Slide 1"/>
         </div>
         <div>
           <img src={image2} alt="Slide 2" />
@@ -71,7 +72,7 @@ export const SplashScreen = () => {
           <img src={image3} alt="Slide 3" />
         </div>
       </Slider>
-      <button onClick={hideSplashScreen}>Begin the search</button>
+      <button className="start-button" onClick={hideSplashScreen}>Begin the search</button>
     </div>
   );
 };

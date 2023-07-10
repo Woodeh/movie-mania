@@ -1,3 +1,10 @@
+.related-movies .card:hover {
+  &:hover {
+    transform: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
 
 
 .movie-poster {
