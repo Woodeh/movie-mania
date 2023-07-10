@@ -2,8 +2,9 @@ import React, { FC, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./RelatedMovies.scss";
 import { TypographyText } from "../../../components/Typography/TypographyText";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { IMovie } from "../../../utils/interfaces/IMovie";
 import Loader from "../../../components/common/Loader/Loader";
 
@@ -11,9 +12,7 @@ interface IRelatedMovies {
   movieTitle: string;
 }
 
-export const RelatedMovies: FC<IRelatedMovies> = ({
-  movieTitle,
-}) => {
+export const RelatedMovies: FC<IRelatedMovies> = ({ movieTitle }) => {
   const [movies, setMovies] = useState<IMovie[]>([]);
   const navigate = useNavigate();
 
@@ -55,23 +54,59 @@ export const RelatedMovies: FC<IRelatedMovies> = ({
     navigate(`/movies/${id}`);
   };
 
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
+  const CustomNextArrow = (props: any) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={`${className} custom-next-arrow`}
+        style={{ ...style }}
+        onClick={onClick}
+      />
+    );
+  };
+
+  const CustomPrevArrow = (props: any) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={`${className} custom-prev-arrow`}
+        style={{ ...style }}
+        onClick={onClick}
+      />
+    );
+  };
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: Math.min(movies.length, 4),
+    slidesToScroll: 1,
+    autoplay: true,
+    pauseOnHover: true,
+    autoplaySpeed: 4000,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: Math.min(movies.length, 3),
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: Math.min(movies.length, 2),
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: Math.min(movies.length, 1),
+        },
+      },
+    ],
   };
 
   return (
@@ -79,14 +114,7 @@ export const RelatedMovies: FC<IRelatedMovies> = ({
       <div className="related-movies">
         <h1 className="related-title">Related movies</h1>
         {movies.length > 0 ? (
-          <Carousel
-            responsive={responsive}
-            renderButtonGroupOutside={true}
-            arrows={true}
-            autoPlay={true}
-            transitionDuration={100}
-            // infinite={true}
-          >
+          <Slider {...settings}>
             {movies.map((movie) => (
               <Link
                 to={`/movies/${movie.imdbID}`}
@@ -98,7 +126,10 @@ export const RelatedMovies: FC<IRelatedMovies> = ({
                   onClick={() => handleCardClick(movie.imdbID)}
                 >
                   <button className="movie-poster--btn">
-                    <TypographyText content={movie.imdbRating} type="subline" />
+                    <TypographyText
+                      content={movie.imdbRating}
+                      type="subline"
+                    />
                   </button>
                   <img
                     className="movie-poster--img"
@@ -112,7 +143,7 @@ export const RelatedMovies: FC<IRelatedMovies> = ({
                 </div>
               </Link>
             ))}
-          </Carousel>
+          </Slider>
         ) : (
           <Loader />
         )}

@@ -1,5 +1,6 @@
 body {
   height: 100%;
+  scrollbar-gutter: stable;
   background-color: #1a023d;
   background-image: url("./assets/img/step_background (6).png");
   margin: 0;
@@ -9,6 +10,21 @@ body {
   background-repeat: no-repeat;
   
 }
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

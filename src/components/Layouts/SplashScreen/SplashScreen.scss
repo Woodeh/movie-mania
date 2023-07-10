@@ -15,6 +15,8 @@
   z-index: 9999;
   opacity: 0;
   transition: opacity 0.5s;
+
+
   
 
   &.visible {
@@ -28,7 +30,7 @@
 
   .slick-slider {
     width: 80%;
-    max-width: 600px;
+    max-width: 800px;
     margin-bottom: 20px;
   }
 
@@ -53,3 +55,8 @@
   }
 }
 
+
+.custom-prev-arrow {
+    width: 100px;
+    color: red;
+}
