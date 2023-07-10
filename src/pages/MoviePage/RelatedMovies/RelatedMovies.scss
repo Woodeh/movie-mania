@@ -2,20 +2,15 @@
 
 .movie-poster {
   position: relative;
-  width: 266px;
-  margin-left: 10px;
   z-index: 1;
   &--btn {
     position: absolute;
-    z-index: 2;
-    top: 19px;
-    left: 19px;
-    display: flex;
+    
+    
+    
     padding: 4px 8px;
-    gap: 10px;
-    border-radius: 6px;
+    z-index: 4;
     border: none;
-    background-color: #00a340;
     color: #ffff;
   }
   &--btn:hover {
@@ -31,27 +26,17 @@
     }
   }
   h3 {
-    padding-top: 24px;
     width: 266px;
   }
-
-  h2 {
-    padding: 5px 0;
-  }
-  p {
-    padding-top: 4px;
-  }
-  ul {
-    display: flex;
-    gap: 30px;
-  }
+  
 }
 
 .movie-poster {
   &--img {
-    width: 266px;
-    height: 357px;
+    width: 100%;
+    box-shadow: 15px 11px 30px -8px rgba(0, 0, 0, 0.42);
     border-radius: 10px;
+    height: 428px;
   }
 }
 
@@ -59,7 +44,8 @@
 
 .related-title {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+  font-size: 20px;
 }
 
 .related-movie__genre {
@@ -79,5 +65,6 @@
 .related-movie__year {
   font-size: 14px;
   text-align: center;
+  font-weight: 200;
 }
 

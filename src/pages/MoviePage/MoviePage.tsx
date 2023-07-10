@@ -87,12 +87,13 @@ export const MovieInfo: FC<IMovieInfo> = () => {
           <TypographyText content={genreString} type="subline" />
           <TypographyText content={movie.Title} type="H1" />
           <p className="movie-rating">
-            <span className="movie-rating--green">{movie.imdbRating}</span>
-            <span>IMDb {movie.imdbRating}</span>
+           
+            <span>IMDb rating {movie.imdbRating}</span>
             <span>{movie.Runtime}</span>
           </p>
           <p className="movie-info--plot">{movie.Plot}</p>
           <div className="movie-info--genres">
+              
             <ul>
               <li>
                 <span className="movie-info--list">Year:</span>

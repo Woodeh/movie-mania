@@ -32,6 +32,7 @@
     width: 80%;
     max-width: 800px;
     margin-bottom: 20px;
+    margin-top: 50px;
   }
 
   .slick-slide {
@@ -59,4 +60,18 @@
 .custom-prev-arrow {
     width: 100px;
     color: red;
+}
+
+.splash-screen__logotype {
+display: flex;
+flex-direction: column;
+}
+
+.splash-screen__logo {
+width: 70px;
+margin: 0 auto;
+}
+
+.splash-screen__title {
+  
 }

@@ -1,13 +1,11 @@
 .card {
- 
-  
   padding: 20px;
-  
   transition: transform 0.3s ease;
   height: 100%;
   position: relative;
   overflow: hidden;
-
+  margin-left: 14px;
+  margin-right: 14px;
   background: rgba(255, 255, 255, 0.08);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

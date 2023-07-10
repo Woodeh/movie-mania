@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './SplashScreen.scss';
+import { Logotype } from '../../../assets/icons';
 
 const SampleNextArrow = (props: { className: any; style: any; onClick: any; }) => {
   const { className, style, onClick } = props;
@@ -52,6 +53,13 @@ export const SplashScreen = () => {
 
   return (
     <div className={`splash-screen ${showSplashScreen ? 'visible' : 'hidden'}`}>
+      <div className='splash-screen__logotype'>
+        <div className="splash-screen__logo">
+          <Logotype />
+          </div>
+      
+      <h1 className="splash-screen__title">MovieMania</h1>
+      </div>
       <Slider {...sliderSettings}>
         <div>
           <img src={image1} alt="Slide 1" />

@@ -122,7 +122,7 @@ export const RelatedMovies: FC<IRelatedMovies> = ({ movieTitle }) => {
                 key={movie.imdbID}
               >
                 <div
-                  className="movie-poster"
+                  className="card"
                   onClick={() => handleCardClick(movie.imdbID)}
                 >
                   <button className="movie-poster--btn">
@@ -137,7 +137,7 @@ export const RelatedMovies: FC<IRelatedMovies> = ({ movieTitle }) => {
                     src={movie.Poster}
                     alt={movie.Title}
                   />
-                  <p className="related-movie__genre">{movie.Genre.split(", ").join(" , ")}</p>
+                  <p className="related-movie__genre">{movie.Genre.split(", ").slice(0, 3).join(", ")}</p>
                   <h3 className="related-movie__title">{movie.Title}</h3>
                   <h2 className="related-movie__year">{movie.Year}</h2>
                 </div>
