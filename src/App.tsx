@@ -24,8 +24,7 @@ export const App = () => {
       />
       <Router />
       <SplashScreen />
-      <MainPage />
-      <Search />
+      
     </PageTemplate>
   );
 };

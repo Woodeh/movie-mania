@@ -63,7 +63,7 @@ export const SplashScreen = () => {
           <img src={image3} alt="Slide 3" />
         </div>
       </Slider>
-      <button onClick={hideSplashScreen}>Приступить к поиску</button>
+      <button onClick={hideSplashScreen}>Begin the search</button>
     </div>
   );
 };
