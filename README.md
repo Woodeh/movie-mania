@@ -27,6 +27,11 @@ The Movie-Mania App is built using the following technologies:
 - **SCSS**: A CSS preprocessor that extends the capabilities of CSS. It allows for the use of variables, mixins, and other advanced features to enhance the styling process.
 - **React Redux Toolkit**: A library that simplifies the usage of Redux, a state management tool for JavaScript applications. It provides utilities and abstractions to reduce boilerplate code and improve developer productivity.
 - **MUI (Material-UI)**: A popular React UI framework that provides a set of pre-built components following the Material Design guidelines. It offers a rich set of UI elements for creating a visually appealing and consistent user interface.
+  
+I also wanted to highlight the components and sites I used to create this app: 
+1. css glass (glassmorphism-generator)
+2. background generator by Superdesigner
+3. React Slick component
 
 ## Getting Started
 
