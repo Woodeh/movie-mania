@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a6317a5d.css",
+    "main.js": "/static/js/main.c1a3ecd1.js",
+    "static/media/step_background (6).png": "/static/media/step_background (6).e84e1d46e790f9f2f88c.png",
+    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/light.svg": "/static/media/light.d72b0e5930edcafd0f02ce2aa199b548.svg",
+    "static/media/cinema-glasses-stereo-movie-svgrepo-com.svg": "/static/media/cinema-glasses-stereo-movie-svgrepo-com.4399e7ec55888ecf636e5a5ee3d61ba7.svg",
+    "static/media/thumbsDown.svg": "/static/media/thumbsDown.ee03c667aa88a7c3c3ae17ac99a2ce8e.svg",
+    "static/media/dark.svg": "/static/media/dark.f4b8097da4a34270a4ec2286fa65184d.svg",
+    "static/media/thumbsUp.svg": "/static/media/thumbsUp.da8cf4b017840808337bfb5f09c9b65f.svg",
+    "static/media/cancel.svg": "/static/media/cancel.303b7cbeb825ddab50ae83a7bdba2588.svg",
+    "static/media/favorites.svg": "/static/media/favorites.a2d8e0a58c61b6c9bd6bfb2451fb6b74.svg",
+    "static/media/user.svg": "/static/media/user.74b983f9bb66985eb38b4c09c79c1622.svg",
+    "static/media/menu.svg": "/static/media/menu.105fd483a65b10be782907160991141d.svg",
+    "static/media/burgerMenu.svg": "/static/media/burgerMenu.608bb1fcb010d0c8d3bfc04530b09f65.svg",
+    "static/media/search.svg": "/static/media/search.ec55d1de5004e0e41501613d651755b0.svg",
+    "index.html": "/index.html",
+    "main.a6317a5d.css.map": "/static/css/main.a6317a5d.css.map",
+    "main.c1a3ecd1.js.map": "/static/js/main.c1a3ecd1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6317a5d.css",
+    "static/js/main.c1a3ecd1.js"
+  ]
+}
