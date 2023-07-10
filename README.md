@@ -46,6 +46,10 @@ npm start
 
 5. Open your web browser and visit `http://localhost:3000` to access the app.
 
+You can also just go to the website at this [link] (https://movie-mania-project.vercel.app/) ![](https://movie-mania-project.vercel.app/)
+
+
+
 ## Contribution
 
 Contributions to the Movie-Mania App are welcome! If you encounter any bugs, have suggestions for improvements, or want to add new features, please feel free to open an issue or submit a pull request.
