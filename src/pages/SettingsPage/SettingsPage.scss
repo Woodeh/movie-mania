@@ -2,29 +2,31 @@
 
     &__form-profile {
         display: flex;
-        width: 100%;
-        height: 100;
-        // background-color: #242426;
+        width: 700px;
         border-radius: 10px;
         color: #fff;
         align-items: center;
         column-gap: 40px;
-        padding: 20px 40px;
-        margin-bottom: 40px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     &__form-password {
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 350px;
-        background-color: #242426;
-        border-radius: 10px;
-        color: #fff;
-        justify-content: center;
-        column-gap: 40px;
-        padding: 72px 40px;
-        row-gap: 15px;
+    width: 700px;
+    height: 350px;
+    border-radius: 10px;
+    color: #fff;
+    column-gap: 40px;
+    row-gap: 15px;
+    flex-direction: column;
+    margin: 0 auto;
+
 
         &-lol {
             width: 100px;
