@@ -39,7 +39,7 @@ backdrop-filter: blur(10.4px);
     width: 223px;
     height: 302px;
     border-radius: 8px;
-    margin-bottom: 16px;
+    margin: 0 auto;
     transition: filter 0.5s ease;
   }
 
@@ -55,7 +55,6 @@ backdrop-filter: blur(10.4px);
   }
 
   h2 {
-    font-size: 18px;
     margin-bottom: 8px;
   }
 
@@ -95,6 +94,7 @@ backdrop-filter: blur(10.4px);
     text-align: center;
     font-size: 14px;
     opacity: 0.7;
+    margin-top: 10px;
   }
 
   .card-year {

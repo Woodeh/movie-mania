@@ -1,28 +1,53 @@
 @media (max-width: 1200px) {
-    .burgerMenu__content {
-      width: 100%;
-      left: 0;
-      transform: none;
-    }
-  
-    .burgerMenu__nav-item {
-      max-width: 100%;
-    }
-
-    .header {
-        justify-content: space-evenly;
-    }
+  .burgerMenu__content {
+    width: 100%;
+    left: 0;
+    transform: none;
   }
-  
+
+  .burgerMenu__nav-item {
+    max-width: 100%;
+  }
+
+  .header {
+    justify-content: space-evenly;
+  }
+
+  .container {
+    margin: 0;
+  }
+
+  .related-movies {
+    display: none;
+  }
+}
+
+
+@media (max-width: 1100px) {
+  .container {
+    width: auto;
+  }
+
+  .movies-container {
+    justify-content: space-around;
+  }
+}
 
 
 
 @media (max-width: 768px) {
-    .movies-container {
-        justify-content: space-evenly;
-    }
-
-    .logo_title {
-        display: none;
-    }
+  .movies-container {
+    justify-content: space-evenly;
   }
+
+
+  .movie-details {
+    width: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .logo_title {
+    display: none;
+  }
+}

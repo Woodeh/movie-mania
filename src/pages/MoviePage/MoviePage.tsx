@@ -108,13 +108,13 @@ export const MovieInfo: FC<IMovieInfo> = () => {
                 <span className="movie-info--list">Country:</span>
               </li>
               <li>
-                <span className="movie-info--list">Actors:</span>
-              </li>
-              <li>
                 <span className="movie-info--list">Director:</span>
               </li>
               <li>
                 <span className="movie-info--list">Writer:</span>
+              </li>
+              <li>
+                <span className="movie-info--list">Actors:</span>
               </li>
             </ul>
             <ul>
@@ -122,9 +122,9 @@ export const MovieInfo: FC<IMovieInfo> = () => {
               <li>{movie.Released || "N/A"}</li>
               <li>{movie.BoxOffice || "N/A"}</li>
               <li>{movie.Country || "N/A"}</li>
-              <li>{movie.Actors || "N/A"}</li>
               <li>{movie.Director || "N/A"}</li>
               <li>{movie.Writer || "N/A"}</li>
+              <li>{movie.Actors || "N/A"}</li>
             </ul>
           </div>
         </div>
