@@ -23,6 +23,7 @@
 
     &.open {
       height: 92px;
+      padding-top: 30px;
     }
     svg {
       path {
@@ -86,6 +87,10 @@
   }
 }
 
-.switch_title {
+
+
+.burgerMenu__content.open .icon-button {
+  position: absolute;
+  top: 10px;
   
 }

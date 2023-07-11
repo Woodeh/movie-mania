@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { FILM_URL } from "../../utils/api/urls";
 import { useLocation } from "react-router-dom";
 import { Movie } from "../../components/Movie/Movie";
@@ -11,6 +11,8 @@ export const Search = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
+  const [yearFilter, setYearFilter] = useState("");
+  const [genreFilter, setGenreFilter] = useState("");
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   let query = searchParams.get("query") || "";
@@ -26,7 +28,22 @@ export const Search = () => {
         const data = await response.json();
         console.log(data);
         const dataMovies = data.Search || [];
-        const limitedMovies = dataMovies.slice(0, 8);
+
+        let filteredMovies = dataMovies;
+
+        if (yearFilter) {
+          filteredMovies = filteredMovies.filter(
+            (movie: { Year: string; }) => movie.Year === yearFilter
+          );
+        }
+
+        if (genreFilter) {
+          filteredMovies = filteredMovies.filter((movie: { Genre: string | string[]; }) =>
+            movie.Genre.includes(genreFilter)
+          );
+        }
+
+        const limitedMovies = filteredMovies.slice(0, 8);
         setVisibleMovies(limitedMovies);
         setTotalResults(data.totalResults);
       } catch (error) {
@@ -40,7 +57,7 @@ export const Search = () => {
     };
 
     fetchMovies();
-  }, [query, currentPage]);
+  }, [query, currentPage, yearFilter, genreFilter]);
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
@@ -50,8 +67,42 @@ export const Search = () => {
     setCurrentPage((prevPage) => prevPage - 1);
   };
 
+  const handleYearFilterChange = (event: { target: { value: SetStateAction<string>; }; }) => {
+    setYearFilter(event.target.value);
+  };
+
+  const handleGenreFilterChange = (event: { target: { value: SetStateAction<string>; }; }) => {
+    setGenreFilter(event.target.value);
+  };
+
+  const handleFilterClick = () => {
+    setCurrentPage(1);
+  };
+
   return (
     <div className="blog">
+      <div className="filter-container">
+        <label htmlFor="year-filter">Год:</label>
+        <input
+          id="year-filter"
+          type="text"
+          value={yearFilter}
+          onChange={handleYearFilterChange}
+        />
+
+        <label htmlFor="genre-filter">Жанр:</label>
+        <input
+          id="genre-filter"
+          type="text"
+          value={genreFilter}
+          onChange={handleGenreFilterChange}
+        />
+
+        <button onClick={handleFilterClick} className="filter-button">
+          Фильтр
+        </button>
+      </div>
+
       <div className="movies-container">
         {isLoading || showLoader ? (
           <Loader />
