@@ -35,7 +35,7 @@ I also wanted to highlight the components and sites I used to create this app:
 
 ## Getting Started
 
-To run the Movie-Mania App App locally, follow these steps:
+To run the Movie-Mania App locally, follow these steps:
 
 1. Clone the repository:
 git clone https://github.com/Woodeh/movie-mania
