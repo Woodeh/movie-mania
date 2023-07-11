@@ -59,7 +59,6 @@ export const SplashScreen = () => {
           </div>
       
       <h1 className="splash-screen__title">MovieMania</h1>
-      <p className="splash-screen__discription">Welcome! In this app you will have access to things like:</p>
       </div>
       <Slider {...sliderSettings}>
         <div>

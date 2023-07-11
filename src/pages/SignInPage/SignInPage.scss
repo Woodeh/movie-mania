@@ -4,13 +4,13 @@
     &__form {
         margin: 72px auto 0;
         max-width: 624px;
-        border: 1px solid transparent;
         padding: 40px;
         display: flex;
         flex-direction: column;
         row-gap: 40px;
-        background-color: #242426;
-        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         color: #fff;
 
         &-description { 
@@ -22,7 +22,7 @@
         }
 
         &-link {
-            color: #2231aa;
+            color: #7135ff;
         }
 
         &-forgot {
@@ -34,7 +34,8 @@
 
     &__error-message {
         position: absolute;
-        bottom: 76px;
+        bottom: 246px;
+    left: 37%;
         font-size: 16px;
         line-height: 20px;
         font-weight: 400;

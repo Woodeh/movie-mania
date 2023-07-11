@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { postNewUser } from "../../utils/api/postNewUser";
 import { useAppDispatch } from "../../store/hooks";
 import { setConfirmEmailAction } from "../../store/confirmEmail/actions";
-import { Header } from "../../components/Layouts/Header/Header";
 import "./SignUpPage.scss";
 
 interface IError {
@@ -100,8 +99,6 @@ export const SignUpPage: FC = () => {
 
   return (
     <div className="sign-up">
-      <Header />
-      {/* <Breadcrumbs path={[createBackToHomePath]} /> */}
       <form className="sign-up__form">
         <TypographyText content="Sign Up" type="H1" />
         <Input

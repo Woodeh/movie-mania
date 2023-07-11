@@ -6,7 +6,7 @@ import "./TrendMovieList.scss";
 interface ITrendMovies {}
 
 export const TrendMovies: FC<ITrendMovies> = () => {
-  const initialVisibleCount: number = 4;
+  const initialVisibleCount: number = 8;
   const [visibleCount, setVisibleCount] = useState<number>(initialVisibleCount);
 
   const handleShowMore = (): void => {

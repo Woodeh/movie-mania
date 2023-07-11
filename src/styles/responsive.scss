@@ -1,0 +1,28 @@
+@media (max-width: 1200px) {
+    .burgerMenu__content {
+      width: 100%;
+      left: 0;
+      transform: none;
+    }
+  
+    .burgerMenu__nav-item {
+      max-width: 100%;
+    }
+
+    .header {
+        justify-content: space-evenly;
+    }
+  }
+  
+
+
+
+@media (max-width: 768px) {
+    .movies-container {
+        justify-content: space-evenly;
+    }
+
+    .logo_title {
+        display: none;
+    }
+  }

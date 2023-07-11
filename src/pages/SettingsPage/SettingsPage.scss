@@ -1,5 +1,15 @@
 .settings {
 
+
+    width: 800px;
+    height: 750px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    margin-top: 25px;
+
+
     &__form-profile {
         display: flex;
         width: 700px;

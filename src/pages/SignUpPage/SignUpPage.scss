@@ -3,15 +3,16 @@
     background: url();
     
     &__form {
-        margin: 72px auto 0;
+        margin: 42px auto 0;
         max-width: 624px;
-        border: 1px solid transparent;
         padding: 40px;
         display: flex;
         flex-direction: column;
         row-gap: 40px;
-        background-color: #242426;
-        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        
         color: #fff;
 
         &-description { 
@@ -23,7 +24,7 @@
         }
 
         &-link {
-            color: #2231aa;
+            color: #7135ff;
         }
     }
 }

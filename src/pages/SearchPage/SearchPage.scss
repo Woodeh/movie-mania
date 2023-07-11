@@ -1,7 +1,6 @@
 .movies-container {
   position: relative;
   align-content: space-between;
-  justify-content: space-around;
 }
 
 .previous-button {
@@ -14,4 +13,13 @@
   position: absolute;
   right: 45%;
   bottom: 60px;
+}
+
+.light span {
+  color: rgba(255, 255, 255, 0.89);
+}
+
+
+.filter-label {
+ margin: 0 auto;
 }

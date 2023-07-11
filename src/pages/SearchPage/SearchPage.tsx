@@ -78,7 +78,7 @@ export const Search = () => {
   return (
     <div className="blog">
       <div className="filter-container">
-        <label htmlFor="year-filter">Year Filter:</label>
+        <label htmlFor="year-filter" className="filter-label">Move the sliders to change the annual range</label>
         <Slider
           id="year-filter"
           value={yearFilter.length === 0 ? [1960, 2023] : yearFilter}
