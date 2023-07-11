@@ -2,6 +2,7 @@ import { SetStateAction, useEffect, useState } from "react";
 import { FILM_URL } from "../../utils/api/urls";
 import { useLocation } from "react-router-dom";
 import { Movie } from "../../components/Movie/Movie";
+import Slider from "@mui/material/Slider"; 
 import Loader from "../../components/common/Loader/Loader";
 import "./SearchPage.scss";
 
@@ -17,6 +18,8 @@ export const Search = () => {
   const searchParams = new URLSearchParams(location.search);
   let query = searchParams.get("query") || "";
 
+  
+
   useEffect(() => {
     const fetchMovies = async () => {
       try {
@@ -28,9 +31,8 @@ export const Search = () => {
         const data = await response.json();
         console.log(data);
         const dataMovies = data.Search || [];
-
         let filteredMovies = dataMovies;
-
+        
         if (yearFilter) {
           filteredMovies = filteredMovies.filter(
             (movie: { Year: string; }) => movie.Year === yearFilter
@@ -67,13 +69,18 @@ export const Search = () => {
     setCurrentPage((prevPage) => prevPage - 1);
   };
 
-  const handleYearFilterChange = (event: { target: { value: SetStateAction<string>; }; }) => {
-    setYearFilter(event.target.value);
+  const handleYearFilterChange = (event: any, newValue: number | number[]) => {
+    if (Array.isArray(newValue)) {
+      const [minYear, maxYear] = newValue;
+      setYearFilter(`${minYear}-${maxYear}`);
+    } else {
+      setYearFilter(String(newValue));
+    }
   };
 
-  const handleGenreFilterChange = (event: { target: { value: SetStateAction<string>; }; }) => {
-    setGenreFilter(event.target.value);
-  };
+  // const handleGenreFilterChange = (event: { target: { value: SetStateAction<string>; }; }) => {
+  //   setGenreFilter(event.target.value);
+  // };
 
   const handleFilterClick = () => {
     setCurrentPage(1);
@@ -82,15 +89,18 @@ export const Search = () => {
   return (
     <div className="blog">
       <div className="filter-container">
-        <label htmlFor="year-filter">Год:</label>
-        <input
+        <label htmlFor="year-filter">Year Filter:</label>
+        <Slider
           id="year-filter"
-          type="text"
-          value={yearFilter}
+          value={yearFilter === "" ? undefined : parseInt(yearFilter)}
           onChange={handleYearFilterChange}
+          min={1960}
+          max={2023}
+          step={1}
+          valueLabelDisplay="auto"
         />
 
-        <label htmlFor="genre-filter">Жанр:</label>
+        {/* <label htmlFor="genre-filter">Жанр:</label>
         <input
           id="genre-filter"
           type="text"
@@ -100,7 +110,7 @@ export const Search = () => {
 
         <button onClick={handleFilterClick} className="filter-button">
           Фильтр
-        </button>
+        </button> */}
       </div>
 
       <div className="movies-container">
