@@ -38,10 +38,10 @@ I also wanted to highlight the components and sites I used to create this app:
 To run the Movie-Mania App App locally, follow these steps:
 
 1. Clone the repository:
-git clone https://github.com/Woodeh/cinema-hub
+git clone https://github.com/Woodeh/movie-mania
 
 2. Navigate to the project directory:
-cd cinema-hub
+cd movie-mania
 
 3. Install the dependencies:
 npm install
