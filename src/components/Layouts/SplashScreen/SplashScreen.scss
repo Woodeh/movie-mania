@@ -72,15 +72,19 @@
 .splash-screen__logotype {
 display: flex;
 flex-direction: column;
+
 }
 
 .splash-screen__logo {
 width: 70px;
 margin: 0 auto;
+
 }
 
 .splash-screen__title {
   text-align: center;
+  font-size: 38px;
+  text-shadow: black 2px 2px 2px;
 }
 
 .splash-screen__discription {

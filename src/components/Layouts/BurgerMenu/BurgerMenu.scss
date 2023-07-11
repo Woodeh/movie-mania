@@ -23,6 +23,7 @@
 
     &.open {
       height: 92px;
+      padding-top: 30px;
     }
     svg {
       path {
@@ -55,9 +56,12 @@
     font-weight: 600;
     cursor: pointer;
     color: #fff;
+    transition: transform 0.3s ease;
 
     &:hover {
       color: #6113c7;
+      
+      transform: scale(1.1);
     }
   }
 
@@ -86,6 +90,10 @@
   }
 }
 
-.switch_title {
+
+
+.burgerMenu__content.open .icon-button {
+  position: absolute;
+  top: 10px;
   
 }

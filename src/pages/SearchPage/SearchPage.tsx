@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FILM_URL } from "../../utils/api/urls";
 import { useLocation } from "react-router-dom";
 import { Movie } from "../../components/Movie/Movie";
+import Slider from "@mui/material/Slider";
 import Loader from "../../components/common/Loader/Loader";
 import "./SearchPage.scss";
 
@@ -11,6 +12,7 @@ export const Search = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
+  const [yearFilter, setYearFilter] = useState<number[]>([]);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   let query = searchParams.get("query") || "";
@@ -26,7 +28,18 @@ export const Search = () => {
         const data = await response.json();
         console.log(data);
         const dataMovies = data.Search || [];
-        const limitedMovies = dataMovies.slice(0, 8);
+        let filteredMovies = dataMovies;
+
+        if (yearFilter.length > 0) {
+          filteredMovies = filteredMovies.filter(
+            (movie: { Year: string }) => {
+              const movieYear = parseInt(movie.Year);
+              return movieYear >= yearFilter[0] && movieYear <= yearFilter[1];
+            }
+          );
+        }
+
+        const limitedMovies = filteredMovies.slice(0, 8);
         setVisibleMovies(limitedMovies);
         setTotalResults(data.totalResults);
       } catch (error) {
@@ -40,7 +53,7 @@ export const Search = () => {
     };
 
     fetchMovies();
-  }, [query, currentPage]);
+  }, [query, currentPage, yearFilter ]);
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
@@ -50,8 +63,34 @@ export const Search = () => {
     setCurrentPage((prevPage) => prevPage - 1);
   };
 
+  const handleYearFilterChange = (event: any, newValue: number | number[]) => {
+    if (Array.isArray(newValue)) {
+      setYearFilter(newValue);
+    } else {
+      setYearFilter([newValue, newValue]);
+    }
+  };
+
+  const handleFilterClick = () => {
+    setCurrentPage(1);
+  };
+
   return (
     <div className="blog">
+      <div className="filter-container">
+        <label htmlFor="year-filter">Year Filter:</label>
+        <Slider
+          id="year-filter"
+          value={yearFilter.length === 0 ? [1960, 2023] : yearFilter}
+          onChange={handleYearFilterChange}
+          min={1960}
+          max={2023}
+          step={1}
+          valueLabelDisplay="auto"
+        />
+      
+      </div>
+
       <div className="movies-container">
         {isLoading || showLoader ? (
           <Loader />
