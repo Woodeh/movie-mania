@@ -9,11 +9,11 @@
 
     &.button--primary {
         color: #fff;
-        background-color: #7B61FF;
+        background-color: rgba(255, 255, 255, 0.08);;
 
         &.active {
             &:hover {
-                background-color: #917CFF;
+                background-color: rgba(97, 28, 129, 0.205);;
             }
         }
 
