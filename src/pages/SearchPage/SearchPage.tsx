@@ -1,8 +1,8 @@
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FILM_URL } from "../../utils/api/urls";
 import { useLocation } from "react-router-dom";
 import { Movie } from "../../components/Movie/Movie";
-import Slider from "@mui/material/Slider"; 
+import Slider from "@mui/material/Slider";
 import Loader from "../../components/common/Loader/Loader";
 import "./SearchPage.scss";
 
@@ -12,13 +12,10 @@ export const Search = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
-  const [yearFilter, setYearFilter] = useState("");
-  const [genreFilter, setGenreFilter] = useState("");
+  const [yearFilter, setYearFilter] = useState<number[]>([]);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   let query = searchParams.get("query") || "";
-
-  
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -32,16 +29,13 @@ export const Search = () => {
         console.log(data);
         const dataMovies = data.Search || [];
         let filteredMovies = dataMovies;
-        
-        if (yearFilter) {
-          filteredMovies = filteredMovies.filter(
-            (movie: { Year: string; }) => movie.Year === yearFilter
-          );
-        }
 
-        if (genreFilter) {
-          filteredMovies = filteredMovies.filter((movie: { Genre: string | string[]; }) =>
-            movie.Genre.includes(genreFilter)
+        if (yearFilter.length > 0) {
+          filteredMovies = filteredMovies.filter(
+            (movie: { Year: string }) => {
+              const movieYear = parseInt(movie.Year);
+              return movieYear >= yearFilter[0] && movieYear <= yearFilter[1];
+            }
           );
         }
 
@@ -59,7 +53,7 @@ export const Search = () => {
     };
 
     fetchMovies();
-  }, [query, currentPage, yearFilter, genreFilter]);
+  }, [query, currentPage, yearFilter ]);
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
@@ -71,16 +65,11 @@ export const Search = () => {
 
   const handleYearFilterChange = (event: any, newValue: number | number[]) => {
     if (Array.isArray(newValue)) {
-      const [minYear, maxYear] = newValue;
-      setYearFilter(`${minYear}-${maxYear}`);
+      setYearFilter(newValue);
     } else {
-      setYearFilter(String(newValue));
+      setYearFilter([newValue, newValue]);
     }
   };
-
-  // const handleGenreFilterChange = (event: { target: { value: SetStateAction<string>; }; }) => {
-  //   setGenreFilter(event.target.value);
-  // };
 
   const handleFilterClick = () => {
     setCurrentPage(1);
@@ -92,25 +81,14 @@ export const Search = () => {
         <label htmlFor="year-filter">Year Filter:</label>
         <Slider
           id="year-filter"
-          value={yearFilter === "" ? undefined : parseInt(yearFilter)}
+          value={yearFilter.length === 0 ? [1960, 2023] : yearFilter}
           onChange={handleYearFilterChange}
           min={1960}
           max={2023}
           step={1}
           valueLabelDisplay="auto"
         />
-
-        {/* <label htmlFor="genre-filter">Жанр:</label>
-        <input
-          id="genre-filter"
-          type="text"
-          value={genreFilter}
-          onChange={handleGenreFilterChange}
-        />
-
-        <button onClick={handleFilterClick} className="filter-button">
-          Фильтр
-        </button> */}
+      
       </div>
 
       <div className="movies-container">

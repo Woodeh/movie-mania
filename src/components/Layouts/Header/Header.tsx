@@ -21,6 +21,9 @@ export const Header: FC<IHeader> = ({ isSearchDisabled = false }) => {
 
   const handleSearch = () => {
     navigate(`/search-page?query=${searchValue}`);
+    setSearchValue('');
+
+    
   };
 
   const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
