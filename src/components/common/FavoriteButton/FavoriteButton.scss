@@ -1,72 +1,55 @@
 button {
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    white-space: nowrap;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
 
-    &:hover {
-      filter: brightness(1.2);
-    }
-
-    &:active {
-      transform: scale(0.95);
-    }
+  &:hover {
+    filter: brightness(1.2);
   }
 
-  .add-favorite-button {
-    background-color: #2ecc7000;
-    position: absolute;
-    top: 28px;
-    right: 28px;
-    color: #ffffff;
-    cursor: pointer;
-    background-color: #26183a;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    
-
-    svg {
-      path {
-        fill: #ffffff;
-      }
-    }
-
-    &:hover {
-      background-color: #26183a;
-    padding-top: 4px;
-    padding-bottom: 4px;
-      svg {
-        path {
-          fill: #929292;
-        }
-      }
-    }
-    
+  &:active {
+    transform: scale(0.95);
   }
+}
 
-  .remove-favorite-button {
-    background-color: #26183a;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    color: #ffcc00;
-    position: absolute;
-    top: 28px;
-    right: 28px;
-    cursor: pointer;
-    
-    
-    svg {
-      path {
-        fill: #ffcc00;
-      }
-    }
-    &:hover {
-      svg {
-        path {
-          fill: #aaaaaa;
-        }
-      }
-    }
+.add-favorite-button {
+  display: inline-block;
+  width: 280px;
+  margin-left: 14px;
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.185);
+  color: white;
+  height: 35px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10px 10px 0 0;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  font-weight: 600;
+  &:hover {
+    background-color: rgb(67 14 138);
   }
+}
+
+.remove-favorite-button {
+  display: inline-block;
+  width: 280px;
+  margin-left: 14px;
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.185);
+  color: rgb(211, 190, 0);
+  height: 35px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10px 10px 0 0;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  font-weight: 600;
+  &:hover {
+    color: #aaaaaa;
+    background-color: rgb(67 14 138);
+  }
+}

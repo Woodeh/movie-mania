@@ -83,7 +83,13 @@ export const MoviePage: FC<IMoviePage> = () => {
   return (
     <>
       <div className="movie-details">
+        
         <div className="movie-poster">
+        <FavoriteButton
+            isFavorite={isFavorite}
+            onAddToFavorites={handleAddToFavorites}
+            onRemoveFromFavorites={handleRemoveFromFavorites}
+          />
           {movie.Poster !== "N/A" ? (
             <img
               className="movie-poster--img"
@@ -109,11 +115,7 @@ export const MoviePage: FC<IMoviePage> = () => {
   </a>
 )}
 
-          <FavoriteButton
-            isFavorite={isFavorite}
-            onAddToFavorites={handleAddToFavorites}
-            onRemoveFromFavorites={handleRemoveFromFavorites}
-          />
+          
           <ShareButton />
         </div>
         <div className="movie-info">

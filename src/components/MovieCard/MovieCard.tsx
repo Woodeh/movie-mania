@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import FavoriteButton from "../common/FavoriteButton/FavoriteButton";
 import { IMovieCard } from "../../utils/interfaces/IMovieCard";
 import "./MovieCard.scss";
 
@@ -39,11 +38,7 @@ export const Card: FC<IMovieCard> = ({
           <p className="card-year">{yearFilm}</p>
         </div>
         <div className="card-actions">
-          <FavoriteButton
-            isFavorite={isFavorite}
-            onAddToFavorites={handleAddToFavorites}
-            onRemoveFromFavorites={handleRemoveFromFavorites}
-          />
+          
         </div>
       </div>
     </div>

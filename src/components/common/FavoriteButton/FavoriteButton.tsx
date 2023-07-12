@@ -1,6 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import "./FavoriteButton.scss";
 
 interface FavoriteButtonProps {
@@ -23,13 +21,12 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({
   };
 
   return (
-    <button
-      className={isFavorite ? "remove-favorite-button" : "add-favorite-button"}
-      type="button"
-      onClick={handleClick}
-    >
-      <FontAwesomeIcon icon={faBookmark} size="2x"/>
-    </button>
+    <div
+  className={`favorite-button ${isFavorite ? "remove-favorite-button" : "add-favorite-button"}`}
+  onClick={handleClick}
+>
+  {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+</div>
   );
 };
 
