@@ -2,7 +2,7 @@ import { FC, useState, KeyboardEvent } from "react";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { UserInfo } from "../UserInfo/UserInfo";
 import { LoginButton } from "../../common/LoginButton/LoginButton";
-import { Logotype, UserIcon } from "../../../assets/icons";
+import { Logotype } from "../../../assets/icons";
 import { useNavigate } from "react-router-dom";
 import "./Header.scss";
 

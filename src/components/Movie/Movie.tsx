@@ -21,7 +21,7 @@ export const Movie: React.FC<IMovieFC> = ({ imdbID, movieObject }) => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const response = await fetch(`${FILM_URL}?i=${imdbID}&apikey=797d76c8`);
+        const response = await fetch(`${FILM_URL}?i=${imdbID}&apikey=ad0d5fb3`);
         const data = await response.json();
         setMovie(data || null);
       } catch (error) {

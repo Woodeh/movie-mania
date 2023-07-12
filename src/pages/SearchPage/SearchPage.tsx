@@ -23,7 +23,7 @@ export const Search = () => {
         setIsLoading(true);
         setShowLoader(true);
         const search = encodeURIComponent(query);
-        const URL = `${FILM_URL}?s=${search}&apikey=797d76c8&page=${currentPage}&r=json&plot=full`;
+        const URL = `${FILM_URL}?s=${search}&apikey=ad0d5fb3&page=${currentPage}&r=json&plot=full`;
         const response = await fetch(URL);
         const data = await response.json();
         console.log(data);

@@ -26,7 +26,7 @@ export const MoviePage: FC<IMoviePage> = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const URL = `${FILM_URL}?i=${id}&apikey=797d76c8`;
+        const URL = `${FILM_URL}?i=${id}&apikey=ad0d5fb3`;
         const response = await fetch(URL);
         const data = await response.json();
         setMovie(data);
