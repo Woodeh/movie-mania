@@ -5,21 +5,18 @@ import { TypographyText } from "../../components/common/Typography/TypographyTex
 import { RelatedMovies } from "./RelatedMovies/RelatedMovies";
 import { ShareButton } from "../../components/common/ShareButton/ShareButton";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addToFavorites,
-  removeFromFavorites,
-} from "../../redux/favoritesActions";
+import { addToFavorites, removeFromFavorites } from "../../redux/favoritesActions";
 import FavoriteButton from "../../components/common/FavoriteButton/FavoriteButton";
 import Loader from "../../components/common/Loader/Loader";
 import "./MoviePage.scss";
 
-interface IMovieInfo {
+interface IMoviePage {
   match: {
     params: { id: string };
   };
 }
 
-export const MovieInfo: FC<IMovieInfo> = () => {
+export const MoviePage: FC<IMoviePage> = () => {
   const { id } = useParams<{ id: string }>();
   const [movie, setMovie] = useState<any>();
   const favorites = useSelector((state: any) => state.favorites || []);

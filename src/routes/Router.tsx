@@ -8,7 +8,7 @@ import { ActivatePage } from "../pages/ActivatePage/ActivatePage";
 import { useAppSelector } from "../store/hooks";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { Settings } from "../pages/SettingsPage/SettingsPage";
-import { MovieInfo } from "../pages/MoviePage/MoviePage";
+import { MoviePage } from "../pages/MoviePage/MoviePage";
 import { Trends } from "../pages/TrendsPage/TrendsPage";
 import { Favorites } from "../pages/FavoritesPage/FavoritesPage";
 import { Search } from "../pages/SearchPage/SearchPage";
@@ -21,7 +21,7 @@ export const Router: FC = () => {
       <Route path="/settings" element={<Settings />} />
       <Route path="/trends" element={<Trends />} />
       <Route path="" element={<MainPage />} />
-      <Route path="/movies/:id" element={<MovieInfo match={{ params: { id: "" } }} />} />
+      <Route path="/movies/:id" element={<MoviePage match={{ params: { id: "" } }} />} />
       <Route path="/favorites" element={<Favorites />} />
       <Route path="/search-page" element={<Search />} />
       <Route path="/sign-in" element={<SignInPage />} />

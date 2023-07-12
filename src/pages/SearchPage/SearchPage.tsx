@@ -31,12 +31,10 @@ export const Search = () => {
         let filteredMovies = dataMovies;
 
         if (yearFilter.length > 0) {
-          filteredMovies = filteredMovies.filter(
-            (movie: { Year: string }) => {
-              const movieYear = parseInt(movie.Year);
-              return movieYear >= yearFilter[0] && movieYear <= yearFilter[1];
-            }
-          );
+          filteredMovies = filteredMovies.filter((movie: { Year: string }) => {
+            const movieYear = parseInt(movie.Year);
+            return movieYear >= yearFilter[0] && movieYear <= yearFilter[1];
+          });
         }
 
         const limitedMovies = filteredMovies.slice(0, 8);
@@ -53,7 +51,7 @@ export const Search = () => {
     };
 
     fetchMovies();
-  }, [query, currentPage, yearFilter ]);
+  }, [query, currentPage, yearFilter]);
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
@@ -78,7 +76,9 @@ export const Search = () => {
   return (
     <div className="blog">
       <div className="filter-container">
-        <label htmlFor="year-filter" className="filter-label">Move the sliders to change the annual range</label>
+        <label htmlFor="year-filter" className="filter-label">
+          Move the sliders to change the annual range
+        </label>
         <Slider
           id="year-filter"
           value={yearFilter.length === 0 ? [1960, 2023] : yearFilter}
@@ -88,7 +88,6 @@ export const Search = () => {
           step={1}
           valueLabelDisplay="auto"
         />
-      
       </div>
 
       <div className="movies-container">

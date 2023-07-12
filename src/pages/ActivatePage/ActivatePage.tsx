@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { TypographyText } from "../../components/common/Typography/TypographyText";
 import { Button } from "../../components/common/Button/Button";
-import { Breadcrumbs } from "../../components/common/Breadcrumbs/Breadcrumbs";
+import { Breadcrumbs } from "../SignInPage/breadcrumbs/Breadcrumbs";
 import { createBackToHomePath } from "../../utils/constants/createBackToHomePath";
 import { useNavigate, useParams } from "react-router-dom";
 import { Spinner } from "../../components/common/Spinner/Spinner";

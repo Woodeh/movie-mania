@@ -4,9 +4,9 @@ import { moviesDb } from "../../../utils/constants/moviesDb";
 import { ShowMore } from "../../../components/common/ShowMoreButton/ShowMoreButton";
 import "./MainPageMovieList.scss";
 
-interface IMovies {}
+interface IMainPageMovieList {}
 
-export const Movies: FC<IMovies> = () => {
+export const MainPageMovieList: FC<IMainPageMovieList> = () => {
   const [showMoreCount, setShowMoreCount] = useState(4);
   const [movies] = useState<string[]>(moviesDb);
 
