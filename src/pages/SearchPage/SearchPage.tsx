@@ -5,6 +5,7 @@ import { Movie } from "../../components/Movie/Movie";
 import Slider from "@mui/material/Slider";
 import Loader from "../../components/common/Loader/Loader";
 import "./SearchPage.scss";
+import { API_KEY } from "../../utils/constants/constants";
 
 export const Search = () => {
   const [visibleMovies, setVisibleMovies] = useState<any[]>([]);
@@ -23,7 +24,7 @@ export const Search = () => {
         setIsLoading(true);
         setShowLoader(true);
         const search = encodeURIComponent(query);
-        const URL = `${FILM_URL}?s=${search}&apikey=ad0d5fb3&page=${currentPage}&r=json&plot=full`;
+        const URL = `${FILM_URL}?s=${search}&apikey=${API_KEY}&page=${currentPage}&r=json&plot=full`;
         const response = await fetch(URL);
         const data = await response.json();
         console.log(data);

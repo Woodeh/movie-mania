@@ -6,6 +6,7 @@ import { Card } from "../MovieCard/MovieCard";
 import FavoriteModal from "../common/FavoriteModal/FavotireModal";
 import { IMovie } from "../../utils/interfaces/IMovie";
 import "./Movie.scss";
+import { API_KEY } from "../../utils/constants/constants";
 
 interface IMovieFC {
   imdbID: string | "";
@@ -21,7 +22,7 @@ export const Movie: React.FC<IMovieFC> = ({ imdbID, movieObject }) => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const response = await fetch(`${FILM_URL}?i=${imdbID}&apikey=ad0d5fb3`);
+        const response = await fetch(`${FILM_URL}?i=${imdbID}&apikey=${API_KEY}`);
         const data = await response.json();
         setMovie(data || null);
       } catch (error) {

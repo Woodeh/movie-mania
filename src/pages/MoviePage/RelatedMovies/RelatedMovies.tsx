@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { IMovie } from "../../../utils/interfaces/IMovie";
 import Loader from "../../../components/common/Loader/Loader";
 import "./RelatedMovies.scss";
+import { API_KEY } from "../../../utils/constants/constants";
 
 interface IRelatedMovies {
   movieTitle: string;
@@ -22,14 +23,14 @@ export const RelatedMovies: FC<IRelatedMovies> = ({ movieTitle }) => {
         const response = await fetch(
           `https://www.omdbapi.com/?s=${encodeURIComponent(
             movieTitle
-          )}&apikey=cbd67aa8`
+          )}&apikey=${API_KEY}`
         );
         const data = await response.json();
 
         if (data.Search) {
           const movieIds = data.Search.map((movie: any) => movie.imdbID);
           const requests = movieIds.map((id: string) =>
-            fetch(`https://www.omdbapi.com/?i=${id}&apikey=cbd67aa8`)
+            fetch(`https://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`)
           );
           const responses = await Promise.all(requests);
           const moviesData = await Promise.all(

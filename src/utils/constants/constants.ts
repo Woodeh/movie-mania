@@ -1,3 +1,3 @@
 export const API_URL = "https://api.kinopoisk.dev";
-export const API_KEY = "A1FV80V-DEC4AS6-MH54J4V-5S42456";
+export const API_KEY = "ad0d5fb3"
 

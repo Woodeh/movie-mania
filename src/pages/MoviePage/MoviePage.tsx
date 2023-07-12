@@ -9,6 +9,7 @@ import { addToFavorites, removeFromFavorites } from "../../redux/favoritesAction
 import FavoriteButton from "../../components/common/FavoriteButton/FavoriteButton";
 import Loader from "../../components/common/Loader/Loader";
 import "./MoviePage.scss";
+import { API_KEY } from "../../utils/constants/constants";
 
 interface IMoviePage {
   match: {
@@ -26,7 +27,7 @@ export const MoviePage: FC<IMoviePage> = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const URL = `${FILM_URL}?i=${id}&apikey=ad0d5fb3`;
+        const URL = `${FILM_URL}?i=${id}&apikey=${API_KEY}`;
         const response = await fetch(URL);
         const data = await response.json();
         setMovie(data);
