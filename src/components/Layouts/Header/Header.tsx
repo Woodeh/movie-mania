@@ -1,7 +1,7 @@
 import { FC, useState, KeyboardEvent } from "react";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { UserInfo } from "../UserInfo/UserInfo";
-import { IconButton } from "../../common/IconButton/IconButton";
+import { LoginButton } from "../../common/LoginButton/LoginButton";
 import { Logotype, UserIcon } from "../../../assets/icons";
 import { useNavigate } from "react-router-dom";
 import "./Header.scss";
@@ -22,8 +22,6 @@ export const Header: FC<IHeader> = ({ isSearchDisabled = false }) => {
   const handleSearch = () => {
     navigate(`/search-page?query=${searchValue}`);
     setSearchValue('');
-
-    
   };
 
   const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
@@ -32,9 +30,7 @@ export const Header: FC<IHeader> = ({ isSearchDisabled = false }) => {
     }
   };
 
-  const inputClass = `search-input ${
-    isSearchDisabled && "search-film__disabled"
-  }`;
+  const inputClass = `search-input ${isSearchDisabled && "search-film__disabled"}`;
 
   return (
     <header className="header">
@@ -66,9 +62,7 @@ export const Header: FC<IHeader> = ({ isSearchDisabled = false }) => {
         {isLogged ? (
           <UserInfo username="" />
         ) : (
-          <IconButton onClick={handleClickToSignIn} type="header">
-            <UserIcon />
-          </IconButton>
+          <LoginButton onClick={handleClickToSignIn} />
         )}
       </div>
     </header>

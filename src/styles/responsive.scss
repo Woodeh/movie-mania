@@ -69,21 +69,24 @@
     filter: none;
   }
   }
+
+
+  .share-buttons {
+    gap: 15px;
+   }
+  
+    .movie-details {
+      width: auto;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  
+    .logo_title {
+      display: none;
+    }
 }
 
- .share-buttons {
-  gap: 15px;
- }
-
-  .movie-details {
-    width: auto;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .logo_title {
-    display: none;
-  }
+ 
 
 
 @media (max-width: 600px) {

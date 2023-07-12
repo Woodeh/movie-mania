@@ -1,17 +1,12 @@
 import { FC, useState } from "react";
-import { CancelIcon, BurgerMenuIcon } from "../../../assets/icons";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { isDarktheme } from "../../../store/theme/selectors";
-import { IconButton } from "../../common/IconButton/IconButton";
-import { ControlledSwitches } from "../../common/Switcher/Switcher";
-import { Button } from "../../common/Button/Button";
-import "./BurgerMenu.scss";
+import { IconButton } from "@mui/material";
+import { Menu as MenuIcon, Close as CloseIcon, Person } from "@mui/icons-material";
+import { Switcher } from "../../common/Switcher/Switcher";
 
-interface IconButtonProps {
-  onClick: () => void;
-  className?: string; 
-}
+import "./BurgerMenu.scss";
 
 export const BurgerMenu: FC = () => {
   const navigate = useNavigate();
@@ -46,13 +41,21 @@ export const BurgerMenu: FC = () => {
   return (
     <div className="burgerMenu dark light">
       <div className="burgerMenu__btn-box">
-        <IconButton onClick={handleClick} type="header">
-          {isOpen ? <CancelIcon /> : <BurgerMenuIcon />}
+        <IconButton onClick={handleClick}>
+          {isOpen ? (
+            <CloseIcon style={{ fontSize: "35px" }} /> 
+          ) : (
+            <MenuIcon style={{ fontSize: "35px" }} /> 
+          )}
         </IconButton>
       </div>
       <div className={`burgerMenu__content ${isOpen && "open"}`}>
         <IconButton onClick={handleClick}>
-          <CancelIcon />
+          {isOpen ? (
+            <CloseIcon style={{ fontSize: "35px" }} /> 
+          ) : (
+            <MenuIcon style={{ fontSize: "0px" }} /> 
+          )}
         </IconButton>
         <nav className="burgerMenu__nav">
           {options.map(({ id, name, url }) => (
@@ -68,17 +71,10 @@ export const BurgerMenu: FC = () => {
           <li className="burgerMenu__nav-item">
             <div className="burgerMenu__theme-box">
               <p className="switch_title">Switch theme</p>
-              <ControlledSwitches />
+              <Switcher />
             </div>
           </li>
         </nav>
-        {/* <div>
-          {isLogged ? (
-            <Button content="Log Out" onClick={logout} type="secondary" />
-          ) : (
-            <Button content="Sign In" onClick={signIn} type="primary" />
-          )}
-        </div> */}
       </div>
     </div>
   );
