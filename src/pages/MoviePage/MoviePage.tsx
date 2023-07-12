@@ -12,7 +12,7 @@ import {
 import FavoriteButton from "../../components/common/FavoriteButton/FavoriteButton";
 import Loader from "../../components/common/Loader/Loader";
 import "./MoviePage.scss";
-import { API_KEY } from "../../utils/constants/constants";
+import { API_KEY, UT_API_KEY } from "../../utils/constants/constants";
 
 interface IMoviePage {
   match: {
@@ -23,6 +23,7 @@ interface IMoviePage {
 export const MoviePage: FC<IMoviePage> = () => {
   const { id } = useParams<{ id: string }>();
   const [movie, setMovie] = useState<any>();
+  const [trailer, setTrailer] = useState<string | null>(null);
   const favorites = useSelector((state: any) => state.favorites || []);
   const dispatch = useDispatch();
   const [isFavorite, setIsFavorite] = useState(false);
@@ -35,12 +36,28 @@ export const MoviePage: FC<IMoviePage> = () => {
         const data = await response.json();
         setMovie(data);
         setIsFavorite(isMovieInFavorites(data.imdbID));
+        await fetchTrailer(data.Title);
       } catch (error) {
-        console.log("error:", error);
+        console.log("Error fetching movie:", error);
       }
     };
     fetchMovie();
   }, [id]);
+
+  const fetchTrailer = async (filmTitle: string) => {
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/youtube/v3/search?key=${UT_API_KEY}&q=${encodeURIComponent(
+          filmTitle + ' official trailer'
+        )}&maxResults=1&type=video`
+      );
+      const data = await response.json();
+      const videoId = data.items[0].id.videoId;
+      setTrailer(`https://www.youtube.com/watch?v=${videoId}`);
+    } catch (error) {
+      console.log("Error fetching trailer:", error);
+    }
+  };
 
   const handleAddToFavorites = () => {
     dispatch(addToFavorites(movie));
@@ -80,6 +97,13 @@ export const MoviePage: FC<IMoviePage> = () => {
               alt={movie.Title}
             />
           )}
+          
+            {trailer && (
+              <a href={trailer} target="_blank" rel="noopener noreferrer">
+                Trailer
+              </a>
+            )}
+
           <FavoriteButton
             isFavorite={isFavorite}
             onAddToFavorites={handleAddToFavorites}

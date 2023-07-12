@@ -6,6 +6,7 @@ import { store } from './store/store';
 import './index.scss';
 import './styles/responsive.scss'
 
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
