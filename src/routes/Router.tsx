@@ -30,7 +30,7 @@ export const Router: FC = () => {
       <Route element={<ProtectedRoute access={!!confirmEmail} />}>
         <Route path="/confirm-registration" element={<RegistrationConfirmPage />} />
       </Route>
-      <Route path="*" element={<>Такой страницы не существует</>} />
+      <Route path="*" element={<>No such page exists</>} />
     </Routes>
   );
 };
