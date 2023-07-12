@@ -1,6 +1,6 @@
-.show-more{
-    border:none;
-    color:white;
+.show-more {
+    border: none;
+    color: white;
     display: inline-flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.08);
@@ -11,4 +11,9 @@
     padding: 0 24px;
     cursor: pointer;
     margin-left: 0px;
-}
+  
+    p {
+      font-weight: 600;
+    }
+  }
+  

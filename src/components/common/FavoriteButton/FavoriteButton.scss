@@ -22,6 +22,9 @@ button {
     right: 28px;
     color: #ffffff;
     cursor: pointer;
+    background-color: #26183a;
+    padding-top: 4px;
+    padding-bottom: 4px;
     
 
     svg {
@@ -31,7 +34,9 @@ button {
     }
 
     &:hover {
-      background-color: #ffffff00;
+      background-color: #26183a;
+    padding-top: 4px;
+    padding-bottom: 4px;
       svg {
         path {
           fill: #929292;
@@ -42,7 +47,9 @@ button {
   }
 
   .remove-favorite-button {
-    background-color: #e74d3c00;
+    background-color: #26183a;
+    padding-top: 4px;
+    padding-bottom: 4px;
     color: #ffcc00;
     position: absolute;
     top: 28px;

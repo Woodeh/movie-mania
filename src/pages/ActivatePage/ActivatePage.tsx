@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { TypographyText } from "../../components/Typography/TypographyText";
+import { TypographyText } from "../../components/common/Typography/TypographyText";
 import { Button } from "../../components/common/Button/Button";
 import { Breadcrumbs } from "../../components/common/Breadcrumbs/Breadcrumbs";
 import { createBackToHomePath } from "../../utils/constants/createBackToHomePath";

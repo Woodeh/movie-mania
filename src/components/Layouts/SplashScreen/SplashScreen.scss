@@ -15,10 +15,10 @@
   z-index: 9999;
   opacity: 0;
   transition: opacity 0.5s;
-  
 
 
-  
+
+
 
   &.visible {
     opacity: 1;
@@ -45,8 +45,7 @@
 
 
   .start-button {
-    padding: 10px 20px;
-    
+    padding: 10px 40px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -55,7 +54,7 @@
     color: #ffffff;
     border: none;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 25px;
     cursor: pointer;
     z-index: 2;
     position: absolute;
@@ -65,19 +64,19 @@
 
 
 .custom-prev-arrow {
-    width: 100px;
-    
+  width: 100px;
+
 }
 
 .splash-screen__logotype {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
 }
 
 .splash-screen__logo {
-width: 70px;
-margin: 0 auto;
+  width: 70px;
+  margin: 0 auto;
 
 }
 
@@ -90,13 +89,3 @@ margin: 0 auto;
 .splash-screen__discription {
   text-align: center;
 }
-
-
-// .slick-prev:before, .slick-next:before {
-//   font-family: 'slick';
-//   font-size: 50px;
-//   line-height: 1;
-//   opacity: .75;
-//   color: white;
-//   -webkit-font-smoothing: antialiased;
-// }

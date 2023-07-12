@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { TypographyText } from "../../components/Typography/TypographyText";
+import { TypographyText } from "../../components/common/Typography/TypographyText";
 import { Input } from "../../components/common/Input/Input";
 import { Button } from "../../components/common/Button/Button";
 import { Link, useNavigate } from "react-router-dom";

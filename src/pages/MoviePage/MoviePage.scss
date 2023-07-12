@@ -97,13 +97,14 @@
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  gap: 15px;
 }
 
 
 
 .subline {
   color: white;
-  font-weight: 200;
+  font-weight: 600;
 }
 
 @media (max-width: 1024px) {

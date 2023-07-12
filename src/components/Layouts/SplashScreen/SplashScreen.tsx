@@ -32,8 +32,6 @@ export const SplashScreen = () => {
   const image1 = require('./1slide.jpg');
   const image2 = require('./2slide.jpg');
   const image3 = require('./3slide.jpg');
-  const image4 = require('./JJK.jpg');
-  const image5 = require('./JJK.jpg');
   const hideSplashScreen = () => {
     setShowSplashScreen(false);
   };

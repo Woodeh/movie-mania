@@ -1,11 +1,14 @@
 import { FC, useEffect, useState } from "react";
 import { FILM_URL } from "../../utils/api/urls";
 import { useParams } from "react-router-dom";
-import { TypographyText } from "../../components/Typography/TypographyText";
+import { TypographyText } from "../../components/common/Typography/TypographyText";
 import { RelatedMovies } from "./RelatedMovies/RelatedMovies";
 import { ShareButton } from "../../components/common/ShareButton/ShareButton";
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavorites, removeFromFavorites } from "../../redux/favoritesActions";
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from "../../redux/favoritesActions";
 import FavoriteButton from "../../components/common/FavoriteButton/FavoriteButton";
 import Loader from "../../components/common/Loader/Loader";
 import "./MoviePage.scss";
@@ -92,51 +95,65 @@ export const MovieInfo: FC<IMovieInfo> = () => {
           </p>
           <p className="movie-info--plot">{movie.Plot}</p>
           <div className="movie-info--genres">
-          <ul>
-  <li>
-    <span className="movie-info--list">
-      <span className="movie-info--list-label">Year</span>{" "}
-      <span className="movie-info--list-value">{movie.Year || "N/A"}</span>
-    </span>
-  </li>
-  <li>
-    <span className="movie-info--list">
-      <span className="movie-info--list-label">Released</span>{" "}
-      <span className="movie-info--list-value">{movie.Released || "N/A"}</span>
-    </span>
-  </li>
-  <li>
-    <span className="movie-info--list">
-      <span className="movie-info--list-label">BoxOffice</span>{" "}
-      <span className="movie-info--list-value">{movie.BoxOffice || "N/A"}</span>
-    </span>
-  </li>
-  <li>
-    <span className="movie-info--list">
-      <span className="movie-info--list-label">Country</span>{" "}
-      <span className="movie-info--list-value">{movie.Country || "N/A"}</span>
-    </span>
-  </li>
-  <li>
-    <span className="movie-info--list">
-      <span className="movie-info--list-label">Director</span>{" "}
-      <span className="movie-info--list-value">{movie.Director || "N/A"}</span>
-    </span>
-  </li>
-  <li>
-    <span className="movie-info--list">
-      <span className="movie-info--list-label">Writer</span>{" "}
-      <span className="movie-info--list-value">{movie.Writer || "N/A"}</span>
-    </span>
-  </li>
-  <li>
-    <span className="movie-info--list">
-      <span className="movie-info--list-label">Actors</span>{" "}
-      <span className="movie-info--list-value">{movie.Actors || "N/A"}</span>
-    </span>
-  </li>
-</ul>
-</div>
+            <ul>
+              <li>
+                <span className="movie-info--list">
+                  <span className="movie-info--list-label">Year</span>{" "}
+                  <span className="movie-info--list-value">
+                    {movie.Year || "N/A"}
+                  </span>
+                </span>
+              </li>
+              <li>
+                <span className="movie-info--list">
+                  <span className="movie-info--list-label">Released</span>{" "}
+                  <span className="movie-info--list-value">
+                    {movie.Released || "N/A"}
+                  </span>
+                </span>
+              </li>
+              <li>
+                <span className="movie-info--list">
+                  <span className="movie-info--list-label">BoxOffice</span>{" "}
+                  <span className="movie-info--list-value">
+                    {movie.BoxOffice || "N/A"}
+                  </span>
+                </span>
+              </li>
+              <li>
+                <span className="movie-info--list">
+                  <span className="movie-info--list-label">Country</span>{" "}
+                  <span className="movie-info--list-value">
+                    {movie.Country || "N/A"}
+                  </span>
+                </span>
+              </li>
+              <li>
+                <span className="movie-info--list">
+                  <span className="movie-info--list-label">Director</span>{" "}
+                  <span className="movie-info--list-value">
+                    {movie.Director || "N/A"}
+                  </span>
+                </span>
+              </li>
+              <li>
+                <span className="movie-info--list">
+                  <span className="movie-info--list-label">Writer</span>{" "}
+                  <span className="movie-info--list-value">
+                    {movie.Writer || "N/A"}
+                  </span>
+                </span>
+              </li>
+              <li>
+                <span className="movie-info--list">
+                  <span className="movie-info--list-label">Actors</span>{" "}
+                  <span className="movie-info--list-value">
+                    {movie.Actors || "N/A"}
+                  </span>
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <RelatedMovies movieTitle={movie.Title} />
