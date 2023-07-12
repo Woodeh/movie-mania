@@ -31,6 +31,12 @@
   .movies-container {
     justify-content: space-around;
   }
+
+  .card:hover {
+    transform: translateY(-0px) rotateZ(0deg);
+    
+  }
+
 }
 
 
@@ -40,6 +46,9 @@
     justify-content: space-evenly;
   }
 
+ .share-buttons {
+  gap: 15px;
+ }
 
   .movie-details {
     width: auto;
@@ -50,4 +59,83 @@
   .logo_title {
     display: none;
   }
+}
+
+@media (max-width: 600px) {
+
+  .burger_title {
+    display: none;
+  }
+
+  .logo_container {
+    margin-left: 0;
+
+  }
+
+  button {
+    margin-left: 0;
+  }
+
+  .settings {
+    width: auto;
+    height: auto;
+    margin: 0 10px;
+    margin-top: 10px;
+  }
+
+  .settings__form-profile,
+  .settings__form-password {
+    width: auto;
+    flex-direction: column;
+  }
+
+  .settings__form-password {
+    height: auto;
+  }
+
+  .settings__form-password-lol {
+    width: auto;
+  }
+
+  .settings_btn {
+    width: auto;
+  }
+
+
+
+}
+
+@media (max-width: 500px) {
+
+.movie-poster--img {
+margin-left: 0px;
+}
+
+ul, ol {
+  padding: 0;
+  width: 100px;
+}
+
+}
+
+
+
+@media (max-width: 400px) {
+
+  .burgerMenu__content.open {
+    height: 100%;
+}
+
+  .burgerMenu__nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .burgerMenu__nav-btn {
+    font-size: 28px;
+  }
+
+  
+
+
 }

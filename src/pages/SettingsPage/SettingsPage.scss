@@ -1,6 +1,4 @@
 .settings {
-
-
     width: 800px;
     height: 750px;
     background: rgba(255, 255, 255, 0.08);
@@ -8,26 +6,26 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     margin-top: 25px;
-
-
-    &__form-profile {
-        display: flex;
-        width: 700px;
-        border-radius: 10px;
-        color: #fff;
-        align-items: center;
-        column-gap: 40px;
-        margin: 0 auto;
-    }
-
-    h2 {
-        text-align: center;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
-    &__form-password {
-        display: flex;
+  }
+  
+  .settings__form-profile {
+    display: flex;
+    width: 700px;
+    border-radius: 10px;
+    color: #fff;
+    align-items: center;
+    column-gap: 40px;
+    margin: 0 auto;
+  }
+  
+  .settings h2 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .settings__form-password {
+    display: flex;
     width: 700px;
     height: 350px;
     border-radius: 10px;
@@ -36,20 +34,19 @@
     row-gap: 15px;
     flex-direction: column;
     margin: 0 auto;
+  }
+  
+  .settings__form-password-lol {
+    width: 100px;
+  }
+  
+  .settings_btn {
+    display: flex;
+    margin: 0 auto;
+    width: 266px;
+    height: 56px;
+    justify-content: center;
+    column-gap: 40px;
+    margin-top: 48px;
+  }
 
-
-        &-lol {
-            width: 100px;
-        }
-    }
-
-    &_btn {
-        display: flex;
-        margin: 0 auto;
-        width: 266px;
-        height: 56px;
-        justify-content: center;
-        column-gap: 40px;
-        margin-top: 48px;
-    }
-}
