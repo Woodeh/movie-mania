@@ -29,9 +29,9 @@ The Movie-Mania App is built using the following technologies:
 - **MUI (Material-UI)**: A popular React UI framework that provides a set of pre-built components following the Material Design guidelines. It offers a rich set of UI elements for creating a visually appealing and consistent user interface.
   
 I also wanted to highlight the components and sites I used to create this app: 
-1. css glass (glassmorphism-generator)
-2. background generator by Superdesigner
-3. React Slick component
+1. **css glass** (glassmorphism-generator)
+2. **background generator** by Superdesigner
+3. **React Slick** component
 
 ## Getting Started
 
