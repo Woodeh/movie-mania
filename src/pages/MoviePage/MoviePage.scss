@@ -6,6 +6,11 @@
 }
 
 
+.movie-info--plot {
+  width: 55%;
+  word-wrap: break-word;
+}
+
 .movie-details--plot {
   
   max-width: 600px;
@@ -93,6 +98,8 @@
   display: flex;
   justify-content: center;
 }
+
+
 
 .subline {
   color: white;

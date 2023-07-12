@@ -24,6 +24,7 @@
     &.open {
       height: 103px;
     }
+
     svg {
       path {
         fill: #fdfdfd;
@@ -90,4 +91,16 @@
 .burgerMenu__icon {
   width: 30px;
   height: 30px;
+}
+
+.burger-logo {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+}
+
+.burgerMenu__theme-box {
+  margin-bottom: 10px;
 }

@@ -5,6 +5,7 @@ import { isDarktheme } from "../../../store/theme/selectors";
 import { IconButton } from "@mui/material";
 import { Menu as MenuIcon, Close as CloseIcon, Person } from "@mui/icons-material";
 import { Switcher } from "../../common/Switcher/Switcher";
+import { Logotype } from "../../../assets/icons/"
 
 import "./BurgerMenu.scss";
 
@@ -40,6 +41,7 @@ export const BurgerMenu: FC = () => {
 
   return (
     <div className="burgerMenu dark light">
+      
       <div className="burgerMenu__btn-box">
         <IconButton onClick={handleClick}>
           {isOpen ? (
@@ -54,9 +56,12 @@ export const BurgerMenu: FC = () => {
           {isOpen ? (
             <CloseIcon style={{ fontSize: "35px" }} /> 
           ) : (
-            <MenuIcon style={{ fontSize: "0px" }} /> 
+            <MenuIcon style={{ fontSize: "35px" }} /> 
           )}
         </IconButton>
+        <div className="burger-logo">
+          <Logotype />
+        </div>
         <nav className="burgerMenu__nav">
           {options.map(({ id, name, url }) => (
             <li key={id} className="burgerMenu__nav-item">
@@ -68,13 +73,11 @@ export const BurgerMenu: FC = () => {
               </button>
             </li>
           ))}
-          <li className="burgerMenu__nav-item">
+        </nav>
             <div className="burgerMenu__theme-box">
               <p className="switch_title">Switch theme</p>
               <Switcher />
             </div>
-          </li>
-        </nav>
       </div>
     </div>
   );

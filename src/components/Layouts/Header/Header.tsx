@@ -42,7 +42,7 @@ export const Header: FC<IHeader> = ({ isSearchDisabled = false }) => {
       </div>
       <div className="burger_container">
         <BurgerMenu />
-        <div className="burger_title">Menu</div>
+        <div className="burger_title">MENU</div>
       </div>
       <div className="search">
         <div className="search__input">
