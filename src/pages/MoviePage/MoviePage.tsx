@@ -97,12 +97,17 @@ export const MoviePage: FC<IMoviePage> = () => {
               alt={movie.Title}
             />
           )}
-          
+
             {trailer && (
-              <a href={trailer} target="_blank" rel="noopener noreferrer">
-                Trailer
-              </a>
-            )}
+  <a
+    href={trailer}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="movie-trailer-button"
+  >
+    Trailer
+  </a>
+)}
 
           <FavoriteButton
             isFavorite={isFavorite}

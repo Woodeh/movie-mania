@@ -30,7 +30,7 @@
 .movie-poster {
   &--img {
     box-shadow: 15px 11px 30px -8px rgba(0, 0, 0, 0.42);
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     height: auto;
     width: 280px;
     margin-left: 14px;

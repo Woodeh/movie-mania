@@ -125,3 +125,25 @@
     gap: 10px;
   }
 }
+
+
+
+.movie-trailer-button {
+  display: inline-block;
+  width: 280px;
+  margin-left: 14px;
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.185);;
+  color: white;
+  height: 35px;
+  text-decoration: none;
+  border-radius: 0 0 10px 10px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  font-weight: 600;
+}
+
+.movie-trailer-button:hover {
+  background-color: rgb(67 14 138);
+}
+
