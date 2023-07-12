@@ -29,9 +29,9 @@ const SamplePrevArrow = (props: { className: any; style: any; onClick: any; }) =
 
 export const SplashScreen = () => {
   const [showSplashScreen, setShowSplashScreen] = useState(true);
-  const image1 = require('./1slide.jpg');
-  const image2 = require('./2slide.jpg');
-  const image3 = require('./3slide.jpg');
+  const image1 = require('./img/1slide.jpg');
+  const image2 = require('./img/2slide.jpg');
+  const image3 = require('./img/3slide.jpg');
   const hideSplashScreen = () => {
     setShowSplashScreen(false);
   };

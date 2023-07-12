@@ -5,8 +5,8 @@ import { FILM_URL } from "../../utils/api/urls";
 import { Card } from "../MovieCard/MovieCard";
 import FavoriteModal from "../common/FavoriteModal/FavotireModal";
 import { IMovie } from "../../utils/interfaces/IMovie";
-import "./Movie.scss";
 import { API_KEY } from "../../utils/constants/constants";
+import "./Movie.scss";
 
 interface IMovieFC {
   imdbID: string | "";

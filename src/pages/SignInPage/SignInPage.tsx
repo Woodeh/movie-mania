@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef, useState, KeyboardEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { TypographyText } from "../../components/common/Typography/TypographyText";
+import { TypographyText } from "../../components/common/Typography/Typography";
 import { Input } from "../../components/common/Input/Input";
 import { Button } from "../../components/common/Button/Button";
 import { postLogin } from "../../utils/api/postLogin";

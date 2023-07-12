@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react";
-import { TypographyText } from "../../components/common/Typography/TypographyText";
+import { TypographyText } from "../../components/common/Typography/Typography";
 import { Button } from "../../components/common/Button/Button";
 import "./RegistrationConfirmPage.scss";
 import { Breadcrumbs } from "../SignInPage/breadcrumbs/Breadcrumbs";

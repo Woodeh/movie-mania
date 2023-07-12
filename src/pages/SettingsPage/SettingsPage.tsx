@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { TypographyText } from "../../components/common/Typography/TypographyText";
+import { TypographyText } from "../../components/common/Typography/Typography";
 import { Input } from "../../components/common/Input/Input";
 import { Button } from "../../components/common/Button/Button";
 import "./SettingsPage.scss";

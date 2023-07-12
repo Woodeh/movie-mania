@@ -1,6 +1,5 @@
 @import '~slick-carousel/slick/slick';
 
-
 .splash-screen {
   position: fixed;
   top: 0;
@@ -15,10 +14,6 @@
   z-index: 9999;
   opacity: 0;
   transition: opacity 0.5s;
-
-
-
-
 
   &.visible {
     opacity: 1;

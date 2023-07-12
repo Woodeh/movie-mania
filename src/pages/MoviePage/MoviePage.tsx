@@ -1,11 +1,14 @@
 import { FC, useEffect, useState } from "react";
 import { FILM_URL } from "../../utils/api/urls";
 import { useParams } from "react-router-dom";
-import { TypographyText } from "../../components/common/Typography/TypographyText";
+import { TypographyText } from "../../components/common/Typography/Typography";
 import { RelatedMovies } from "./RelatedMovies/RelatedMovies";
 import { ShareButton } from "../../components/common/ShareButton/ShareButton";
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavorites, removeFromFavorites } from "../../redux/favoritesActions";
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from "../../redux/favoritesActions";
 import FavoriteButton from "../../components/common/FavoriteButton/FavoriteButton";
 import Loader from "../../components/common/Loader/Loader";
 import "./MoviePage.scss";

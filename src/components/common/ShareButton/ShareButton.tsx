@@ -1,9 +1,4 @@
-import React from "react";
-import {
-  TelegramShareButton,
-  WhatsappShareButton,
-  FacebookShareButton,
-} from "react-share";
+import { TelegramShareButton, WhatsappShareButton, FacebookShareButton } from "react-share";
 import { TelegramIcon, WhatsappIcon, FacebookIcon } from "react-share";
 
 export const ShareButton = () => {

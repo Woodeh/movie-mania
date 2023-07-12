@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { TypographyText } from "../../../components/common/Typography/TypographyText";
+import { TypographyText } from "../../../components/common/Typography/Typography";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -113,49 +113,49 @@ export const RelatedMovies: FC<IRelatedMovies> = ({ movieTitle }) => {
   return (
     <>
       <div className="related-movies">
-  <h1 className="related-title">Related movies</h1>
-  {movies.length > 0 ? (
-    <Slider {...settings}>
-      {movies.map((movie) => (
-        <Link
-          to={`/movies/${movie.imdbID}`}
-          className="movie-link"
-          key={movie.imdbID}
-        >
-          <div
-            className="card"
-            onClick={() => handleCardClick(movie.imdbID)}
-          >
-            <div className="card-rating">
-              <TypographyText content={movie.imdbRating} type="subline" />
-            </div>
-            {movie.Poster !== "N/A" ? (
-              <img
-                className="movie-poster--img"
-                draggable="false"
-                src={movie.Poster}
-                alt={movie.Title}
-              />
-            ) : (
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png"
-                draggable="false"
-                alt={movie.Title}
-              />
-            )}
-            <p className="related-movie__genre">
-              {movie.Genre.split(", ").slice(0, 3).join(", ")}
-            </p>
-            <h3 className="related-movie__title">{movie.Title}</h3>
-            <h2 className="related-movie__year">{movie.Year}</h2>
-          </div>
-        </Link>
-      ))}
-    </Slider>
-  ) : (
-    <Loader />
-  )}
-</div>
+        <h1 className="related-title">Related movies</h1>
+        {movies.length > 0 ? (
+          <Slider {...settings}>
+            {movies.map((movie) => (
+              <Link
+                to={`/movies/${movie.imdbID}`}
+                className="movie-link"
+                key={movie.imdbID}
+              >
+                <div
+                  className="card"
+                  onClick={() => handleCardClick(movie.imdbID)}
+                >
+                  <div className="card-rating">
+                    <TypographyText content={movie.imdbRating} type="subline" />
+                  </div>
+                  {movie.Poster !== "N/A" ? (
+                    <img
+                      className="movie-poster--img"
+                      draggable="false"
+                      src={movie.Poster}
+                      alt={movie.Title}
+                    />
+                  ) : (
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png"
+                      draggable="false"
+                      alt={movie.Title}
+                    />
+                  )}
+                  <p className="related-movie__genre">
+                    {movie.Genre.split(", ").slice(0, 3).join(", ")}
+                  </p>
+                  <h3 className="related-movie__title">{movie.Title}</h3>
+                  <h2 className="related-movie__year">{movie.Year}</h2>
+                </div>
+              </Link>
+            ))}
+          </Slider>
+        ) : (
+          <Loader />
+        )}
+      </div>
     </>
   );
 };
