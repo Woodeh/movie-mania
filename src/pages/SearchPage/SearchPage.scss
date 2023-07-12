@@ -9,6 +9,7 @@
   gap: 20px;
   justify-content: center;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 
@@ -30,6 +31,21 @@
 }
 
 
-.filter-label {
- margin: 0 auto;
+.filter-container {
+  text-align: center;
+}
+
+
+.css-187mznn-MuiSlider-root {
+  border-radius: 12px;
+  box-sizing: content-box;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  touch-action: none;
+  color: #1976d2;
+  -webkit-tap-highlight-color: transparent;
+  height: 4px;
+  width: 90% !important;
+  padding: 13px 0;
 }
