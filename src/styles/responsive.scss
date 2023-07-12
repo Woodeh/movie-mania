@@ -44,6 +44,7 @@
 @media (max-width: 768px) {
   .movies-container {
     justify-content: space-evenly;
+    row-gap: 20px;
   }
 .fav-movies-container {
   justify-content: space-around;
@@ -137,7 +138,6 @@ margin-left: 0px;
 
 ul, ol {
   padding: 0;
-  width: 100px;
 }
 
 .subline {
@@ -173,5 +173,14 @@ ul, ol {
     font-size: 28px;
   }
 
+  .previous-button {
+    width: 100px;
+    height: 50px;
+   }
+   
+   .next-button {
+     width: 100px;
+    height: 50px;
+   }
 
 }

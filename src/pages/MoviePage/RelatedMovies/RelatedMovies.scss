@@ -20,18 +20,7 @@
     border: none;
     color: #ffff;
   }
-  &--btn:hover {
-    transition: filter 0.5s ease;
-    filter: brightness(1.2);
-    @keyframes brightnessAnimation {
-      from {
-        filter: brightness(1);
-      }
-      to {
-        filter: brightness(1.2);
-      }
-    }
-  }
+ 
   h3 {
     width: 266px;
   }

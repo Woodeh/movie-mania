@@ -125,12 +125,12 @@ export const RelatedMovies: FC<IRelatedMovies> = ({ movieTitle }) => {
                   className="card"
                   onClick={() => handleCardClick(movie.imdbID)}
                 >
-                  <button className="movie-poster--btn">
+                  <div className="card-rating">
                     <TypographyText
                       content={movie.imdbRating}
                       type="subline"
                     />
-                  </button>
+                  </div>
                   <img
                     className="movie-poster--img"
                     draggable="false"

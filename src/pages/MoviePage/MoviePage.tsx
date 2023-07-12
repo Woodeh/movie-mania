@@ -87,46 +87,56 @@ export const MovieInfo: FC<IMovieInfo> = () => {
           <TypographyText content={genreString} type="subline" />
           <TypographyText content={movie.Title} type="H1" />
           <p className="movie-rating">
-           
             <span>IMDb rating {movie.imdbRating}</span>
             <span>{movie.Runtime}</span>
           </p>
           <p className="movie-info--plot">{movie.Plot}</p>
           <div className="movie-info--genres">
-              
-            <ul>
-              <li>
-                <span className="movie-info--list">Year:</span>
-              </li>
-              <li>
-                <span className="movie-info--list">Released:</span>
-              </li>
-              <li>
-                <span className="movie-info--list">BoxOffice:</span>
-              </li>
-              <li>
-                <span className="movie-info--list">Country:</span>
-              </li>
-              <li>
-                <span className="movie-info--list">Director:</span>
-              </li>
-              <li>
-                <span className="movie-info--list">Writer:</span>
-              </li>
-              <li>
-                <span className="movie-info--list">Actors:</span>
-              </li>
-            </ul>
-            <ul>
-              <li>{movie.Year || "N/A"}</li>
-              <li>{movie.Released || "N/A"}</li>
-              <li>{movie.BoxOffice || "N/A"}</li>
-              <li>{movie.Country || "N/A"}</li>
-              <li>{movie.Director || "N/A"}</li>
-              <li>{movie.Writer || "N/A"}</li>
-              <li>{movie.Actors || "N/A"}</li>
-            </ul>
-          </div>
+          <ul>
+  <li>
+    <span className="movie-info--list">
+      <span className="movie-info--list-label">Year</span>{" "}
+      <span className="movie-info--list-value">{movie.Year || "N/A"}</span>
+    </span>
+  </li>
+  <li>
+    <span className="movie-info--list">
+      <span className="movie-info--list-label">Released</span>{" "}
+      <span className="movie-info--list-value">{movie.Released || "N/A"}</span>
+    </span>
+  </li>
+  <li>
+    <span className="movie-info--list">
+      <span className="movie-info--list-label">BoxOffice</span>{" "}
+      <span className="movie-info--list-value">{movie.BoxOffice || "N/A"}</span>
+    </span>
+  </li>
+  <li>
+    <span className="movie-info--list">
+      <span className="movie-info--list-label">Country</span>{" "}
+      <span className="movie-info--list-value">{movie.Country || "N/A"}</span>
+    </span>
+  </li>
+  <li>
+    <span className="movie-info--list">
+      <span className="movie-info--list-label">Director</span>{" "}
+      <span className="movie-info--list-value">{movie.Director || "N/A"}</span>
+    </span>
+  </li>
+  <li>
+    <span className="movie-info--list">
+      <span className="movie-info--list-label">Writer</span>{" "}
+      <span className="movie-info--list-value">{movie.Writer || "N/A"}</span>
+    </span>
+  </li>
+  <li>
+    <span className="movie-info--list">
+      <span className="movie-info--list-label">Actors</span>{" "}
+      <span className="movie-info--list-value">{movie.Actors || "N/A"}</span>
+    </span>
+  </li>
+</ul>
+</div>
         </div>
       </div>
       <RelatedMovies movieTitle={movie.Title} />

@@ -3,16 +3,26 @@
   align-content: space-between;
 }
 
+.pagination-container {
+  display: flex;
+  margin: 0 auto;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+
 .previous-button {
-  position: absolute;
-  left: 45%;
-  bottom: 60px;
+ margin-left: 0px;
+ width: 100px;
+ height: 30px;
 }
 
 .next-button {
-  position: absolute;
-  right: 45%;
-  bottom: 60px;
+  margin-left: 0px;
+  width: 100px;
+ height: 30px;
 }
 
 .light span {
