@@ -19,10 +19,10 @@ export const Dashboard: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ padding: "20px", backgroundColor: "#f0f0f0" }}>
+    <div>
       {user ? (
         <div>
-          <h2>Добро пожаловать, {user.displayName || user.email}!</h2>
+          <h2>Добро пожаловать, {user.email}!</h2>
           {/* Дополнительная информация о пользователе */}
         </div>
       ) : (
