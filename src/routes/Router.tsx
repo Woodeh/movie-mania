@@ -12,6 +12,7 @@ import { MoviePage } from "../pages/MoviePage/MoviePage";
 import { Trends } from "../pages/TrendsPage/TrendsPage";
 import { Favorites } from "../pages/FavoritesPage/FavoritesPage";
 import { Search } from "../pages/SearchPage/SearchPage";
+import { Dashboard } from "../components/Dashboard/Dashboard";
 
 export const Router: FC = () => {
   const { confirmEmail } = useAppSelector((state) => state.confirmEmail);
@@ -20,7 +21,7 @@ export const Router: FC = () => {
     <Routes>
       <Route path="/settings" element={<Settings />} />
       <Route path="/trends" element={<Trends />} />
-      <Route path="" element={<MainPage />} />
+      <Route path="/" element={<MainPage />} />
       <Route path="/movies/:id" element={<MoviePage match={{ params: { id: "" } }} />} />
       <Route path="/favorites" element={<Favorites />} />
       <Route path="/search-page" element={<Search />} />
@@ -29,8 +30,9 @@ export const Router: FC = () => {
       <Route path="/activate/:uid/:token" element={<ActivatePage />} />
       <Route element={<ProtectedRoute access={!!confirmEmail} />}>
         <Route path="/confirm-registration" element={<RegistrationConfirmPage />} />
+        <Route path="/dashboard" element={<Dashboard />} /> 
       </Route>
-      <Route path="*" element={<>No such page exists</>} />
+      <Route path="*" element={<MainPage />} /> 
     </Routes>
   );
 };

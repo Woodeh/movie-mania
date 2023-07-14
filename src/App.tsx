@@ -3,6 +3,9 @@ import { Router } from "./routes/Router";
 import GoogleFontLoader from "react-google-font-loader";
 import "./App.css";
 import { SplashScreen} from "./components/Layouts/SplashScreen/SplashScreen"
+import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
+import { Dashboard } from "@mui/icons-material";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 export const App = () => {
   return (
@@ -20,6 +23,9 @@ export const App = () => {
         ]}
         subsets={["cyrillic-ext", "greek"]}
       />
+      <RegistrationForm />
+      <LoginForm />
+      <Dashboard />
       <Router />
       <SplashScreen />
       
