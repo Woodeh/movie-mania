@@ -67,4 +67,4 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use and 
 
 ---
 
-Enjoy searching and discovering movies with the Cinema-hub App! If you have any questions or need assistance, please don't hesitate to contact me.
+Enjoy searching and discovering movies with the Movie--mania App! If you have any questions or need assistance, please don't hesitate to contact me.
